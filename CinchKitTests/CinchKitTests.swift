@@ -22,11 +22,19 @@ class CinchKitTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testStartWithCallback() {
         // This is an example of a functional test case.
-        let f = FooBar()
-        f.hello()
-        XCTAssert(true, "Pass")
+        let client = CinchClient()
+        let expectation = expectationWithDescription("GET root resources")
+
+        client.start({
+//            XCTAssertNotNil(client.rootResources is AnyObject , "Should not be nil")
+            expectation.fulfill()
+            XCTAssertTrue(true, "Pass")
+            return
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: nil)
     }
     
     func testPerformanceExample() {
