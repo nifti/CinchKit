@@ -11,6 +11,7 @@
 		C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4506EF31A75B1B60053248E /* CinchKitTests.swift */; };
+		C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C0371A77F82F00C4DB2A /* CNHServer.swift */; };
 		C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AD41A75B72A00CC0952 /* CinchKit.swift */; };
 		C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; };
 		C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */; };
@@ -67,6 +68,7 @@
 		C4506EEC1A75B1B60053248E /* CinchKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinchKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4506EF21A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4506EF31A75B1B60053248E /* CinchKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinchKitTests.swift; sourceTree = "<group>"; };
+		C470C0371A77F82F00C4DB2A /* CNHServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHServer.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
 		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = Models/ApiResource.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				C4506EE61A75B1B60053248E /* CinchKit.h */,
 				C4852AD41A75B72A00CC0952 /* CinchKit.swift */,
 				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
+				C470C0371A77F82F00C4DB2A /* CNHServer.swift */,
 				C4506EE41A75B1B60053248E /* Supporting Files */,
 			);
 			path = CinchKit;
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */,
 				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,

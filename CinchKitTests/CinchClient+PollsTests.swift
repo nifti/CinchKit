@@ -22,7 +22,7 @@ class CinchClientPollsSpec: QuickSpec {
                 
                 c.rootResources = ["polls" : r]
                 
-                waitUntil(timeout: 3) { done in
+                waitUntil(timeout: 10) { done in
                     c.fetchLatestPolls { ( response, error ) in
                         expect(error).to(beNil())
                         expect(response).toNot(beNil())
@@ -33,6 +33,21 @@ class CinchClientPollsSpec: QuickSpec {
                         var polls = response!.polls
                         expect(polls!.first!.candidates).toNot(beNil())
                         expect(polls!.first!.author).toNot(beNil())
+                        
+                        done()
+                    }
+                }
+            }
+            
+            it("should return error when polls resource doesnt exist") {
+                let c = CinchClient()
+                
+                waitUntil(timeout: 10) { done in
+                    c.fetchLatestPolls { ( response, error ) in
+                        expect(error).toNot(beNil())
+                        expect(error!.domain).to(equal(CinchKitErrorDomain))
+                        expect(response).to(beNil())
+                        
                         done()
                     }
                 }
