@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4506EE11A75B1B60053248E /* CinchKit.framework */; };
+		C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4506EED1A75B1B60053248E /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4506EE11A75B1B60053248E /* CinchKit.framework */; };
 		C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4506EF31A75B1B60053248E /* CinchKitTests.swift */; };
 		C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AD41A75B72A00CC0952 /* CinchKit.swift */; };
+		C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; };
+		C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */; };
+		C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */; };
+		C4BBA2F21A76F04A00B23DC7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */; };
+		C4BBA2F31A76F04E00B23DC7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */; };
+		C4BBA2F51A76F07C00B23DC7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4BBA2F61A76F08400B23DC7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */; };
+		C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */; };
+		C4BBA2FD1A76FDF400B23DC7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; };
+		C4BBA2FE1A76FE0300B23DC7 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +35,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C4300E201A75C239009F2024 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C4BBA2FE1A76FE0300B23DC7 /* SwiftyJSON.framework in CopyFiles */,
+				C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BBA2F41A76F06800B23DC7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C4BBA2F61A76F08400B23DC7 /* Quick.framework in CopyFiles */,
+				C4BBA2F51A76F07C00B23DC7 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C4506EE11A75B1B60053248E /* CinchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CinchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4506EE51A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +68,14 @@
 		C4506EF21A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4506EF31A75B1B60053248E /* CinchKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinchKitTests.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
+		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = Models/ApiResource.swift; sourceTree = "<group>"; };
+		C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Polls.swift"; sourceTree = "<group>"; };
+		C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+PollsTests.swift"; sourceTree = "<group>"; };
+		C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollModel.swift; path = Models/PollModel.swift; sourceTree = "<group>"; };
+		C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BBA2FD1A76FDF400B23DC7 /* SwiftyJSON.framework in Frameworks */,
+				C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,19 +92,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4506EED1A75B1B60053248E /* CinchKit.framework in Frameworks */,
+				C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */,
+				C4BBA2F21A76F04A00B23DC7 /* Nimble.framework in Frameworks */,
+				C4BBA2F31A76F04E00B23DC7 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4300E1F1A75C0D8009F2024 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */,
+				C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */,
+				C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */,
+				C488D8241A75BDA500294305 /* Alamofire.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
 		C4506ED71A75B1B60053248E = {
 			isa = PBXGroup;
 			children = (
 				C4506EE31A75B1B60053248E /* CinchKit */,
 				C4506EF01A75B1B60053248E /* CinchKitTests */,
 				C4506EE21A75B1B60053248E /* Products */,
+				C4300E1F1A75C0D8009F2024 /* frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,8 +134,10 @@
 		C4506EE31A75B1B60053248E /* CinchKit */ = {
 			isa = PBXGroup;
 			children = (
+				C4BBA2E71A76936D00B23DC7 /* Models */,
 				C4506EE61A75B1B60053248E /* CinchKit.h */,
 				C4852AD41A75B72A00CC0952 /* CinchKit.swift */,
+				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
 				C4506EE41A75B1B60053248E /* Supporting Files */,
 			);
 			path = CinchKit;
@@ -92,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
+				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
 				C4506EF11A75B1B60053248E /* Supporting Files */,
 			);
 			path = CinchKitTests;
@@ -103,6 +167,15 @@
 				C4506EF21A75B1B60053248E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4BBA2E71A76936D00B23DC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */,
+				C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +200,7 @@
 				C4506EDD1A75B1B60053248E /* Frameworks */,
 				C4506EDE1A75B1B60053248E /* Headers */,
 				C4506EDF1A75B1B60053248E /* Resources */,
+				C4300E201A75C239009F2024 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -144,6 +218,7 @@
 				C4506EE81A75B1B60053248E /* Sources */,
 				C4506EE91A75B1B60053248E /* Frameworks */,
 				C4506EEA1A75B1B60053248E /* Resources */,
+				C4BBA2F41A76F06800B23DC7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -212,6 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,
+				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
+				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,
 				C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
+				C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +407,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CinchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -345,6 +428,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CinchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -359,6 +446,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -376,6 +464,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CinchKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
