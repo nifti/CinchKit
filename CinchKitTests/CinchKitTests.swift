@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import Nimble
 import CinchKit
 
 class CinchKitTests: XCTestCase {
@@ -23,14 +24,27 @@ class CinchKitTests: XCTestCase {
     }
     
     func testStartWithCallback() {
-        // This is an example of a functional test case.
         let client = CinchClient()
         let expectation = expectationWithDescription("GET root resources")
 
         client.start({
-//            XCTAssertNotNil(client.rootResources is AnyObject , "Should not be nil")
+            expect(client.rootResources).toNot(beNil())
             expectation.fulfill()
-            XCTAssertTrue(true, "Pass")
+            return
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: nil)
+    }
+    
+    func testCreateClientWithServer() {
+        let s = CNHServer(baseURL : NSURL(string: "http://api.us-east-1.niftiws.com")!)
+        
+        let client = CinchClient(server: s)
+        let expectation = expectationWithDescription("GET root resources")
+        
+        client.start({
+            expect(client.rootResources).toNot(beNil())
+            expectation.fulfill()
             return
         })
         

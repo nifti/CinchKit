@@ -9,6 +9,10 @@
 public struct CNHServer {
     public let baseURL : NSURL
     
+    public init(baseURL : NSURL) {
+       self.baseURL = baseURL
+    }
+    
     static func dotComServer() -> CNHServer {
         return CNHServer(baseURL : NSURL(string : "http://api.us-east-1.niftiws.com")!)
     }
