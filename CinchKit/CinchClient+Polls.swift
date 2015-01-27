@@ -10,35 +10,35 @@ import SwiftyJSON
 
 extension CinchClient {
     
-    public func fetchLatestPolls(completionHandler : (CNHPollsResponse?) -> ()) {
+    public func fetchLatestPolls(completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
         
         if let polls = self.rootResources?["polls"] {
             manager.request(.GET, polls.href)
                 .responseJSON { (req, res, json, error) in
-                    println("done done done")
                     if(error != nil) {
                         NSLog("Error: \(error)")
-                        println(req)
-                        println(res)
+                        return completionHandler(nil, error)
                     } else {
-                        var j : JSON = JSON(json!)
-                        
-                        let polls = self.parsePollsResponse(j)
-                        
-                        var nextLink : CNHApiLink?
-                        
-                        if let href = j["links"]["next"].URL {
-                            nextLink = CNHApiLink(id: nil, href: href, type: "polls")
-                        }
-                        
-                        var selfLink = CNHApiLink(id: nil, href: j["links"]["self"].URL!, type: "polls")
-                        
-                        var response = CNHPollsResponse(selfLink : selfLink, nextLink : nextLink, polls: polls)
-                        return completionHandler(response)
+                        let response = self.parseResponse(JSON(json!))
+                        return completionHandler(response, nil)
                     }
                     
             }
         }
+    }
+    
+    func parseResponse(json : JSON) -> CNHPollsResponse? {
+        let polls = self.parsePollsResponse(json)
+        
+        var nextLink : CNHApiLink?
+        
+        if let href = json["links"]["next"].URL {
+            nextLink = CNHApiLink(id: nil, href: href, type: "polls")
+        }
+        
+        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "polls")
+        
+        return CNHPollsResponse(selfLink : selfLink, nextLink : nextLink, polls: polls)
     }
     
     func parsePollsResponse(json : JSON) -> [CNHPoll]? {

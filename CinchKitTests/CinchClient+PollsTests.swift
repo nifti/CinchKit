@@ -23,7 +23,8 @@ class CinchClientPollsSpec: QuickSpec {
                 c.rootResources = ["polls" : r]
                 
                 waitUntil(timeout: 3) { done in
-                    c.fetchLatestPolls { ( response ) in
+                    c.fetchLatestPolls { ( response, error ) in
+                        expect(error).to(beNil())
                         expect(response).toNot(beNil())
                         expect(response!.selfLink).toNot(beNil())
                         expect(response!.nextLink).toNot(beNil())
