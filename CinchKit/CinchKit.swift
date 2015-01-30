@@ -17,6 +17,9 @@ public class CinchClient {
     
     let manager : Alamofire.Manager
     let server : CNHServer
+    
+    internal let responseQueue = dispatch_queue_create("cinchkit.response", DISPATCH_QUEUE_CONCURRENT)
+    
     public var rootResources : [String : ApiResource]?
 
     public convenience init() {
@@ -25,6 +28,7 @@ public class CinchClient {
     
     public required init(server : CNHServer) {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPMaximumConnectionsPerHost = 20
         manager = Alamofire.Manager(configuration: configuration)
         self.server = server
     }
@@ -45,6 +49,16 @@ public class CinchClient {
                 
                 completionHandler?()
         }
+    }
+    
+    func logResponseTime(start : CFTimeInterval) {
+        let end = CACurrentMediaTime()
+        var elapsedTime = end - start
+        
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = .DecimalStyle
+        
+        println("Elapsed Time: \(numberFormatter.stringFromNumber(elapsedTime)) sec")
     }
     
     func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {

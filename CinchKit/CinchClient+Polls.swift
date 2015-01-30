@@ -21,13 +21,15 @@ extension CinchClient {
     }
     
     public func fetchPolls(atURL url : NSURL, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
+        let start = CACurrentMediaTime()
         request(.GET, url)
             .responseCinchJSON { (_, _, json, error) in
+                self.logResponseTime(start)
                 if(error != nil) {
                     NSLog("Error: \(error)")
                     return completionHandler(nil, error)
                 } else {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    dispatch_async(self.responseQueue, {
                         let response = self.parseResponse(json)
                         
                         dispatch_async(dispatch_get_main_queue(), {
