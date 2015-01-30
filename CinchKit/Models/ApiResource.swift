@@ -10,10 +10,10 @@ import Foundation
 
 public struct ApiResource {
     let id: String
-    let href: String
+    let href: NSURL
     let title: String?
     
-    public init(id : String, href: String, title : String?) {
+    public init(id : String, href: NSURL, title : String?) {
         self.id = id
         self.href = href
         self.title = title

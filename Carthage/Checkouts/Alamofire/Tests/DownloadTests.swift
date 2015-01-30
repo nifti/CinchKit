@@ -1,6 +1,6 @@
 // DownloadTests.swift
 //
-// Copyright (c) 2014 Alamofire (http://alamofire.org)
+// Copyright (c) 2014–2015 Alamofire (http://alamofire.org)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -63,12 +63,18 @@ class AlamofireDownloadResponseTestCase: XCTestCase {
                 let contents = fileManager.contentsOfDirectoryAtURL(directory, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: &fileManagerError)!
                 XCTAssertNil(fileManagerError, "fileManagerError should be nil")
 
-                let predicate = NSPredicate(format: "lastPathComponent = '\(numberOfLines)'")!
+                #if os(iOS)
+                let suggestedFilename = "\(numberOfLines)"
+                #elseif os(OSX)
+                let suggestedFilename = "\(numberOfLines).json"
+                #endif
+
+                let predicate = NSPredicate(format: "lastPathComponent = '\(suggestedFilename)'")!
                 let filteredContents = (contents as NSArray).filteredArrayUsingPredicate(predicate)
                 XCTAssertEqual(filteredContents.count, 1, "should have one file in Documents")
 
                 let file = filteredContents.first as NSURL
-                XCTAssertEqual(file.lastPathComponent!, "\(numberOfLines)", "filename should be \(numberOfLines)")
+                XCTAssertEqual(file.lastPathComponent!, "\(suggestedFilename)", "filename should bsuggestedFilenameines)")
 
                 if let data = NSData(contentsOfURL: file) {
                     XCTAssertGreaterThan(data.length, 0, "data length should be non-zero")

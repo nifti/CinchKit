@@ -51,11 +51,24 @@ class CinchKitTests: XCTestCase {
         waitForExpectationsWithTimeout(5, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testClientStartPerformance() {
+        let s = CNHServer(baseURL : NSURL(string: "http://api.us-east-1.niftiws.com")!)
+        
+        let client = CinchClient(server: s)
+
         self.measureBlock() {
-            // Put the code you want to measure the time of here.
+            let expectation = self.expectationWithDescription("GET root resources")
+            
+            client.start({
+                expect(client.rootResources).toNot(beNil())
+                expectation.fulfill()
+                return
+            })
+            
+            self.waitForExpectationsWithTimeout(5, handler: nil)
         }
+        
+
     }
     
 }
