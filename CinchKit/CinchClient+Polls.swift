@@ -13,20 +13,29 @@ extension CinchClient {
     public func fetchLatestPolls(completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
         
         if let polls = self.rootResources?["polls"] {
-            manager.request(.GET, polls.href)
-                .responseJSON { (_, _, json, error) in
-                    if(error != nil) {
-                        NSLog("Error: \(error)")
-                        return completionHandler(nil, error)
-                    } else {
-                        let response = self.parseResponse(JSON(json!))
-                        return completionHandler(response, nil)
-                    }
-                    
-            }
+            self.fetchPolls(atURL: polls.href, completionHandler: completionHandler)
         } else {
             let err = NSError(domain: CinchKitErrorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey : "Cinch Client not connected"])
             return completionHandler(nil, err)
+        }
+    }
+    
+    public func fetchPolls(atURL url : NSURL, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
+        request(.GET, url)
+            .responseCinchJSON { (_, _, json, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
+                    return completionHandler(nil, error)
+                } else {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                        let response = self.parseResponse(json)
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            return completionHandler(response, nil)
+                        })
+                    })
+                }
+                
         }
     }
     

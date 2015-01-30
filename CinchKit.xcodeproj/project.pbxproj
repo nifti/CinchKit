@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4506EE11A75B1B60053248E /* CinchKit.framework */; };
 		C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */; };
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4506EF31A75B1B60053248E /* CinchKitTests.swift */; };
 		C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C0371A77F82F00C4DB2A /* CNHServer.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire-CinchJSON.swift"; path = "Extensions/Alamofire-CinchJSON.swift"; sourceTree = "<group>"; };
 		C4506EE11A75B1B60053248E /* CinchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CinchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4506EE51A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4506EE61A75B1B60053248E /* CinchKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CinchKit.h; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			name = frameworks;
 			sourceTree = "<group>";
 		};
+		C44D9F6B1A7BF8A900E3B375 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		C4506ED71A75B1B60053248E = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		C4506EE31A75B1B60053248E /* CinchKit */ = {
 			isa = PBXGroup;
 			children = (
+				C44D9F6B1A7BF8A900E3B375 /* Extensions */,
 				C4BBA2E71A76936D00B23DC7 /* Models */,
 				C4506EE61A75B1B60053248E /* CinchKit.h */,
 				C4852AD41A75B72A00CC0952 /* CinchKit.swift */,
@@ -290,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */,
 				C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */,
 				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,

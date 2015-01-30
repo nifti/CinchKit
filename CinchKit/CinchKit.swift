@@ -34,17 +34,24 @@ public class CinchClient {
     }
     
     public func start(completionHandler : (() -> ())?) {
-        manager.request(.GET, self.server.baseURL)
-            .responseJSON { (_, _, json, error) in
+        request(.GET, self.server.baseURL)
+            .responseCinchJSON { (_, _, json, error) in
                 if(error != nil) {
                     NSLog("Error: \(error)")
 //                    return completionHandler(nil, error)
                 } else {
-                   self.rootResources  = self.decodeResources(JSON(json!))
+                   self.rootResources  = self.decodeResources(json)
                 }
                 
                 completionHandler?()
         }
+    }
+    
+    func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {
+        println("performing request: method \(method.rawValue) - \(URLString.URLString)")
+        let start = CACurrentMediaTime()
+        
+        return manager.request(method, URLString, parameters: parameters, encoding: encoding)
     }
     
     internal func decodeResources(json : JSON) -> [String : ApiResource]? {
@@ -58,7 +65,7 @@ public class CinchClient {
     internal func decodeResource(json : JSON) -> ApiResource {
         return ApiResource(
             id: json["id"].stringValue,
-            href: json["href"].stringValue,
+            href: json["href"].URL!,
             title: json["title"].stringValue
         )
     }

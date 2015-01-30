@@ -18,7 +18,8 @@ class CinchClientPollsSpec: QuickSpec {
             
             it("should return polls") {
                 let c = CinchClient()
-                let r = ApiResource(id: "polls", href: "http://api.us-east-1.niftiws.com/discussions", title: "get and create polls")
+                
+                let r = ApiResource(id: "polls", href: NSURL(string: "http://api.us-east-1.niftiws.com/discussions")!, title: "get and create polls")
                 
                 c.rootResources = ["polls" : r]
                 
