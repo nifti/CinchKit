@@ -15,8 +15,7 @@ extension CinchClient {
         if let polls = self.rootResources?["polls"] {
             self.fetchPolls(atURL: polls.href, completionHandler: completionHandler)
         } else {
-            let err = NSError(domain: CinchKitErrorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey : "Cinch Client not connected"])
-            return completionHandler(nil, err)
+            return completionHandler(nil, clientNotConnectedError())
         }
     }
     

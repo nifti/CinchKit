@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class PollsResponseSerializer : JSONObjectSerializer {
+    let accountsSerializer = AccountsSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> CNHPollsResponse? {
         return self.parseResponse(json)
@@ -32,7 +33,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
     func parsePollsResponse(json : JSON) -> [CNHPoll]? {
         var accountIndex : [String : CNHAccount]?
         
-        if let accounts = json["linked"]["accounts"].array?.map(self.decodeAccount) {
+        if let accounts = accountsSerializer.jsonToObject(json["linked"]["accounts"]) {
             accountIndex = self.indexById(accounts)
         }
         
@@ -73,16 +74,6 @@ class PollsResponseSerializer : JSONObjectSerializer {
             created : json["created"].stringValue,
             voters : json["voters"].array?.map({ $0.stringValue }),
             type : json["type"].stringValue
-        )
-    }
-    
-    func decodeAccount(json : JSON) -> CNHAccount {
-        
-        return CNHAccount(
-            id: json["id"].stringValue,
-            href : json["href"].stringValue,
-            name : json["name"].stringValue,
-            picture : json["picture"].URL
         )
     }
     

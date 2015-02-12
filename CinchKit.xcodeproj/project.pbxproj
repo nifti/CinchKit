@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */; };
 		C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */; };
+		C41DDDAC1A8D48E300B9523A /* CinchClient+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */; };
+		C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */; };
+		C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */; };
 		C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4506EE11A75B1B60053248E /* CinchKit.framework */; };
 		C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */; };
@@ -67,6 +70,9 @@
 /* Begin PBXFileReference section */
 		C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollsResponseSerializer.swift; path = Serializers/PollsResponseSerializer.swift; sourceTree = "<group>"; };
 		C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResourcesSerializer.swift; path = Serializers/ApiResourcesSerializer.swift; sourceTree = "<group>"; };
+		C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Auth.swift"; path = "Client/CinchClient+Auth.swift"; sourceTree = "<group>"; };
+		C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountsSerializer.swift; path = Serializers/AccountsSerializer.swift; sourceTree = "<group>"; };
+		C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+AuthTests.swift"; sourceTree = "<group>"; };
 		C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire-CinchJSON.swift"; path = "Extensions/Alamofire-CinchJSON.swift"; sourceTree = "<group>"; };
 		C4506EE11A75B1B60053248E /* CinchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CinchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4506EE51A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,7 +84,7 @@
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
 		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = Models/ApiResource.swift; sourceTree = "<group>"; };
-		C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Polls.swift"; sourceTree = "<group>"; };
+		C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Polls.swift"; path = "Client/CinchClient+Polls.swift"; sourceTree = "<group>"; };
 		C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+PollsTests.swift"; sourceTree = "<group>"; };
@@ -114,8 +120,18 @@
 			children = (
 				C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */,
 				C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */,
+				C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */,
 			);
 			name = Serializers;
+			sourceTree = "<group>";
+		};
+		C41DDDAA1A8D486100B9523A /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
+				C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */,
+			);
+			name = Client;
 			sourceTree = "<group>";
 		};
 		C4300E1F1A75C0D8009F2024 /* frameworks */ = {
@@ -159,12 +175,12 @@
 		C4506EE31A75B1B60053248E /* CinchKit */ = {
 			isa = PBXGroup;
 			children = (
+				C41DDDAA1A8D486100B9523A /* Client */,
 				C44D9F6B1A7BF8A900E3B375 /* Extensions */,
 				C4BBA2E71A76936D00B23DC7 /* Models */,
 				C412B47F1A8D0DA000CFAAB9 /* Serializers */,
 				C4506EE61A75B1B60053248E /* CinchKit.h */,
 				C4852AD41A75B72A00CC0952 /* CinchKit.swift */,
-				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
 				C470C0371A77F82F00C4DB2A /* CNHServer.swift */,
 				C4506EE41A75B1B60053248E /* Supporting Files */,
 			);
@@ -183,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
+				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
 				C4506EF11A75B1B60053248E /* Supporting Files */,
 			);
@@ -321,6 +338,8 @@
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */,
 				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,
+				C41DDDAC1A8D48E300B9523A /* CinchClient+Auth.swift in Sources */,
+				C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */,
 				C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */,
 				C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */,
 			);
@@ -330,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */,
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
 				C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */,
 			);
