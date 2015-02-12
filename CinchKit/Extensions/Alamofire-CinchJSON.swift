@@ -11,9 +11,19 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+public protocol JSONObjectSerializer {
+    typealias ContentType
+    
+    func jsonToObject(json:SwiftyJSON.JSON) -> ContentType?
+}
+
 // MARK: - Request for Cinch JSON
 
 extension Request {
+    
+    public func responseCinchJSON<T : JSONObjectSerializer>(serializer : T, completionHandler: (NSURLRequest, NSHTTPURLResponse?, T.ContentType?, NSError?) -> Void) -> Self {
+        return responseCinchJSON(queue:nil, serializer : serializer, options:NSJSONReadingOptions.AllowFragments, completionHandler:completionHandler)
+    }
     
     /**
     Adds a handler to be called once the request has finished.
@@ -50,6 +60,29 @@ extension Request {
                 
                 dispatch_async(queue ?? dispatch_get_main_queue(), {
                     completionHandler(self.request, self.response, responseJSON, error)
+                })
+            })
+        })
+    }
+    
+    public func responseCinchJSON<T : JSONObjectSerializer>(queue: dispatch_queue_t? = nil, serializer : T, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, T.ContentType?, NSError?) -> Void) -> Self {
+        
+        return response(queue: queue, serializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                
+                var responseJSON: JSON
+                var decodedObject : T.ContentType?
+                
+                if error != nil || object == nil{
+                    responseJSON = JSON.nullJSON
+                } else {
+                    responseJSON = SwiftyJSON.JSON(object!)
+                    decodedObject = serializer.jsonToObject(responseJSON)
+                }
+                
+                dispatch_async(queue ?? dispatch_get_main_queue(), {
+                    completionHandler(self.request, self.response, decodedObject, error)
                 })
             })
         })
