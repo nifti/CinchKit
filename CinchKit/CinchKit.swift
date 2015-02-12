@@ -38,13 +38,15 @@ public class CinchClient {
     }
     
     public func start(completionHandler : (() -> ())?) {
+        let serializer = ApiResourcesSerializer()
+        
         request(.GET, self.server.baseURL)
-            .responseCinchJSON { (_, _, json, error) in
+            .responseCinchJSON(serializer) { (_, _, resources, error) in
                 if(error != nil) {
                     NSLog("Error: \(error)")
 //                    return completionHandler(nil, error)
                 } else {
-                   self.rootResources  = self.decodeResources(json)
+                   self.rootResources  = resources
                 }
                 
                 completionHandler?()
@@ -63,34 +65,8 @@ public class CinchClient {
     
     func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {
         println("performing request: method \(method.rawValue) - \(URLString.URLString)")
-        let start = CACurrentMediaTime()
         
         return manager.request(method, URLString, parameters: parameters, encoding: encoding)
     }
-    
-    internal func decodeResources(json : JSON) -> [String : ApiResource]? {
-        if let resources = json["resources"].array?.map(self.decodeResource) {
-            return self.indexById(resources)
-        } else {
-            return nil
-        }
-    }
-    
-    internal func decodeResource(json : JSON) -> ApiResource {
-        return ApiResource(
-            id: json["id"].stringValue,
-            href: json["href"].URL!,
-            title: json["title"].stringValue
-        )
-    }
-    
-    internal func indexById(data : [ApiResource]) -> [String : ApiResource] {
-        var result = [String : ApiResource]()
-        
-        for item in data {
-            result[item.id] = item
-        }
-        
-        return result
-    }
+
 }
