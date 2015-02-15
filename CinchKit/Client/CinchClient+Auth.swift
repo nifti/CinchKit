@@ -26,7 +26,7 @@ extension CinchClient {
             let start = CACurrentMediaTime()
             request(.GET, accounts.href, parameters: params, encoding : Alamofire.ParameterEncoding.URL)
                 .responseCinchJSON(serializer) { (_, _, response, error) in
-                    self.logResponseTime(start)
+                    CNHUtils.logResponseTime(start)
                     if(error != nil) {
                         NSLog("Error: \(error)")
                         return completionHandler(nil, error)

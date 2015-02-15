@@ -30,6 +30,7 @@
 		C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */; };
 		C4BBA2FD1A76FDF400B23DC7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; };
 		C4BBA2FE1A76FE0300B23DC7 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+PollsTests.swift"; sourceTree = "<group>"; };
 		C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollModel.swift; path = Models/PollModel.swift; sourceTree = "<group>"; };
 		C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				C4506EE61A75B1B60053248E /* CinchKit.h */,
 				C4852AD41A75B72A00CC0952 /* CinchKit.swift */,
 				C470C0371A77F82F00C4DB2A /* CNHServer.swift */,
+				C4F3820A1A90FB96001A392C /* CNHUtils.swift */,
 				C4506EE41A75B1B60053248E /* Supporting Files */,
 			);
 			path = CinchKit;
@@ -335,6 +338,7 @@
 				C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */,
 				C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */,
 				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,
+				C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */,
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */,
 				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,

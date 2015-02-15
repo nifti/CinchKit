@@ -20,12 +20,13 @@ extension CinchClient {
     }
     
     public func fetchPolls(atURL url : NSURL, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
-        let start = CACurrentMediaTime()
         let serializer = PollsResponseSerializer()
         
+        let start = CACurrentMediaTime()
         request(.GET, url)
             .responseCinchJSON(serializer) { (_, _, response, error) in
-                self.logResponseTime(start)
+                CNHUtils.logResponseTime(start)
+                
                 if(error != nil) {
                     NSLog("Error: \(error)")
                     return completionHandler(nil, error)

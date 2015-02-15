@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import CinchKit
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let client = CinchClient()
-        client.start()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

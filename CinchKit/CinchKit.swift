@@ -70,16 +70,6 @@ public class CinchClient {
         return result
     }
     
-    func logResponseTime(start : CFTimeInterval) {
-        let end = CACurrentMediaTime()
-        var elapsedTime = end - start
-        
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = .DecimalStyle
-        
-        println("Elapsed Time: \(numberFormatter.stringFromNumber(elapsedTime)) sec")
-    }
-    
     func clientNotConnectedError() -> NSError {
         return NSError(domain: CinchKitErrorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey : "Cinch Client not connected"])
     }

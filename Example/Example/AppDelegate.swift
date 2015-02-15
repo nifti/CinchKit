@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CinchKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let client = CinchClient()
+        client.start {
+            println("client started")
+            
+            client.fetchLatestPolls() { (_, _) in
+                println("fetched polls")
+            }
+        }
+        
         return true
     }
 
