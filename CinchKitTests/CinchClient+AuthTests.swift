@@ -16,11 +16,24 @@ class CinchClientAuthSpec: QuickSpec {
     override func spec() {
         describe("Cinch Client Auth") {
             var client: CinchClient?
+            var accountsResource : ApiResource?
+            
+//            beforeSuite {
+//                LSNocilla.sharedInstance().start()
+//            }
+//            
+//            afterSuite {
+//                LSNocilla.sharedInstance().stop()
+//            }
             
             beforeEach {
                 client = CinchClient()
-                let r = ApiResource(id: "accounts", href: NSURL(string: "\(client!.server.authServerURL)/accounts")!, title: "get and create accounts")
-                client!.rootResources = ["accounts" : r]
+                accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(client!.server.authServerURL)/accounts")!, title: "get and create accounts")
+                client!.rootResources = ["accounts" : accountsResource!]
+            }
+            
+            afterEach {
+//                LSNocilla.sharedInstance().clearStubs()
             }
             
             describe("fetch Accounts matching email") {
@@ -36,11 +49,13 @@ class CinchClientAuthSpec: QuickSpec {
                     }
                 }
                 
-                it("should return nil") {
+                it("should return 404 not found error") {
                     waitUntil(timeout: 10) { done in
                         client!.fetchAccountsMatchingEmail("asdfasdfasdf") { (accounts, error) in
-                            expect(error).to(beNil())
+                            expect(error).toNot(beNil())
                             expect(accounts).to(beNil())
+                            
+                            expect(error!.code).to(equal(404))
                             done()
                         }
                     }
@@ -74,11 +89,13 @@ class CinchClientAuthSpec: QuickSpec {
                     }
                 }
                 
-                it("should return nil") {
+                it("should return 404 not found") {
                     waitUntil(timeout: 10) { done in
                         client!.fetchAccountsMatchingUsername("asdfasdfasdf") { (accounts, error) in
-                            expect(error).to(beNil())
+                            expect(error).toNot(beNil())
                             expect(accounts).to(beNil())
+                            
+                            expect(error!.code).to(equal(404))
                             done()
                         }
                     }
@@ -98,6 +115,38 @@ class CinchClientAuthSpec: QuickSpec {
                     }
                 }
             }
+            
+            describe("create account") {
+                
+                beforeEach {
+                    LSNocilla.sharedInstance().start()
+                }
+                
+                afterEach {
+                    LSNocilla.sharedInstance().clearStubs()
+                    LSNocilla.sharedInstance().stop()
+                }
+                
+                it("should return created account") {
+                    var str : NSString = accountsResource!.href.absoluteString!
+                    
+                    var filepath = NSBundle(forClass: CinchClientAuthSpec.self).pathForResource("createAccount", ofType: "json")
+                    var data = NSData(contentsOfFile: filepath!)
+
+                    stubRequest("POST", str).andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 10) { done in
+                        
+                        client!.createAccount(["email" : "foo23@bar.com", "username" : "foobar23", "name" : "foobar"]) { (account, error) in
+                            expect(error).to(beNil())
+                            expect(account).toNot(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }

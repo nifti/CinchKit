@@ -9,9 +9,9 @@
 import Foundation
 
 public struct ApiResource {
-    let id: String
-    let href: NSURL
-    let title: String?
+    public let id: String
+    public let href: NSURL
+    public let title: String?
     
     public init(id : String, href: NSURL, title : String?) {
         self.id = id

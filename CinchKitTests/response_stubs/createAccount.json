@@ -1,0 +1,26 @@
+{
+    "links": {
+        "self": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts"
+    },
+    "accounts": [
+                 {
+                 "id": "78e2646e-4633-46be-9337-cba1bae67079",
+                 "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts/78e2646e-4633-46be-9337-cba1bae67079",
+                 "email": "foo1@bar.com",
+                 "name": "foo bar",
+                 "username": "fo1obar",
+                 "createdAt": "2015-02-19T17:38:41.697Z"
+                 }
+                 ],
+    "linked": {
+        "tokens": [
+                   {
+                   "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens",
+                   "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzhlMjY0NmUtNDYzMy00NmJlLTkzMzctY2JhMWJhZTY3MDc5IiwibmFtZSI6ImZvbyBiYXIiLCJzY29wZSI6WyJhY2Nlc3N0b2tlbiJdLCJpYXQiOjE0MjQzNjc1MjEsImV4cCI6MTQyNDM3MTEyMX0.X8cBvUoreqGXDknm7UiBA4HhqrtyHhy-L-0IP7cG-BM",
+                   "expires": 1424371121000,
+                   "type": "Bearer",
+                   "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzhlMjY0NmUtNDYzMy00NmJlLTkzMzctY2JhMWJhZTY3MDc5Iiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQyNDM2NzUyMX0.hKcbTAq2PT2ZKM0UNjs0aoXjHsWbhDrYmA9Eggq1wV4"
+                   }
+                   ]
+    }
+}
