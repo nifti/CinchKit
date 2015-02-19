@@ -10,13 +10,26 @@ import Foundation
 
 internal class CNHUtils {
     
-    internal class func logResponseTime(start : CFTimeInterval) {
+    internal class func logResponseTime(start : CFTimeInterval, response : NSHTTPURLResponse?, message : String?) {
         let end = CACurrentMediaTime()
         var elapsedTime = end - start
         
         let numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = .DecimalStyle
         
-        println("Elapsed Time: \(numberFormatter.stringFromNumber(elapsedTime)) sec")
+        var prefix = ""
+        
+        if let msg = message {
+           prefix = "\(msg) -"
+        }
+        
+        if let resp = response {
+            var latency = "0.000"
+            if let time = numberFormatter.stringFromNumber(elapsedTime) {
+                latency = time
+            }
+            
+            println("\(prefix) \(resp.statusCode) -  \(latency)s")
+        }
     }
 }

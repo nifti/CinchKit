@@ -21,7 +21,7 @@ public class CinchClient {
     internal let responseQueue = dispatch_queue_create("cinchkit.response", DISPATCH_QUEUE_CONCURRENT)
     
     public var rootResources : [String : ApiResource]?
-
+    
     public convenience init() {
         self.init(server: CNHServer.dotComServer())
     }
@@ -44,9 +44,9 @@ public class CinchClient {
             .responseCinchJSON(serializer) { (_, _, resources, error) in
                 if(error != nil) {
                     NSLog("Error: \(error)")
-//                    return completionHandler(nil, error)
+                    //                    return completionHandler(nil, error)
                 } else {
-                   self.rootResources  = self.authServerResourcesHack(resources)
+                    self.rootResources  = self.authServerResourcesHack(resources)
                 }
                 
                 completionHandler?()
@@ -75,9 +75,26 @@ public class CinchClient {
     }
     
     func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {
-        println("performing request: method \(method.rawValue) - \(URLString.URLString)")
+        println("request - \(method.rawValue) - \(URLString.URLString)")
         
         return manager.request(method, URLString, parameters: parameters, encoding: encoding)
     }
-
+    
+    func request<T : JSONObjectSerializer>( method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, encoding: Alamofire.ParameterEncoding = .JSON,
+        serializer : T, completionHandler : ((T.ContentType?, NSError?) -> Void)? ) {
+            
+            let start = CACurrentMediaTime()
+            
+            request(method, URLString, parameters: parameters, encoding: encoding)
+                .responseCinchJSON(serializer) { (_, httpResponse, response, error) in
+                    CNHUtils.logResponseTime(start, response : httpResponse,  message : "response: \(method.rawValue) \(URLString.URLString)")
+                    
+                    if(error != nil) {
+                        NSLog("Error: \(error)")
+                        completionHandler?(nil, error)
+                    } else {
+                        completionHandler?(response, nil)
+                    }
+            }
+    }
 }

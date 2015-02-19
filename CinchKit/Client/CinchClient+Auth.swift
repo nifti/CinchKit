@@ -19,22 +19,20 @@ extension CinchClient {
         self.fetchAccountsMatchingParams(["username" : username], completionHandler: completionHandler)
     }
     
+    public func createAccount(parameters: [String : AnyObject], completionHandler : ((CNHAccount?, NSError?) -> ())?) {
+        let serializer = CreateAccountSerializer()
+        
+        if let accounts = self.rootResources?["accounts"] {
+            request(.POST, accounts.href, parameters: parameters, serializer: serializer, completionHandler: completionHandler)
+        } else {
+            completionHandler?(nil, clientNotConnectedError())
+        }
+    }
+    
     internal func fetchAccountsMatchingParams(params : [String : AnyObject]?, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
         if let accounts = self.rootResources?["accounts"] {
             let serializer = FetchAccountsSerializer()
-            
-            let start = CACurrentMediaTime()
-            request(.GET, accounts.href, parameters: params, encoding : Alamofire.ParameterEncoding.URL)
-                .responseCinchJSON(serializer) { (_, _, response, error) in
-                    CNHUtils.logResponseTime(start)
-                    if(error != nil) {
-                        NSLog("Error: \(error)")
-                        return completionHandler(nil, error)
-                    } else {
-                        return completionHandler(response, nil)
-                    }
-            }
-            
+            request(.GET, accounts.href, parameters: params, encoding : .URL , serializer: serializer, completionHandler: completionHandler)
         } else {
             return completionHandler(nil, clientNotConnectedError())
         }

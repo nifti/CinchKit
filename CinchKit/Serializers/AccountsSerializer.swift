@@ -32,3 +32,11 @@ class FetchAccountsSerializer : JSONObjectSerializer {
         return accountSerializer.jsonToObject(json["accounts"])
     }
 }
+
+class CreateAccountSerializer : JSONObjectSerializer {
+    let accountSerializer = AccountsSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHAccount? {
+        return accountSerializer.jsonToObject(json["accounts"])?.first
+    }
+}
