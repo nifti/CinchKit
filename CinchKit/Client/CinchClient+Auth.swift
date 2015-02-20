@@ -23,7 +23,15 @@ extension CinchClient {
         let serializer = CreateAccountSerializer()
         
         if let accounts = self.rootResources?["accounts"] {
-            request(.POST, accounts.href, parameters: parameters, serializer: serializer, completionHandler: completionHandler)
+            request(.POST, accounts.href, parameters: parameters, serializer: serializer) { (auth, error) in
+                if let err = error {
+                    completionHandler?(nil, error)
+                } else if let a = auth {
+                    completionHandler?(a.account, nil)
+                } else {
+                    completionHandler?(nil, nil)
+                }
+            }
         } else {
             completionHandler?(nil, clientNotConnectedError())
         }

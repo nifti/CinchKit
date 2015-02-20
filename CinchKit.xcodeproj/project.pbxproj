@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A52CB2EABAF4BA6F5F157F7 /* libPods-CinchKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E5286BD2701432C1E4AF07 /* libPods-CinchKitTests.a */; };
 		C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */; };
 		C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */; };
 		C41DDDAC1A8D48E300B9523A /* CinchClient+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */; };
@@ -20,6 +21,8 @@
 		C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C0371A77F82F00C4DB2A /* CNHServer.swift */; };
 		C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AD41A75B72A00CC0952 /* CinchKit.swift */; };
 		C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; };
+		C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = C4B554F91A969A0700228AA5 /* createAccount.json */; };
+		C4B554FD1A96D23500228AA5 /* ErrorResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */; };
 		C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */; };
 		C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */; };
 		C4BBA2F21A76F04A00B23DC7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */; };
@@ -69,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2EFD08EBAA80F82F872E16AA /* Pods-CinchKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		36E5286BD2701432C1E4AF07 /* libPods-CinchKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CinchKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollsResponseSerializer.swift; path = Serializers/PollsResponseSerializer.swift; sourceTree = "<group>"; };
 		C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResourcesSerializer.swift; path = Serializers/ApiResourcesSerializer.swift; sourceTree = "<group>"; };
 		C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Auth.swift"; path = "Client/CinchClient+Auth.swift"; sourceTree = "<group>"; };
@@ -84,6 +89,8 @@
 		C470C0371A77F82F00C4DB2A /* CNHServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHServer.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
 		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C4B554F91A969A0700228AA5 /* createAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = createAccount.json; path = response_stubs/createAccount.json; sourceTree = "<group>"; };
+		C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponseSerializer.swift; path = Serializers/ErrorResponseSerializer.swift; sourceTree = "<group>"; };
 		C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = Models/ApiResource.swift; sourceTree = "<group>"; };
 		C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Polls.swift"; path = "Client/CinchClient+Polls.swift"; sourceTree = "<group>"; };
 		C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -91,7 +98,9 @@
 		C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+PollsTests.swift"; sourceTree = "<group>"; };
 		C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollModel.swift; path = Models/PollModel.swift; sourceTree = "<group>"; };
 		C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinchKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
+		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,18 +120,37 @@
 				C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */,
 				C4BBA2F21A76F04A00B23DC7 /* Nimble.framework in Frameworks */,
 				C4BBA2F31A76F04E00B23DC7 /* Quick.framework in Frameworks */,
+				0A52CB2EABAF4BA6F5F157F7 /* libPods-CinchKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58F4D213680BC7207F9E3903 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36E5286BD2701432C1E4AF07 /* libPods-CinchKitTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B219E6652910C9579F5CEE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2EFD08EBAA80F82F872E16AA /* Pods-CinchKitTests.debug.xcconfig */,
+				D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C412B47F1A8D0DA000CFAAB9 /* Serializers */ = {
 			isa = PBXGroup;
 			children = (
-				C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */,
-				C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */,
 				C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */,
+				C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */,
+				C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */,
+				C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */,
 			);
 			name = Serializers;
 			sourceTree = "<group>";
@@ -162,6 +190,8 @@
 				C4506EF01A75B1B60053248E /* CinchKitTests */,
 				C4506EE21A75B1B60053248E /* Products */,
 				C4300E1F1A75C0D8009F2024 /* frameworks */,
+				9B219E6652910C9579F5CEE3 /* Pods */,
+				58F4D213680BC7207F9E3903 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,9 +231,11 @@
 		C4506EF01A75B1B60053248E /* CinchKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				C4B554F81A9699DD00228AA5 /* response_stubs */,
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
+				C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */,
 				C4506EF11A75B1B60053248E /* Supporting Files */,
 			);
 			path = CinchKitTests;
@@ -215,6 +247,14 @@
 				C4506EF21A75B1B60053248E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4B554F81A9699DD00228AA5 /* response_stubs */ = {
+			isa = PBXGroup;
+			children = (
+				C4B554F91A969A0700228AA5 /* createAccount.json */,
+			);
+			name = response_stubs;
 			sourceTree = "<group>";
 		};
 		C4BBA2E71A76936D00B23DC7 /* Models */ = {
@@ -263,10 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4506EFA1A75B1B60053248E /* Build configuration list for PBXNativeTarget "CinchKitTests" */;
 			buildPhases = (
+				D349599BD1C640992E67EB45 /* Check Pods Manifest.lock */,
 				C4506EE81A75B1B60053248E /* Sources */,
 				C4506EE91A75B1B60053248E /* Frameworks */,
 				C4506EEA1A75B1B60053248E /* Resources */,
 				C4BBA2F41A76F06800B23DC7 /* CopyFiles */,
+				899F5C53D5D98E6040A446CF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,10 +367,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		899F5C53D5D98E6040A446CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D349599BD1C640992E67EB45 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4506EDC1A75B1B60053248E /* Sources */ = {
@@ -346,6 +422,7 @@
 				C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */,
 				C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */,
 				C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */,
+				C4B554FD1A96D23500228AA5 /* ErrorResponseSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +575,7 @@
 		};
 		C4506EFB1A75B1B60053248E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EFD08EBAA80F82F872E16AA /* Pods-CinchKitTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -511,11 +589,13 @@
 				INFOPLIST_FILE = CinchKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CinchKitTests/CinchKitTests-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		C4506EFC1A75B1B60053248E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -525,6 +605,7 @@
 				INFOPLIST_FILE = CinchKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CinchKitTests/CinchKitTests-Bridging-Header.h";
 			};
 			name = Release;
 		};

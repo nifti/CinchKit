@@ -49,19 +49,24 @@ extension Request {
         return response(queue: queue, serializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-                
+                var errorResponse : NSError?
                 var responseJSON: JSON
                 var decodedObject : T.ContentType?
-                
+
                 if error != nil || object == nil{
+                    errorResponse = error
                     responseJSON = JSON.nullJSON
+                } else if response?.statusCode >= 400 {
+                    let errSerializer = ErrorResponseSerializer()
+                    responseJSON = JSON.nullJSON
+                    errorResponse = errSerializer.jsonToObject(SwiftyJSON.JSON(object!))
                 } else {
                     responseJSON = SwiftyJSON.JSON(object!)
                     decodedObject = serializer.jsonToObject(responseJSON)
                 }
                 
                 dispatch_async(queue ?? dispatch_get_main_queue(), {
-                    completionHandler(self.request, self.response, decodedObject, error)
+                    completionHandler(self.request, self.response, decodedObject, errorResponse)
                 })
             })
         })
