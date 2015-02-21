@@ -1,5 +1,4 @@
-github "Alamofire/Alamofire" "1.1.4"
+git "git@github.com:ryanfitz/Alamofire.git" "873fb617f215b639f85410b8dc1649a08c31cfec"
 github "Quick/Nimble" "v0.3.0"
-github "luisobo/Nocilla" "0.9.0"
 github "Quick/Quick" "v0.2.2"
 github "SwiftyJSON/SwiftyJSON" "2.1.3"
