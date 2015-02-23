@@ -14,7 +14,6 @@
 		C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */; };
 		C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */; };
 		C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4506EE11A75B1B60053248E /* CinchKit.framework */; };
-		C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */; };
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4506EF31A75B1B60053248E /* CinchKitTests.swift */; };
@@ -32,7 +31,8 @@
 		C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */; };
 		C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */; };
 		C4BBA2FD1A76FDF400B23DC7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; };
-		C4BBA2FE1A76FE0300B23DC7 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4EBFB121A9BECAB00493DB8 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4EBFB131A9BECAB00493DB8 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,23 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C4300E201A75C239009F2024 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C4BBA2FE1A76FE0300B23DC7 /* SwiftyJSON.framework in CopyFiles */,
-				C4300E211A75C280009F2024 /* Alamofire.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C4BBA2F41A76F06800B23DC7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C4EBFB121A9BECAB00493DB8 /* SwiftyJSON.framework in CopyFiles */,
+				C4EBFB131A9BECAB00493DB8 /* Alamofire.framework in CopyFiles */,
 				C4BBA2F61A76F08400B23DC7 /* Quick.framework in CopyFiles */,
 				C4BBA2F51A76F07C00B23DC7 /* Nimble.framework in CopyFiles */,
 			);
@@ -288,7 +279,6 @@
 				C4506EDD1A75B1B60053248E /* Frameworks */,
 				C4506EDE1A75B1B60053248E /* Headers */,
 				C4506EDF1A75B1B60053248E /* Resources */,
-				C4300E201A75C239009F2024 /* CopyFiles */,
 			);
 			buildRules = (
 			);
