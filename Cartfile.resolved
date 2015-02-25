@@ -1,4 +1,5 @@
 git "git@github.com:ryanfitz/Alamofire.git" "873fb617f215b639f85410b8dc1649a08c31cfec"
+github "kishikawakatsumi/KeychainAccess" "v1.1.3"
 github "Quick/Nimble" "v0.3.0"
 github "Quick/Quick" "v0.2.2"
 github "SwiftyJSON/SwiftyJSON" "2.1.3"

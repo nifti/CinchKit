@@ -27,6 +27,7 @@ extension CinchClient {
                 if let err = error {
                     completionHandler?(nil, error)
                 } else if let a = auth {
+                    self.session.accessTokenData = a.accessTokenData
                     completionHandler?(a.account, nil)
                 } else {
                     completionHandler?(nil, nil)

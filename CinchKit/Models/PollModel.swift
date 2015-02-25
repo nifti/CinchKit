@@ -16,14 +16,6 @@ public struct CNHAccount {
 //    public let links : [String : NSURL]?
 }
 
-public struct CNHToken {
-    public let href: String
-    public let access: String
-    public let refresh: String
-    public let type: String
-    public let expires: NSDate
-}
-
 public struct CNHPoll {
     public let id: String
     public let href: String
@@ -61,7 +53,3 @@ public struct CNHPollsResponse {
     public let polls : [CNHPoll]?
 }
 
-public struct CNHAuthResponse {
-    public let account : CNHAccount
-    public let token : CNHToken
-}

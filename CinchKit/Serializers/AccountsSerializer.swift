@@ -26,16 +26,23 @@ class AccountsSerializer : JSONObjectSerializer {
 }
 
 class TokensSerializer : JSONObjectSerializer {
-    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHToken]? {
+    let account : CNHAccount
+    
+    init(account : CNHAccount) {
+        self.account = account
+    }
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHAccessTokenData]? {
         return json.array?.map(self.decodeToken)
     }
     
-    private func decodeToken(json : JSON) -> CNHToken {
+    private func decodeToken(json : JSON) -> CNHAccessTokenData {
         var exp = json["expires"].doubleValue
         var expires = NSDate(timeIntervalSince1970: (exp / 1000) )
         
-        return CNHToken(
-            href : json["href"].stringValue,
+        return CNHAccessTokenData(
+            accountID : account.id,
+            href : json["href"].URL!,
             access : json["acces"].stringValue,
             refresh : json["refresh"].stringValue,
             type : json["type"].stringValue,
@@ -54,14 +61,16 @@ class FetchAccountsSerializer : JSONObjectSerializer {
 
 class CreateAccountSerializer : JSONObjectSerializer {
     let accountSerializer = AccountsSerializer()
-    let tokensSerializer = TokensSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> CNHAuthResponse? {
         var result : CNHAuthResponse?
         
         if let account = accountSerializer.jsonToObject(json["accounts"])?.first {
+            
+            let tokensSerializer = TokensSerializer(account : account)
+            
             if let token = tokensSerializer.jsonToObject(json["linked"]["tokens"])?.first {
-                result = CNHAuthResponse(account : account, token : token)
+                result = CNHAuthResponse(account : account, accessTokenData : token)
             }
         }
         

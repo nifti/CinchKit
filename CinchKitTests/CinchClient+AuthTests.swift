@@ -140,6 +140,7 @@ class CinchClientAuthSpec: QuickSpec {
                         client!.createAccount(["email" : "foo23@bar.com", "username" : "foobar23", "name" : "foobar"]) { (account, error) in
                             expect(error).to(beNil())
                             expect(account).toNot(beNil())
+                            expect(client!.session.accessTokenData).toNot(beNil())
                             
                             done()
                         }

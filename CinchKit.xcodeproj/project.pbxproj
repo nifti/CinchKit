@@ -18,6 +18,13 @@
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4506EF31A75B1B60053248E /* CinchKitTests.swift */; };
 		C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C0371A77F82F00C4DB2A /* CNHServer.swift */; };
+		C47573FE1A9E33B400C7C5B9 /* CNHSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */; };
+		C47574001A9E345200C7C5B9 /* CNHTokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47573FF1A9E345200C7C5B9 /* CNHTokenData.swift */; };
+		C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47574011A9E35F900C7C5B9 /* CNHSessionsTests.swift */; };
+		C47574041A9E727500C7C5B9 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47574031A9E727500C7C5B9 /* KeychainAccess.framework */; };
+		C47574051A9E728800C7C5B9 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C47574031A9E727500C7C5B9 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C47574071A9E8D0F00C7C5B9 /* CNHKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */; };
+		C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */; };
 		C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AD41A75B72A00CC0952 /* CinchKit.swift */; };
 		C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; };
 		C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = C4B554F91A969A0700228AA5 /* createAccount.json */; };
@@ -53,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C47574051A9E728800C7C5B9 /* KeychainAccess.framework in CopyFiles */,
 				C4EBFB121A9BECAB00493DB8 /* SwiftyJSON.framework in CopyFiles */,
 				C4EBFB131A9BECAB00493DB8 /* Alamofire.framework in CopyFiles */,
 				C4BBA2F61A76F08400B23DC7 /* Quick.framework in CopyFiles */,
@@ -78,6 +86,12 @@
 		C4506EF21A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4506EF31A75B1B60053248E /* CinchKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinchKitTests.swift; sourceTree = "<group>"; };
 		C470C0371A77F82F00C4DB2A /* CNHServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHServer.swift; sourceTree = "<group>"; };
+		C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHSession.swift; path = Client/CNHSession.swift; sourceTree = "<group>"; };
+		C47573FF1A9E345200C7C5B9 /* CNHTokenData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHTokenData.swift; path = Models/CNHTokenData.swift; sourceTree = "<group>"; };
+		C47574011A9E35F900C7C5B9 /* CNHSessionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHSessionsTests.swift; sourceTree = "<group>"; };
+		C47574031A9E727500C7C5B9 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHKeychain.swift; path = Client/CNHKeychain.swift; sourceTree = "<group>"; };
+		C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHKeychainTests.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
 		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C4B554F91A969A0700228AA5 /* createAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = createAccount.json; path = response_stubs/createAccount.json; sourceTree = "<group>"; };
@@ -99,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47574041A9E727500C7C5B9 /* KeychainAccess.framework in Frameworks */,
 				C4BBA2FD1A76FDF400B23DC7 /* SwiftyJSON.framework in Frameworks */,
 				C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */,
 			);
@@ -151,6 +166,8 @@
 			children = (
 				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
 				C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */,
+				C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */,
+				C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -158,6 +175,7 @@
 		C4300E1F1A75C0D8009F2024 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C47574031A9E727500C7C5B9 /* KeychainAccess.framework */,
 				C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */,
 				C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */,
 				C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */,
@@ -226,6 +244,8 @@
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
+				C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */,
+				C47574011A9E35F900C7C5B9 /* CNHSessionsTests.swift */,
 				C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */,
 				C4506EF11A75B1B60053248E /* Supporting Files */,
 			);
@@ -252,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */,
+				C47573FF1A9E345200C7C5B9 /* CNHTokenData.swift */,
 				C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */,
 			);
 			name = Models;
@@ -404,10 +425,13 @@
 				C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */,
 				C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */,
 				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,
+				C47574001A9E345200C7C5B9 /* CNHTokenData.swift in Sources */,
 				C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */,
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */,
 				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,
+				C47574071A9E8D0F00C7C5B9 /* CNHKeychain.swift in Sources */,
+				C47573FE1A9E33B400C7C5B9 /* CNHSession.swift in Sources */,
 				C41DDDAC1A8D48E300B9523A /* CinchClient+Auth.swift in Sources */,
 				C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */,
 				C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */,
@@ -420,6 +444,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */,
+				C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */,
 				C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */,
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
 				C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */,
