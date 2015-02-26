@@ -129,9 +129,7 @@ class CinchClientAuthSpec: QuickSpec {
                 
                 it("should return created account") {
                     var str : NSString = accountsResource!.href.absoluteString!
-                    
-                    var filepath = NSBundle(forClass: CinchClientAuthSpec.self).pathForResource("createAccount", ofType: "json")
-                    var data = NSData(contentsOfFile: filepath!)
+                    var data = CinchKitTestsHelper.loadJsonData("createAccount")
 
                     stubRequest("POST", str).andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
@@ -140,6 +138,40 @@ class CinchClientAuthSpec: QuickSpec {
                         client!.createAccount(["email" : "foo23@bar.com", "username" : "foobar23", "name" : "foobar"]) { (account, error) in
                             expect(error).to(beNil())
                             expect(account).toNot(beNil())
+                            expect(client!.session.accessTokenData).toNot(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+            }
+            
+            describe("refreshSession") {
+                
+                beforeEach {
+                    LSNocilla.sharedInstance().start()
+                }
+                
+                afterEach {
+                    LSNocilla.sharedInstance().clearStubs()
+                    LSNocilla.sharedInstance().stop()
+                }
+                
+                it("should return created account") {
+                    var str : NSString = accountsResource!.href.absoluteString!
+                    var data = CinchKitTestsHelper.loadJsonData("createToken")
+
+                    var token = CinchKitTestsHelper.validAuthToken()
+                    
+                    client!.session.accessTokenData = token
+                    
+                    stubRequest("POST", token.href.absoluteString).withHeader("Authorization", "Bearer \(token.refresh)")
+                        .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 10) { done in
+                        
+                        client!.refreshSession { (error) in
+                            expect(error).to(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())
                             
                             done()

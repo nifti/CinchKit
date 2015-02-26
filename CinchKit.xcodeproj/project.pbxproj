@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A52CB2EABAF4BA6F5F157F7 /* libPods-CinchKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E5286BD2701432C1E4AF07 /* libPods-CinchKitTests.a */; };
+		C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */ = {isa = PBXBuildFile; fileRef = C4047DB91A9FD5B4000C3067 /* createToken.json */; };
+		C4047DBC1A9FD9BE000C3067 /* CinchKitTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */; };
 		C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */; };
 		C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */; };
 		C41DDDAC1A8D48E300B9523A /* CinchClient+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */; };
@@ -73,6 +75,8 @@
 /* Begin PBXFileReference section */
 		2EFD08EBAA80F82F872E16AA /* Pods-CinchKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		36E5286BD2701432C1E4AF07 /* libPods-CinchKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CinchKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4047DB91A9FD5B4000C3067 /* createToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = createToken.json; path = response_stubs/createToken.json; sourceTree = "<group>"; };
+		C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKitTestsHelper.swift; sourceTree = "<group>"; };
 		C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollsResponseSerializer.swift; path = Serializers/PollsResponseSerializer.swift; sourceTree = "<group>"; };
 		C412B4821A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResourcesSerializer.swift; path = Serializers/ApiResourcesSerializer.swift; sourceTree = "<group>"; };
 		C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Auth.swift"; path = "Client/CinchClient+Auth.swift"; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			children = (
 				C4B554F81A9699DD00228AA5 /* response_stubs */,
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
+				C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */,
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
 				C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */,
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B554F91A969A0700228AA5 /* createAccount.json */,
+				C4047DB91A9FD5B4000C3067 /* createToken.json */,
 			);
 			name = response_stubs;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */,
+				C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +455,7 @@
 				C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */,
 				C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */,
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
+				C4047DBC1A9FD9BE000C3067 /* CinchKitTestsHelper.swift in Sources */,
 				C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

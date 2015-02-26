@@ -26,12 +26,6 @@ class AccountsSerializer : JSONObjectSerializer {
 }
 
 class TokensSerializer : JSONObjectSerializer {
-    let account : CNHAccount
-    
-    init(account : CNHAccount) {
-        self.account = account
-    }
-    
     func jsonToObject(json: SwiftyJSON.JSON) -> [CNHAccessTokenData]? {
         return json.array?.map(self.decodeToken)
     }
@@ -41,9 +35,9 @@ class TokensSerializer : JSONObjectSerializer {
         var expires = NSDate(timeIntervalSince1970: (exp / 1000) )
         
         return CNHAccessTokenData(
-            accountID : account.id,
-            href : json["href"].URL!,
-            access : json["acces"].stringValue,
+            accountID : json["links"]["account"]["id"].stringValue,
+            href : json["links"]["self"].URL!,
+            access : json["access"].stringValue,
             refresh : json["refresh"].stringValue,
             type : json["type"].stringValue,
             expires : expires
@@ -67,9 +61,28 @@ class CreateAccountSerializer : JSONObjectSerializer {
         
         if let account = accountSerializer.jsonToObject(json["accounts"])?.first {
             
-            let tokensSerializer = TokensSerializer(account : account)
+            let tokensSerializer = TokensSerializer()
             
             if let token = tokensSerializer.jsonToObject(json["linked"]["tokens"])?.first {
+                result = CNHAuthResponse(account : account, accessTokenData : token)
+            }
+        }
+        
+        return result
+    }
+}
+
+class TokenResponseSerializer : JSONObjectSerializer {
+    let tokensSerializer = TokensSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHAuthResponse? {
+        var result : CNHAuthResponse?
+        
+        if let token = tokensSerializer.jsonToObject(json["tokens"])?.first {
+            
+            let accountSerializer = AccountsSerializer()
+            
+            if let account = accountSerializer.jsonToObject(json["linked"]["accounts"])?.first {
                 result = CNHAuthResponse(account : account, accessTokenData : token)
             }
         }
