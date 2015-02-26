@@ -1,0 +1,22 @@
+{
+    "links": {
+        "self": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens"
+    },
+    "tokens": [
+               {
+               "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens",
+               "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZWZmYzgyZWEtMjExYy00ZjFiLTkzZTUtY2YxOWQzY2M4ZWE5IiwibmFtZSI6ImZvbyBiYXIiLCJzY29wZSI6WyJhY2Nlc3N0b2tlbiJdLCJpYXQiOjE0MjQ5ODk3NTUsImV4cCI6MTQyNDk5MzM1NX0.YFOZB_fWhQ0ENSDJvc0oZ5yIFDzQZQFvTxXOgywxaQI",
+               "expires": 1424993355000,
+               "type": "Bearer",
+               "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZWZmYzgyZWEtMjExYy00ZjFiLTkzZTUtY2YxOWQzY2M4ZWE5Iiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQyNDk4OTc1NX0._MjlA5PH03tGI1Sh7XnN3TpHZ9a-GpmfRuUpPRmLn_k",
+               "links": {
+               "self": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens",
+               "account": {
+               "id": "effc82ea-211c-4f1b-93e5-cf19d3cc8ea9",
+               "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts/effc82ea-211c-4f1b-93e5-cf19d3cc8ea9",
+               "type": "account"
+               }
+               }
+               }
+               ]
+}

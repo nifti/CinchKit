@@ -27,7 +27,7 @@ extension CinchClient {
                 if let err = error {
                     completionHandler?(nil, error)
                 } else if let a = auth {
-                    self.session.accessTokenData = a.accessTokenData
+                    self.setActiveSession(a.accessTokenData)
                     completionHandler?(a.account, nil)
                 } else {
                     completionHandler?(nil, nil)
@@ -38,6 +38,27 @@ extension CinchClient {
         }
     }
     
+    public func refreshSession(completionHandler : ( (NSError?) -> () )? = nil) {
+        let serializer = TokenResponseSerializer()
+        
+        if let token = self.session.accessTokenData {
+            let headers = ["Authorization" : "\(token.type) \(token.refresh)"]
+            
+            request(.POST, token.href, headers: headers, serializer: serializer) { (auth, error) in
+                if let err = error {
+                    completionHandler?(error)
+                } else if let a = auth {
+                    self.setActiveSession(a.accessTokenData)
+                    completionHandler?(nil)
+                } else {
+                    completionHandler?(nil)
+                }
+            }
+        } else {
+            completionHandler?(nil)
+        }
+    }
+    
     internal func fetchAccountsMatchingParams(params : [String : AnyObject]?, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
         if let accounts = self.rootResources?["accounts"] {
             let serializer = FetchAccountsSerializer()
@@ -45,5 +66,9 @@ extension CinchClient {
         } else {
             return completionHandler(nil, clientNotConnectedError())
         }
+    }
+    
+    internal func setActiveSession(accessTokenData : CNHAccessTokenData) {
+        self.session.accessTokenData = accessTokenData
     }
 }
