@@ -22,6 +22,8 @@ public class CinchClient {
     
     public var rootResources : [String : ApiResource]?
     
+    private(set) public var session = CNHSession()
+    
     public convenience init() {
         self.init(server: CNHServer.dotComServer())
     }
