@@ -8,11 +8,19 @@
 
 import Foundation
 
+public enum PictureVersion {
+    case Small
+    case Medium
+    case Large
+}
+
 public struct CNHAccount {
     public let id: String
     public let href: String
     public let name: String
-    public let picture: NSURL?
+    public let username: String?
+    public let email: String?
+    public let pictures: [PictureVersion : NSURL]?
 //    public let links : [String : NSURL]?
 }
 

@@ -15,10 +15,15 @@ class ErrorResponseSerializer : JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> NSError? {
         let statusCode = json["statusCode"].intValue
         
-        let userInfo = [
-            NSLocalizedDescriptionKey : json["error"].stringValue,
-            NSLocalizedFailureReasonErrorKey : json["message"].stringValue,
-        ]
+        var userInfo = [String : String]()
+        
+        if let err = json["error"].string {
+           userInfo[NSLocalizedDescriptionKey] = err
+        }
+        
+        if let message = json["message"].string {
+            userInfo[NSLocalizedFailureReasonErrorKey] = message
+        }
         
         return NSError(domain: CinchKitErrorDomain, code: statusCode, userInfo: userInfo)
     }
