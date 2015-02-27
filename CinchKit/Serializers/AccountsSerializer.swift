@@ -84,6 +84,8 @@ class TokenResponseSerializer : JSONObjectSerializer {
             
             if let account = accountSerializer.jsonToObject(json["linked"]["accounts"])?.first {
                 result = CNHAuthResponse(account : account, accessTokenData : token)
+            } else {
+                result = CNHAuthResponse(account : nil, accessTokenData : token)
             }
         }
         

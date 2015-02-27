@@ -173,6 +173,7 @@ class CinchClientAuthSpec: QuickSpec {
                         client!.refreshSession { (error) in
                             expect(error).to(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())
+                            expect(client!.session.accessTokenData!.expires.timeIntervalSince1970).to(equal(1424993355.000))
                             
                             done()
                         }

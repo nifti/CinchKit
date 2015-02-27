@@ -27,6 +27,6 @@ public struct CNHAccessTokenData {
 }
 
 public struct CNHAuthResponse {
-    public let account : CNHAccount
+    public let account : CNHAccount?
     public let accessTokenData : CNHAccessTokenData
 }
