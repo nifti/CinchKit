@@ -18,28 +18,29 @@ class CinchClientAuthSpec: QuickSpec {
             var client: CinchClient?
             var accountsResource : ApiResource?
             
-//            beforeSuite {
-//                LSNocilla.sharedInstance().start()
-//            }
-//            
-//            afterSuite {
-//                LSNocilla.sharedInstance().stop()
-//            }
-            
             beforeEach {
+                LSNocilla.sharedInstance().start()
+                LSNocilla.sharedInstance().clearStubs()
                 client = CinchClient()
                 accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(client!.server.authServerURL)/accounts")!, title: "get and create accounts")
                 client!.rootResources = ["accounts" : accountsResource!]
             }
             
             afterEach {
-//                LSNocilla.sharedInstance().clearStubs()
+                LSNocilla.sharedInstance().clearStubs()
+                LSNocilla.sharedInstance().stop()
             }
             
             describe("fetch Accounts matching email") {
                 
                 it("should return single account") {
-                    waitUntil(timeout: 10) { done in
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?email\\=.*"
+                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
                         client!.fetchAccountsMatchingEmail("foo@bar.com") { (accounts, error) in
                             expect(error).to(beNil())
                             expect(accounts).toNot(beEmpty())
@@ -50,7 +51,13 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should return 404 not found error") {
-                    waitUntil(timeout: 10) { done in
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?email\\=.*"
+                    var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
                         client!.fetchAccountsMatchingEmail("asdfasdfasdf") { (accounts, error) in
                             expect(error).toNot(beNil())
                             expect(accounts).to(beNil())
@@ -64,7 +71,7 @@ class CinchClientAuthSpec: QuickSpec {
                 it("should return error when accounts resource doesnt exist") {
                     let c = CinchClient()
                     
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: 1) { done in
                         c.fetchAccountsMatchingEmail("foo@bar.com") { (accounts, error) in
                             expect(error).toNot(beNil())
                             expect(error!.domain).to(equal(CinchKitErrorDomain))
@@ -79,7 +86,13 @@ class CinchClientAuthSpec: QuickSpec {
             describe("fetch Accounts matching username") {
                 
                 it("should return single account") {
-                    waitUntil(timeout: 10) { done in
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?username\\=.*"
+                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
                         client!.fetchAccountsMatchingUsername("foobar") { (accounts, error) in
                             expect(error).to(beNil())
                             expect(accounts).toNot(beEmpty())
@@ -90,7 +103,13 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should return 404 not found") {
-                    waitUntil(timeout: 10) { done in
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?username\\=.*"
+                    var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
                         client!.fetchAccountsMatchingUsername("asdfasdfasdf") { (accounts, error) in
                             expect(error).toNot(beNil())
                             expect(accounts).to(beNil())
@@ -104,7 +123,7 @@ class CinchClientAuthSpec: QuickSpec {
                 it("should return error when accounts resource doesnt exist") {
                     let c = CinchClient()
                     
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: 5) { done in
                         c.fetchAccountsMatchingUsername("foobar") { (accounts, error) in
                             expect(error).toNot(beNil())
                             expect(error!.domain).to(equal(CinchKitErrorDomain))
@@ -117,15 +136,6 @@ class CinchClientAuthSpec: QuickSpec {
             }
             
             describe("create account") {
-                
-                beforeEach {
-                    LSNocilla.sharedInstance().start()
-                }
-                
-                afterEach {
-                    LSNocilla.sharedInstance().clearStubs()
-                    LSNocilla.sharedInstance().stop()
-                }
                 
                 it("should return created account") {
                     var str : NSString = accountsResource!.href.absoluteString!
@@ -147,15 +157,6 @@ class CinchClientAuthSpec: QuickSpec {
             }
             
             describe("refreshSession") {
-                
-                beforeEach {
-                    LSNocilla.sharedInstance().start()
-                }
-                
-                afterEach {
-                    LSNocilla.sharedInstance().clearStubs()
-                    LSNocilla.sharedInstance().stop()
-                }
                 
                 it("should return created account") {
                     var str : NSString = accountsResource!.href.absoluteString!

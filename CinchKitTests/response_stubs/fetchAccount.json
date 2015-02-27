@@ -1,0 +1,13 @@
+{
+    "links": {
+        "self": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts?email=foo%40bar.com"
+    },
+    "accounts": [
+                 {
+                 "id": "c49ef0c0-8610-491d-9bb2-c494d4a52c5c",
+                 "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts/c49ef0c0-8610-491d-9bb2-c494d4a52c5c",
+                 "name": "foo bar",
+                 "username": "foobar"
+                 }
+                 ]
+}

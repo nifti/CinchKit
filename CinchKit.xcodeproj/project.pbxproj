@@ -15,6 +15,7 @@
 		C41DDDAC1A8D48E300B9523A /* CinchClient+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */; };
 		C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */; };
 		C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */; };
+		C4280CA21AA0F13400D39C1A /* accountNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = C4280CA11AA0F13400D39C1A /* accountNotFound.json */; };
 		C4300E1D1A75BF8F009F2024 /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4506EE11A75B1B60053248E /* CinchKit.framework */; };
 		C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */; };
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 		C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */; };
 		C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AD41A75B72A00CC0952 /* CinchKit.swift */; };
 		C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; };
+		C4A4D2D81AA0EB500091921A /* fetchAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = C4A4D2D71AA0EB500091921A /* fetchAccount.json */; };
 		C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = C4B554F91A969A0700228AA5 /* createAccount.json */; };
 		C4B554FD1A96D23500228AA5 /* ErrorResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */; };
 		C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */; };
@@ -82,6 +84,7 @@
 		C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Auth.swift"; path = "Client/CinchClient+Auth.swift"; sourceTree = "<group>"; };
 		C41DDDAD1A8D4E2E00B9523A /* AccountsSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountsSerializer.swift; path = Serializers/AccountsSerializer.swift; sourceTree = "<group>"; };
 		C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+AuthTests.swift"; sourceTree = "<group>"; };
+		C4280CA11AA0F13400D39C1A /* accountNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = accountNotFound.json; path = response_stubs/accountNotFound.json; sourceTree = "<group>"; };
 		C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire-CinchJSON.swift"; path = "Extensions/Alamofire-CinchJSON.swift"; sourceTree = "<group>"; };
 		C4506EE11A75B1B60053248E /* CinchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CinchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4506EE51A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHKeychainTests.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
 		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C4A4D2D71AA0EB500091921A /* fetchAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fetchAccount.json; path = response_stubs/fetchAccount.json; sourceTree = "<group>"; };
 		C4B554F91A969A0700228AA5 /* createAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = createAccount.json; path = response_stubs/createAccount.json; sourceTree = "<group>"; };
 		C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponseSerializer.swift; path = Serializers/ErrorResponseSerializer.swift; sourceTree = "<group>"; };
 		C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = Models/ApiResource.swift; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 			children = (
 				C4B554F91A969A0700228AA5 /* createAccount.json */,
 				C4047DB91A9FD5B4000C3067 /* createToken.json */,
+				C4A4D2D71AA0EB500091921A /* fetchAccount.json */,
+				C4280CA11AA0F13400D39C1A /* accountNotFound.json */,
 			);
 			name = response_stubs;
 			sourceTree = "<group>";
@@ -386,6 +392,8 @@
 			files = (
 				C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */,
 				C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */,
+				C4280CA21AA0F13400D39C1A /* accountNotFound.json in Resources */,
+				C4A4D2D81AA0EB500091921A /* fetchAccount.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
