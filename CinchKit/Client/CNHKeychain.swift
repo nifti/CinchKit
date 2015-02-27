@@ -24,6 +24,7 @@ public class CNHKeychain {
         var refresh = keychain.get("refresh")
         var type = keychain.get("type")
         var href = keychain.get("href")
+        var expires = keychain.get("expires")
         
         // TODO refactor when upgrading to swift 1.2
         if let id = accountID {
@@ -32,16 +33,19 @@ public class CNHKeychain {
                 if let ref = refresh {
                     if let t = type {
                         if let url = href {
-                            result = CNHAccessTokenData(
-                                accountID : id,
-                                href : NSURL(string: url)!,
-                                access : acc,
-                                refresh : ref,
-                                type : t,
-                                expires : NSDate()
-                            )
+                            if let exp : NSString = expires {
+                                var timestamp = NSDate(timeIntervalSince1970: exp.doubleValue )
+                                
+                                result = CNHAccessTokenData(
+                                    accountID : id,
+                                    href : NSURL(string: url)!,
+                                    access : acc,
+                                    refresh : ref,
+                                    type : t,
+                                    expires : timestamp
+                                )
+                            }
                             
-                            println("result \(result)")
                         }
                     }
                 }
@@ -52,6 +56,8 @@ public class CNHKeychain {
     }
     
     public func save(accessTokenData : CNHAccessTokenData) -> NSError? {
+        var expiresString = NSString(format: "%f", accessTokenData.expires.timeIntervalSince1970)
+        
         if let err = keychain.set(accessTokenData.accountID, key: "accountID") {
             return err
         } else if let err = keychain.set(accessTokenData.access, key: "access") {
@@ -61,6 +67,8 @@ public class CNHKeychain {
         } else if let err = keychain.set(accessTokenData.type, key: "type") {
             return err
         } else if let err = keychain.set(accessTokenData.href.absoluteString!, key: "href") {
+            return err
+        } else if let err = keychain.set(expiresString, key: "expires") {
             return err
         } else {
             return nil
