@@ -97,7 +97,6 @@ public class CinchClient {
     }
     
     func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, headers : [String : String]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {
-        println("request - \(method.rawValue) - \(URLString.URLString)")
         
         var path = NSURL(string: URLString.URLString)!
         var mutableURLRequest = NSMutableURLRequest(URL: path)
@@ -117,13 +116,13 @@ public class CinchClient {
         return manager.request(finalRequest)
     }
     
-    func request<T : JSONObjectSerializer>( method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, headers : [String : String]? = nil,  encoding: Alamofire.ParameterEncoding = .JSON,
+    func request<T : JSONObjectSerializer>( method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, headers : [String : String]? = nil,  encoding: Alamofire.ParameterEncoding = .JSON, queue: dispatch_queue_t? = nil,
         serializer : T, completionHandler : ((T.ContentType?, NSError?) -> Void)? ) {
             
             let start = CACurrentMediaTime()
             
             request(method, URLString, parameters: parameters, headers: headers, encoding: encoding)
-                .responseCinchJSON(serializer) { (_, httpResponse, response, error) in
+                .responseCinchJSON(queue: queue, serializer: serializer) { (_, httpResponse, response, error) in
                     CNHUtils.logResponseTime(start, response : httpResponse,  message : "response: \(method.rawValue) \(URLString.URLString)")
                     
                     if(error != nil) {

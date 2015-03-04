@@ -35,6 +35,29 @@ class CinchClientPollsSpec: QuickSpec {
                         expect(polls!.first!.candidates).toNot(beNil())
                         expect(polls!.first!.author).toNot(beNil())
                         
+                        expect(NSThread.isMainThread()).to(equal(true))
+                        
+                        done()
+                    }
+                }
+            }
+            
+            it("should return on specific queue") {
+                let c = CinchClient()
+                
+                let r = ApiResource(id: "polls", href: NSURL(string: "http://api.us-east-1.niftiws.com/discussions")!, title: "get and create polls")
+                
+                c.rootResources = ["polls" : r]
+                
+                waitUntil(timeout: 10) { done in
+                    var queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+                    
+                    c.fetchLatestPolls(queue: queue) { ( response, error ) in
+                        expect(error).to(beNil())
+                        expect(response).toNot(beNil())
+                        
+                        expect(NSThread.isMainThread()).to(equal(false))
+                        
                         done()
                     }
                 }
