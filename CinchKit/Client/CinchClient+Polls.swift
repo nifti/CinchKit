@@ -11,16 +11,22 @@ import SwiftyJSON
 extension CinchClient {
     
     public func fetchLatestPolls(completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
+        fetchLatestPolls(queue: nil, completionHandler: completionHandler)
+    }
+    
+    public func fetchLatestPolls(queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
         
         if let polls = self.rootResources?["polls"] {
-            self.fetchPolls(atURL: polls.href, completionHandler: completionHandler)
+            self.fetchPolls(atURL: polls.href, queue: queue, completionHandler: completionHandler)
         } else {
-            return completionHandler(nil, clientNotConnectedError())
+            dispatch_async(queue ?? dispatch_get_main_queue(), {
+                completionHandler(nil, self.clientNotConnectedError())
+            })
         }
     }
     
-    public func fetchPolls(atURL url : NSURL, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
+    public func fetchPolls(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
         let serializer = PollsResponseSerializer()
-        request(.GET, url, serializer: serializer, completionHandler: completionHandler)
+        request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
 }
