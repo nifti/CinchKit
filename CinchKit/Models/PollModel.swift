@@ -21,7 +21,7 @@ public struct CNHAccount {
     public let username: String?
     public let email: String?
     public let pictures: [PictureVersion : NSURL]?
-//    public let links : [String : NSURL]?
+    public let links : [String : NSURL]?
 }
 
 public struct CNHPoll {

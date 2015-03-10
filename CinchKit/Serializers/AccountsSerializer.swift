@@ -9,6 +9,21 @@
 import Foundation
 import SwiftyJSON
 
+class LinksSerializer : JSONObjectSerializer {
+    func jsonToObject(json: SwiftyJSON.JSON) -> [String : NSURL]? {
+        var result = [String : NSURL]()
+        
+        for (key: String, subJson: JSON) in json {
+            if let str = subJson.string {
+                if let url = NSURL(string: str) {
+                    result[key] = url
+                }
+            }
+        }
+        
+        return result
+    }
+}
 
 class AccountsSerializer : JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> [CNHAccount]? {
@@ -17,6 +32,8 @@ class AccountsSerializer : JSONObjectSerializer {
     }
     
     private func decodeAccount(json : JSON) -> CNHAccount {
+        let linkSerializer = LinksSerializer()
+        
         var pictures = [PictureVersion : NSURL]()
         
         if let url = json["smallPicture"].URL {
@@ -27,6 +44,8 @@ class AccountsSerializer : JSONObjectSerializer {
             pictures[.Large] = url
         }
         
+        var links = linkSerializer.jsonToObject(json["links"])
+        
         return CNHAccount(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
@@ -35,7 +54,8 @@ class AccountsSerializer : JSONObjectSerializer {
             // optionals
             username : json["username"].string,
             email : json["email"].string,
-            pictures : pictures
+            pictures : pictures,
+            links : links
         )
     }
 }
