@@ -53,7 +53,7 @@ extension CinchClient {
                 params = ["include" : "account"]
             }
             
-            request(.POST, token.href, headers: headers, parameters: params, encoding : .URL, serializer: serializer) { (auth, error) in
+            request(.POST, token.href, headers: headers, parameters: params, encoding : CNHUtils.urlencoding(), serializer: serializer) { (auth, error) in
                 if let err = error {
                     completionHandler?(nil, error)
                 } else if let a = auth {

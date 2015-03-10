@@ -143,7 +143,7 @@ class CinchClientAuthSpec: QuickSpec {
 
                     stubRequest("POST", str).andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: 2) { done in
                         
                         client!.createAccount(["email" : "foo23@bar.com", "username" : "foobar23", "name" : "foobar"]) { (account, error) in
                             expect(error).to(beNil())
@@ -168,7 +168,7 @@ class CinchClientAuthSpec: QuickSpec {
                     stubRequest("POST", token.href.absoluteString).withHeader("Authorization", "Bearer \(token.refresh)")
                         .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: 2) { done in
                         
                         client!.refreshSession { (account, error) in
                             expect(error).to(beNil())
@@ -188,10 +188,11 @@ class CinchClientAuthSpec: QuickSpec {
                     
                     client!.session.accessTokenData = token
                     
-                    stubRequest("POST", token.href.absoluteString).withHeader("Authorization", "Bearer \(token.refresh)")
+                    var path : NSString = "\(token.href.absoluteString!)?include=account"
+                    stubRequest("POST", path).withHeader("Authorization", "Bearer \(token.refresh)")
                         .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
-                    waitUntil(timeout: 10) { done in
+                    waitUntil(timeout: 2) { done in
                         
                         client!.refreshSession(includeAccount : true) { (account, error) in
                             expect(error).to(beNil())
