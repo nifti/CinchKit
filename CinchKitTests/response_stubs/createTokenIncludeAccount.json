@@ -19,4 +19,16 @@
                }
                }
                ],
+    "linked": {
+        "accounts": [
+                     {
+                     "id": "effc82ea-211c-4f1b-93e5-cf19d3cc8ea9",
+                     "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts/effc82ea-211c-4f1b-93e5-cf19d3cc8ea9",
+                     "email": "fosfsssasdfo@bar.com",
+                     "name": "foo bar",
+                     "username": "foobsssasdfasdfar",
+                     "createdAt": "2015-02-26T20:32:43.050Z"
+                     }
+                     ]
+    }
 }

@@ -38,24 +38,33 @@ extension CinchClient {
         }
     }
     
-    public func refreshSession(completionHandler : ( (NSError?) -> () )? = nil) {
+    public func refreshSession(completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+        self.refreshSession(includeAccount: false, completionHandler: completionHandler)
+    }
+    
+    public func refreshSession(includeAccount : Bool = false, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
         let serializer = TokenResponseSerializer()
         
         if let token = self.session.accessTokenData {
             let headers = ["Authorization" : "\(token.type) \(token.refresh)"]
+            var params : [String : AnyObject]?
             
-            request(.POST, token.href, headers: headers, serializer: serializer) { (auth, error) in
+            if includeAccount {
+                params = ["include" : "account"]
+            }
+            
+            request(.POST, token.href, headers: headers, parameters: params, encoding : .URL, serializer: serializer) { (auth, error) in
                 if let err = error {
-                    completionHandler?(error)
+                    completionHandler?(nil, error)
                 } else if let a = auth {
                     self.setActiveSession(a.accessTokenData)
-                    completionHandler?(nil)
+                    completionHandler?(a.account, nil)
                 } else {
-                    completionHandler?(nil)
+                    completionHandler?(nil, nil)
                 }
             }
         } else {
-            completionHandler?(nil)
+            completionHandler?(nil, nil)
         }
     }
     

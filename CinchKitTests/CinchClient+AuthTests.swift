@@ -158,8 +158,7 @@ class CinchClientAuthSpec: QuickSpec {
             
             describe("refreshSession") {
                 
-                it("should return created account") {
-                    var str : NSString = accountsResource!.href.absoluteString!
+                it("should return new session") {
                     var data = CinchKitTestsHelper.loadJsonData("createToken")
 
                     var token = CinchKitTestsHelper.validAuthToken()
@@ -171,10 +170,34 @@ class CinchClientAuthSpec: QuickSpec {
                     
                     waitUntil(timeout: 10) { done in
                         
-                        client!.refreshSession { (error) in
+                        client!.refreshSession { (account, error) in
                             expect(error).to(beNil())
+                            expect(account).to(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())
-                            expect(client!.session.accessTokenData!.expires.timeIntervalSince1970).to(equal(1424993355.000))
+                            expect(client!.session.accessTokenData!.expires.timeIntervalSince1970).to(equal(1425950710.000))
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("should return new session with account") {
+                    var data = CinchKitTestsHelper.loadJsonData("createTokenIncludeAccount")
+                    
+                    var token = CinchKitTestsHelper.validAuthToken()
+                    
+                    client!.session.accessTokenData = token
+                    
+                    stubRequest("POST", token.href.absoluteString).withHeader("Authorization", "Bearer \(token.refresh)")
+                        .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 10) { done in
+                        
+                        client!.refreshSession(includeAccount : true) { (account, error) in
+                            expect(error).to(beNil())
+                            expect(account).toNot(beNil())
+                            expect(client!.session.accessTokenData).toNot(beNil())
+                            expect(client!.session.accessTokenData!.expires.timeIntervalSince1970).to(equal(1425950710.000))
                             
                             done()
                         }
