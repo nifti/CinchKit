@@ -27,11 +27,10 @@ class CinchKitTests: XCTestCase {
         let client = CinchClient()
         let expectation = expectationWithDescription("GET root resources")
 
-        client.start({
+        client.start() { (_) in
             expect(client.rootResources).toNot(beNil())
             expectation.fulfill()
-            return
-        })
+        }
         
         waitForExpectationsWithTimeout(5, handler: nil)
     }
@@ -42,7 +41,7 @@ class CinchKitTests: XCTestCase {
         let client = CinchClient(server: s)
         let expectation = expectationWithDescription("GET root resources")
         
-        client.start({
+        client.start({ (_) in
             expect(client.rootResources).toNot(beNil())
             expectation.fulfill()
             return
@@ -59,11 +58,10 @@ class CinchKitTests: XCTestCase {
         self.measureBlock() {
             let expectation = self.expectationWithDescription("GET root resources")
             
-            client.start({
+            client.start { (_) in
                 expect(client.rootResources).toNot(beNil())
                 expectation.fulfill()
-                return
-            })
+            }
             
             self.waitForExpectationsWithTimeout(5, handler: nil)
         }

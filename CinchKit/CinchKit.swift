@@ -39,21 +39,25 @@ public class CinchClient {
         return start(nil)
     }
     
-    public func start(completionHandler : (() -> ())?) {
+    public func start(completionHandler : ((CNHAccount?) -> ())?) {
+        var activeAccount : CNHAccount?
         var ongoing = 2
         
         let handler : ( () -> () ) = { () in
             ongoing--
             
             if ongoing == 0 {
-                completionHandler?()
+                completionHandler?(activeAccount)
             }
         }
         
         var queue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT)
 
         dispatch_async(queue) {
-            self.refreshSession { (_) in handler() }
+            self.refreshSession(includeAccount : true) { (account, _) in
+                activeAccount = account
+                handler()
+            }
         }
         
         dispatch_async(queue) {
@@ -63,16 +67,14 @@ public class CinchClient {
     
     func refreshRootResource(completionHandler : (() -> ())?) {
         let serializer = ApiResourcesSerializer()
-        request(.GET, self.server.baseURL)
-            .responseCinchJSON(serializer) { (_, _, resources, error) in
-                if(error != nil) {
-                    NSLog("Error: \(error)")
-                } else {
-                    self.rootResources  = self.authServerResourcesHack(resources)
-                }
-                
-                completionHandler?()
-        }
+        request(.GET, self.server.baseURL, serializer: serializer, completionHandler: { (resources, error) in
+            if(error != nil) {
+            } else {
+                self.rootResources  = self.authServerResourcesHack(resources)
+            }
+            
+            completionHandler?()
+        })
     }
     
     func authServerResourcesHack(resources: [String : ApiResource]?) -> [String : ApiResource]? {
@@ -107,7 +109,6 @@ public class CinchClient {
                 mutableURLRequest.setValue(value, forHTTPHeaderField: field)
             }    
         }
-        
         
         let finalRequest = encoding.encode(mutableURLRequest, parameters: parameters).0
         
