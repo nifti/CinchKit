@@ -7,7 +7,12 @@
                  "id": "c49ef0c0-8610-491d-9bb2-c494d4a52c5c",
                  "href": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/accounts/c49ef0c0-8610-491d-9bb2-c494d4a52c5c",
                  "name": "foo bar",
-                 "username": "foobar"
+                 "username": "foobar",
+                 "links": {
+                    "discussions": "http://api.us-east-1.niftiws.com/accounts/da73e9c9-dafb-4ea9-b930-c6f6a71b5306/discussions",
+                    "followers": "http://api.us-east-1.niftiws.com/accounts/da73e9c9-dafb-4ea9-b930-c6f6a71b5306/followers",
+                    "following": "http://api.us-east-1.niftiws.com/accounts/da73e9c9-dafb-4ea9-b930-c6f6a71b5306/following"
+                 }
                  }
                  ]
 }

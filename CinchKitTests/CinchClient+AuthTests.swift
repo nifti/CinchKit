@@ -45,6 +45,7 @@ class CinchClientAuthSpec: QuickSpec {
                             expect(error).to(beNil())
                             expect(accounts).toNot(beEmpty())
                             expect(accounts!.count).to(equal(1))
+                            expect(accounts!.first!.links!.count).to(equal(3))
                             done()
                         }
                     }
