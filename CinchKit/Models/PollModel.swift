@@ -8,10 +8,8 @@
 
 import Foundation
 
-public enum PictureVersion {
-    case Small
-    case Medium
-    case Large
+public enum PictureVersion : String {
+    case Small = "small", Medium = "medium", Large = "large", Original = "original"
 }
 
 public struct CNHAccount {
@@ -47,6 +45,7 @@ public struct CNHPollCandidate {
     public let created : String
     public let voters : [String]?
     public let type : String
+    public let images : [PictureVersion : NSURL]?
 }
 
 public struct CNHApiLink {

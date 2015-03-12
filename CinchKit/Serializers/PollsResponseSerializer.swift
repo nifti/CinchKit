@@ -66,6 +66,12 @@ class PollsResponseSerializer : JSONObjectSerializer {
     
     func decodeCandidate(json : JSON) -> CNHPollCandidate {
         
+        var images : [PictureVersion : NSURL]?
+        
+        if let imgArray = json["images"].array {
+            images = self.decodePollImages(imgArray)
+        }
+        
         return CNHPollCandidate(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
@@ -73,8 +79,23 @@ class PollsResponseSerializer : JSONObjectSerializer {
             votes : json["votes"].intValue,
             created : json["created"].stringValue,
             voters : json["voters"].array?.map({ $0.stringValue }),
-            type : json["type"].stringValue
+            type : json["type"].stringValue,
+            images : images
         )
+    }
+    
+    private func decodePollImages(images : [JSON]) -> [PictureVersion : NSURL] {
+        return images.reduce([PictureVersion : NSURL](), combine: { (memo, json) -> [PictureVersion : NSURL] in
+            var result = memo
+            
+            if let url = json["url"].URL {
+                if let version = PictureVersion(rawValue: json["name"].stringValue) {
+                    result[version] = url
+                }
+            }
+            
+            return result
+        })
     }
     
     internal func indexById(data : [CNHAccount]) -> [String : CNHAccount] {
