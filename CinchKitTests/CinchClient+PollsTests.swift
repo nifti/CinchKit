@@ -32,8 +32,14 @@ class CinchClientPollsSpec: QuickSpec {
                         expect(response!.nextLink!.href).toNot(beNil())
                         
                         var polls = response!.polls
-                        expect(polls!.first!.candidates).toNot(beNil())
-                        expect(polls!.first!.author).toNot(beNil())
+                        var first = polls!.first!
+                        expect(first.candidates).toNot(beNil())
+                        expect(first.author).toNot(beNil())
+                        
+                        var candidate = first.candidates.first!
+                        expect(candidate.image).toNot(beEmpty())
+                        expect(candidate.images).toNot(beEmpty())
+                        expect(candidate.images![.Medium]).toNot(beNil())
                         
                         expect(NSThread.isMainThread()).to(equal(true))
                         
