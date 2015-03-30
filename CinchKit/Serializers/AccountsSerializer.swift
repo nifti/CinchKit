@@ -127,3 +127,18 @@ class TokenResponseSerializer : JSONObjectSerializer {
         return result
     }
 }
+
+class AccountStatsSerializer : JSONObjectSerializer {
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHAccountStats? {
+        return json["statistics"].array?.map(self.decodeStats).first
+    }
+    
+    private func decodeStats(json : JSON) -> CNHAccountStats {
+        return CNHAccountStats(
+            id: json["accountId"].stringValue,
+            totalUnread: json["unreadCount"].intValue,
+            totalPollsCreated: json["totalPollsCreated"].intValue,
+            totalVotes: json["totalVotes"].intValue
+        )
+    }
+}

@@ -22,6 +22,14 @@ public struct CNHAccount {
     public let links : [String : NSURL]?
 }
 
+public struct CNHAccountStats {
+    public let id: String
+//    public let href: String
+    public let totalUnread: Int
+    public let totalPollsCreated: Int
+    public let totalVotes: Int
+}
+
 public struct CNHPoll {
     public let id: String
     public let href: String
