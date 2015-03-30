@@ -84,5 +84,21 @@ class CinchClientPollsSpec: QuickSpec {
             }
             
         }
+        
+        describe("fetch stats") {
+            let c = CinchClient()
+            
+            it("should fetch stats") {
+                let url = NSURL(string: "http://notificationservice-dev-dcik2vewpp.elasticbeanstalk.com/accounts/12738370-1867-407e-bbe4-2a045f755a8a/stats")!
+                waitUntil(timeout: 5) { done in
+                    c.fetchStats(atURL: url, queue: nil) { (response, error ) in
+                        expect(error).to(beNil())
+                        expect(response).toNot(beNil())
+                        
+                        done()
+                    }
+                }
+            }
+        }
     }
 }

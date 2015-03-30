@@ -29,4 +29,9 @@ extension CinchClient {
         let serializer = PollsResponseSerializer()
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+    
+    public func fetchStats(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (CNHAccountStats?, NSError?) -> ()) {
+        let serializer = AccountStatsSerializer()
+        request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }
