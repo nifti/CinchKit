@@ -68,3 +68,11 @@ public struct CNHPollsResponse {
     public let polls : [CNHPoll]?
 }
 
+public struct CNHPollCategory {
+    public let id: String
+    public let name: String
+    public let hideWhenCreating: Bool
+    public let links : [String : NSURL]?
+    public let icons : [NSURL]?
+}
+

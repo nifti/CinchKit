@@ -142,3 +142,23 @@ class AccountStatsSerializer : JSONObjectSerializer {
         )
     }
 }
+
+class PollCategoriesSerializer : JSONObjectSerializer {
+    let linkSerializer = LinksSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHPollCategory]? {
+        return json["categories"].array?.map(self.decodeCategory)
+    }
+    
+    private func decodeCategory(json : JSON) -> CNHPollCategory {
+        var links = linkSerializer.jsonToObject(json["links"])
+        
+        return CNHPollCategory(
+            id: json["id"].stringValue,
+            name: json["name"].stringValue,
+            hideWhenCreating: json["hideWhenCreating"].boolValue,
+            links: links,
+            icons: nil
+        )
+    }
+}

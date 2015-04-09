@@ -100,5 +100,22 @@ class CinchClientPollsSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("fetch categories") {
+            let c = CinchClient()
+            
+            let r = ApiResource(id: "categories", href: NSURL(string: "http://api.us-east-1.niftiws.com/categories")!, title: "poll categories")
+            c.rootResources = ["categories" : r]
+            
+            it("should fetch categories") {
+                waitUntil(timeout: 5) { done in
+                    c.fetchCategories(queue: nil, completionHandler: { (categories, error ) in
+                        expect(error).to(beNil())
+                        expect(categories).toNot(beEmpty())
+                        done()
+                    })
+                }
+            }
+        }
     }
 }
