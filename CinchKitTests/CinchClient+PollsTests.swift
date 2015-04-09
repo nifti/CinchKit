@@ -82,7 +82,6 @@ class CinchClientPollsSpec: QuickSpec {
                     }
                 }
             }
-            
         }
         
         describe("fetch stats") {

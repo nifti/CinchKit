@@ -28,6 +28,8 @@ public struct CNHAccountStats {
     public let totalUnread: Int
     public let totalPollsCreated: Int
     public let totalVotes: Int
+    public let totalFriends: Int
+    public let totalGroups: Int
 }
 
 public struct CNHPoll {
