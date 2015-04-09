@@ -34,4 +34,20 @@ extension CinchClient {
         let serializer = AccountStatsSerializer()
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+    
+    public func fetchCategories(queue: dispatch_queue_t? = nil, completionHandler : ([CNHPollCategory]?, NSError?) -> ()) {
+        
+        if let categories = self.rootResources?["categories"] {
+            self.fetchCategories(atURL: categories.href, queue: queue, completionHandler: completionHandler)
+        } else {
+            dispatch_async(queue ?? dispatch_get_main_queue(), {
+                completionHandler(nil, self.clientNotConnectedError())
+            })
+        }
+    }
+    
+    public func fetchCategories(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHPollCategory]?, NSError?) -> ()) {
+        let serializer = PollCategoriesSerializer()
+        request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }
