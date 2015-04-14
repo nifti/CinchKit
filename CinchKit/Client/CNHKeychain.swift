@@ -56,7 +56,7 @@ public class CNHKeychain {
     }
     
     public func save(accessTokenData : CNHAccessTokenData) -> NSError? {
-        var expiresString = NSString(format: "%f", accessTokenData.expires.timeIntervalSince1970)
+        var expiresString = NSString(format: "%f", accessTokenData.expires.timeIntervalSince1970) as String
         
         if let err = keychain.set(accessTokenData.accountID, key: "accountID") {
             return err

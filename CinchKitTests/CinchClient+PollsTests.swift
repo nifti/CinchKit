@@ -15,16 +15,18 @@ import CinchKit
 class CinchClientPollsSpec: QuickSpec {
     override func spec() {
         describe("fetch latest polls") {
+            var client: CinchClient!
+            beforeEach {
+                client = CinchClient()
+            }
             
             it("should return polls") {
-                let c = CinchClient()
-                
                 let r = ApiResource(id: "polls", href: NSURL(string: "http://api.us-east-1.niftiws.com/discussions")!, title: "get and create polls")
                 
-                c.rootResources = ["polls" : r]
+                client.rootResources = ["polls" : r]
                 
                 waitUntil(timeout: 10) { done in
-                    c.fetchLatestPolls { ( response, error ) in
+                    client.fetchLatestPolls { ( response, error ) in
                         expect(error).to(beNil())
                         expect(response).toNot(beNil())
                         expect(response!.selfLink).toNot(beNil())
