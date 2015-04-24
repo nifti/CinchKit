@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class PollsResponseSerializer : JSONObjectSerializer {
     let accountsSerializer = AccountsSerializer()
+    let linkSerializer = LinksSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> CNHPollsResponse? {
         return self.parseResponse(json)
@@ -48,6 +49,8 @@ class PollsResponseSerializer : JSONObjectSerializer {
             account = accounts?[authorId]
         }
         
+        var links = linkSerializer.jsonToObject(json["links"])
+        
         return CNHPoll(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
@@ -60,7 +63,8 @@ class PollsResponseSerializer : JSONObjectSerializer {
             created : json["created"].stringValue,
             updated : json["updated"].stringValue,
             author : account,
-            candidates : candidates!
+            candidates : candidates!,
+            links : links
         )
     }
     

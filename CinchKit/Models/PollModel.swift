@@ -45,6 +45,7 @@ public struct CNHPoll {
     public let updated : String
     public let author : CNHAccount?
     public let candidates : [CNHPollCandidate]
+    public let links : [String : NSURL]?
 }
 
 public struct CNHPollCandidate {
