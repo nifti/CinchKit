@@ -10,9 +10,9 @@ import SwiftyJSON
 
 extension CinchClient {
     
-    public func fetchLatestPolls(completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
-        fetchLatestPolls(queue: nil, completionHandler: completionHandler)
-    }
+//    public func fetchLatestPolls(completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
+//        fetchLatestPolls(queue: nil, completionHandler: completionHandler)
+//    }
     
     public func fetchLatestPolls(queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
         
