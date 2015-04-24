@@ -43,6 +43,7 @@
 		C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */; };
 		C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */; };
 		C4BBA2FD1A76FDF400B23DC7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; };
+		C4CABC3D1AEA7911004AF795 /* NSDate+ISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */; };
 		C4EBFB121A9BECAB00493DB8 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4EBFB131A9BECAB00493DB8 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
@@ -113,6 +114,7 @@
 		C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+PollsTests.swift"; sourceTree = "<group>"; };
 		C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollModel.swift; path = Models/PollModel.swift; sourceTree = "<group>"; };
 		C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+ISO.swift"; path = "Extensions/NSDate+ISO.swift"; sourceTree = "<group>"; };
 		C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinchKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */,
+				C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CABC3D1AEA7911004AF795 /* NSDate+ISO.swift in Sources */,
 				C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */,
 				C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */,
 				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,

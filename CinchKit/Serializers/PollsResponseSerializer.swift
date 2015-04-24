@@ -108,3 +108,34 @@ class PollsResponseSerializer : JSONObjectSerializer {
         return result
     }
 }
+
+class PollVotesSerializer : JSONObjectSerializer {
+    let accountsSerializer = AccountsSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHVotesResponse? {
+        var nextLink : CNHApiLink?
+        
+        if let href = json["links"]["next"].URL {
+            nextLink = CNHApiLink(id: nil, href: href, type: "votes")
+        }
+        
+        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "votes")
+        
+        let votes = json["votes"].array?.map(self.decodeVote)
+        
+        return CNHVotesResponse(selfLink : selfLink, nextLink : nextLink, votes : votes)
+    }
+    
+    private func decodeVote(json : JSON) -> CNHVote {
+        
+        let account = accountsSerializer.decodeAccount(json["account"])
+        
+        return CNHVote(
+            id: json["photoId"].string,
+            photoURL: json["photoURL"].URL,
+            created : NSDate.dateFromISOString(json["created"].stringValue),
+            updated : NSDate.dateFromISOString(json["updated"].stringValue),
+            account : account
+        )
+    }
+}

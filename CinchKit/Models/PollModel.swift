@@ -78,3 +78,18 @@ public struct CNHPollCategory {
     public let icons : [NSURL]?
 }
 
+public struct CNHVote {
+    public let id: String?
+    public let photoURL : NSURL?
+    
+//    public let href: String
+    public let created : NSDate
+    public let updated : NSDate
+    public let account : CNHAccount?
+}
+
+public struct CNHVotesResponse {
+    public let selfLink : CNHApiLink
+    public let nextLink : CNHApiLink?
+    public let votes : [CNHVote]?
+}

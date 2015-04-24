@@ -31,7 +31,7 @@ class AccountsSerializer : JSONObjectSerializer {
         return accounts
     }
     
-    private func decodeAccount(json : JSON) -> CNHAccount {
+    func decodeAccount(json : JSON) -> CNHAccount {
         let linkSerializer = LinksSerializer()
         
         var pictures = [PictureVersion : NSURL]()
