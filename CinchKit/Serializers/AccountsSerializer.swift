@@ -18,6 +18,10 @@ class LinksSerializer : JSONObjectSerializer {
                 if let url = NSURL(string: str) {
                     result[key] = url
                 }
+            } else {
+                if let href = subJson["href"].URL {
+                    result[key] = href
+                }
             }
         }
         
