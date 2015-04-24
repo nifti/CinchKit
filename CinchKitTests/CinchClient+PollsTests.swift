@@ -118,5 +118,21 @@ class CinchClientPollsSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("fetch votes") {
+            let c = CinchClient()
+            
+            it("should fetch votes") {
+                let url = NSURL(string: "http://api.us-east-1.niftiws.com/discussions/041e52d3-42cf-40d3-812f-e9f83bfc10e3/votes")!
+                waitUntil(timeout: 5) { done in
+                    c.fetchVotes(atURL: url, queue: nil) { (response, error ) in
+                        expect(error).to(beNil())
+                        expect(response).toNot(beNil())
+                        
+                        done()
+                    }
+                }
+            }
+        }
     }
 }
