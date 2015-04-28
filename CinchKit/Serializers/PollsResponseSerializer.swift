@@ -143,3 +143,21 @@ class PollVotesSerializer : JSONObjectSerializer {
         )
     }
 }
+
+class FollowersSerializer : JSONObjectSerializer {
+    let accountsSerializer = AccountsSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHFollowersResponse? {
+        var nextLink : CNHApiLink?
+        
+        if let href = json["links"]["next"].URL {
+            nextLink = CNHApiLink(id: nil, href: href, type: "followers")
+        }
+        
+        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "followers")
+        
+        let accounts = accountsSerializer.jsonToObject(json["accounts"])
+        
+        return CNHFollowersResponse(selfLink : selfLink, nextLink : nextLink, followers : accounts)
+    }
+}
