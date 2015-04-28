@@ -31,6 +31,8 @@
 		C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */; };
 		C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AD41A75B72A00CC0952 /* CinchKit.swift */; };
 		C488D8251A75BDA500294305 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; };
+		C497C9ED1AEF1DD6000ED7C6 /* CinchClient+Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */; };
+		C497C9EF1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */; };
 		C4A4D2D81AA0EB500091921A /* fetchAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = C4A4D2D71AA0EB500091921A /* fetchAccount.json */; };
 		C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = C4B554F91A969A0700228AA5 /* createAccount.json */; };
 		C4B554FD1A96D23500228AA5 /* ErrorResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */; };
@@ -104,6 +106,8 @@
 		C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHKeychainTests.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
 		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Followers.swift"; path = "Client/CinchClient+Followers.swift"; sourceTree = "<group>"; };
+		C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+FollowersTests.swift"; sourceTree = "<group>"; };
 		C4A4D2D71AA0EB500091921A /* fetchAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fetchAccount.json; path = response_stubs/fetchAccount.json; sourceTree = "<group>"; };
 		C4B554F91A969A0700228AA5 /* createAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = createAccount.json; path = response_stubs/createAccount.json; sourceTree = "<group>"; };
 		C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponseSerializer.swift; path = Serializers/ErrorResponseSerializer.swift; sourceTree = "<group>"; };
@@ -176,8 +180,9 @@
 		C41DDDAA1A8D486100B9523A /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
 				C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */,
+				C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */,
+				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
 				C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */,
 				C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */,
 			);
@@ -257,6 +262,7 @@
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
 				C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */,
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
+				C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
 				C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */,
 				C47574011A9E35F900C7C5B9 /* CNHSessionsTests.swift */,
@@ -459,6 +465,7 @@
 				C41DDDAE1A8D4E2E00B9523A /* AccountsSerializer.swift in Sources */,
 				C412B4831A8D0F0700CFAAB9 /* ApiResourcesSerializer.swift in Sources */,
 				C4852AD51A75B72A00CC0952 /* CinchKit.swift in Sources */,
+				C497C9ED1AEF1DD6000ED7C6 /* CinchClient+Followers.swift in Sources */,
 				C4B554FD1A96D23500228AA5 /* ErrorResponseSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +480,7 @@
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
 				C4047DBC1A9FD9BE000C3067 /* CinchKitTestsHelper.swift in Sources */,
 				C4BBA2F81A76F10600B23DC7 /* CinchClient+PollsTests.swift in Sources */,
+				C497C9EF1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

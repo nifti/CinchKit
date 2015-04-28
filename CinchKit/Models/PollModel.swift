@@ -94,3 +94,9 @@ public struct CNHVotesResponse {
     public let nextLink : CNHApiLink?
     public let votes : [CNHVote]?
 }
+
+public struct CNHFollowersResponse {
+    public let selfLink : CNHApiLink
+    public let nextLink : CNHApiLink?
+    public let followers : [CNHAccount]?
+}
