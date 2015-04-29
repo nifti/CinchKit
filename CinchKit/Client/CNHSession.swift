@@ -60,6 +60,12 @@ public class CNHSession {
         return self.sessionState == .Open
     }
     
+    // close active session
+    public func close() {
+        keychain.clear()
+        _accessTokenData = nil
+    }
+    
     public init() {
         _accessTokenData = keychain.load()
     }
