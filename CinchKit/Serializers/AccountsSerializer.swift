@@ -147,7 +147,8 @@ class AccountStatsSerializer : JSONObjectSerializer {
             totalUnread: json["unreadCount"].intValue,
             totalPollsCreated: json["totalPollsCreated"].intValue,
             totalVotes: json["totalVotes"].intValue,
-            totalFriends: json["totalFriends"].intValue,
+            totalFollowing: json["totalFollowing"].intValue,
+            totalFollowers: json["totalFollowers"].intValue,
             totalGroups: json["totalGroups"].intValue
         )
     }
