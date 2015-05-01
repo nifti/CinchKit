@@ -12,6 +12,7 @@ import SwiftyJSON
 class PollsResponseSerializer : JSONObjectSerializer {
     let accountsSerializer = AccountsSerializer()
     let linkSerializer = LinksSerializer()
+    let commentsSerializer = CommentsSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> CNHPollsResponse? {
         return self.parseResponse(json)
@@ -51,6 +52,8 @@ class PollsResponseSerializer : JSONObjectSerializer {
         
         var links = linkSerializer.jsonToObject(json["links"])
         
+        let comments = commentsSerializer.jsonToObject(json["recentComments"])
+        
         return CNHPoll(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
@@ -64,6 +67,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
             updated : json["updated"].stringValue,
             author : account,
             candidates : candidates!,
+            comments : comments,
             links : links
         )
     }
@@ -159,5 +163,44 @@ class FollowersSerializer : JSONObjectSerializer {
         let accounts = accountsSerializer.jsonToObject(json["accounts"])
         
         return CNHFollowersResponse(selfLink : selfLink, nextLink : nextLink, followers : accounts)
+    }
+}
+
+class CommentsSerializer : JSONObjectSerializer {
+    let accountsSerializer = AccountsSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHComment]? {
+        return json.array?.map(self.decodeComment)
+    }
+    
+    func decodeComment(json : JSON) -> CNHComment {
+        let author = accountsSerializer.decodeAccount(json["author"])
+        
+        return CNHComment(
+            id: json["id"].stringValue,
+            href: json["href"].URL!,
+            created : NSDate.dateFromISOString(json["created"].stringValue),
+            message : json["message"].stringValue,
+            author : author
+        )
+    }
+}
+
+
+class CommentsResponseSerializer : JSONObjectSerializer {
+    let commentsSerializer = CommentsSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHCommentsResponse? {
+        var nextLink : CNHApiLink?
+        
+        if let href = json["links"]["next"].URL {
+            nextLink = CNHApiLink(id: nil, href: href, type: "comments")
+        }
+        
+        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "comments")
+        
+        let comments = commentsSerializer.jsonToObject(json["messages"])
+        
+        return CNHCommentsResponse(selfLink : selfLink, nextLink : nextLink, comments : comments)
     }
 }

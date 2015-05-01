@@ -46,6 +46,7 @@ public struct CNHPoll {
     public let updated : String
     public let author : CNHAccount?
     public let candidates : [CNHPollCandidate]
+    public let comments : [CNHComment]?
     public let links : [String : NSURL]?
 }
 
@@ -100,4 +101,19 @@ public struct CNHFollowersResponse {
     public let selfLink : CNHApiLink
     public let nextLink : CNHApiLink?
     public let followers : [CNHAccount]?
+}
+
+public struct CNHComment {
+    public let id: String
+    public let href : NSURL
+    public let created : NSDate
+    
+    public let message : String
+    public let author : CNHAccount?
+}
+
+public struct CNHCommentsResponse {
+    public let selfLink : CNHApiLink
+    public let nextLink : CNHApiLink?
+    public let comments : [CNHComment]?
 }
