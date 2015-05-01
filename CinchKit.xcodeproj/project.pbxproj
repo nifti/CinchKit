@@ -21,6 +21,8 @@
 		C44D9F6D1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44D9F6C1A7BF8C000E3B375 /* Alamofire-CinchJSON.swift */; };
 		C4506EE71A75B1B60053248E /* CinchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C4506EE61A75B1B60053248E /* CinchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4506EF31A75B1B60053248E /* CinchKitTests.swift */; };
+		C4610AB01AF3B7F80031EB53 /* CinchClient+Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4610AAF1AF3B7F80031EB53 /* CinchClient+Comments.swift */; };
+		C4610AB21AF3BF700031EB53 /* CinchClient+CommentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4610AB11AF3BF700031EB53 /* CinchClient+CommentsTests.swift */; };
 		C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470C0371A77F82F00C4DB2A /* CNHServer.swift */; };
 		C47573FE1A9E33B400C7C5B9 /* CNHSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */; };
 		C47574001A9E345200C7C5B9 /* CNHTokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47573FF1A9E345200C7C5B9 /* CNHTokenData.swift */; };
@@ -97,6 +99,8 @@
 		C4506EEC1A75B1B60053248E /* CinchKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CinchKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4506EF21A75B1B60053248E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4506EF31A75B1B60053248E /* CinchKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinchKitTests.swift; sourceTree = "<group>"; };
+		C4610AAF1AF3B7F80031EB53 /* CinchClient+Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Comments.swift"; path = "Client/CinchClient+Comments.swift"; sourceTree = "<group>"; };
+		C4610AB11AF3BF700031EB53 /* CinchClient+CommentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+CommentsTests.swift"; sourceTree = "<group>"; };
 		C470C0371A77F82F00C4DB2A /* CNHServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHServer.swift; sourceTree = "<group>"; };
 		C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHSession.swift; path = Client/CNHSession.swift; sourceTree = "<group>"; };
 		C47573FF1A9E345200C7C5B9 /* CNHTokenData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHTokenData.swift; path = Models/CNHTokenData.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */,
+				C4610AAF1AF3B7F80031EB53 /* CinchClient+Comments.swift */,
 				C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */,
 				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
 				C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */,
@@ -262,6 +267,7 @@
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
 				C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */,
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
+				C4610AB11AF3BF700031EB53 /* CinchClient+CommentsTests.swift */,
 				C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
 				C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */,
@@ -458,6 +464,7 @@
 				C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */,
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */,
+				C4610AB01AF3B7F80031EB53 /* CinchClient+Comments.swift in Sources */,
 				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,
 				C47574071A9E8D0F00C7C5B9 /* CNHKeychain.swift in Sources */,
 				C47573FE1A9E33B400C7C5B9 /* CNHSession.swift in Sources */,
@@ -476,6 +483,7 @@
 			files = (
 				C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */,
 				C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */,
+				C4610AB21AF3BF700031EB53 /* CinchClient+CommentsTests.swift in Sources */,
 				C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */,
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
 				C4047DBC1A9FD9BE000C3067 /* CinchKitTestsHelper.swift in Sources */,
