@@ -117,3 +117,22 @@ public struct CNHCommentsResponse {
     public let nextLink : CNHApiLink?
     public let comments : [CNHComment]?
 }
+
+public struct CNHNotification {
+    public let id: String
+    public let href : NSURL
+    public let created : NSDate
+    public let action : String
+    
+    public let accountFrom : CNHAccount?
+    public let accountTo : CNHAccount?
+    
+    public let resourceId : String
+    public let resourceType : String
+}
+
+public struct CNHNotificationsResponse {
+    public let selfLink : CNHApiLink
+    public let nextLink : CNHApiLink?
+    public let notifications : [CNHNotification]?
+}

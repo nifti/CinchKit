@@ -25,7 +25,7 @@ class CinchClientCommentsSpec: QuickSpec {
                         expect(error).to(beNil())
                         expect(response).toNot(beNil())
                         expect(response!.comments).toNot(beEmpty())
-                        expect(response!.nextLink).toNot(beNil())
+                        expect(response!.nextLink).to(beNil())
                         expect(response!.comments!.first!.author).toNot(beNil())
                         
                         done()
