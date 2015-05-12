@@ -204,3 +204,61 @@ class CommentsResponseSerializer : JSONObjectSerializer {
         return CNHCommentsResponse(selfLink : selfLink, nextLink : nextLink, comments : comments)
     }
 }
+
+class NotificationsResponseSerializer : JSONObjectSerializer {
+    let accountsSerializer = AccountsSerializer()
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHNotificationsResponse? {
+        var nextLink : CNHApiLink?
+        
+        if let href = json["links"]["next"].URL {
+            nextLink = CNHApiLink(id: nil, href: href, type: "notifications")
+        }
+        
+        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "notifications")
+        
+        var accountIndex : [String : CNHAccount]?
+        
+        if let accounts = accountsSerializer.jsonToObject(json["linked"]["accounts"]) {
+            accountIndex = self.indexById(accounts)
+        }
+        
+        let notifications =  json["notifications"].array?.map { self.decodeNotification(accountIndex, json: $0) }
+        
+        return CNHNotificationsResponse(selfLink : selfLink, nextLink : nextLink, notifications : notifications)
+    }
+    
+    func decodeNotification(accounts : [String : CNHAccount]?, json : JSON) -> CNHNotification {
+        var accountFrom : CNHAccount?
+        var accountTo : CNHAccount?
+        
+        if let accId = json["accountFrom"].string {
+            accountFrom = accounts?[accId]
+        }
+        
+        if let accId = json["accountTo"].string {
+            accountTo = accounts?[accId]
+        }
+        
+        return CNHNotification(
+            id: json["id"].stringValue,
+            href : json["href"].URL!,
+            created : NSDate.dateFromISOString(json["createdAt"].stringValue),
+            action : json["action"].stringValue,
+            accountFrom : accountFrom,
+            accountTo : accountTo,
+            resourceId : json["resourceId"].stringValue,
+            resourceType : json["resourceType"].stringValue
+        )
+    }
+    
+    internal func indexById(data : [CNHAccount]) -> [String : CNHAccount] {
+        var result = [String : CNHAccount]()
+        
+        for item in data {
+            result[item.id] = item
+        }
+        
+        return result
+    }
+}
