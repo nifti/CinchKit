@@ -129,6 +129,8 @@ public struct CNHNotification {
     
     public let resourceId : String
     public let resourceType : String
+    
+    public let poll : CNHPoll?
 }
 
 public struct CNHNotificationsResponse {

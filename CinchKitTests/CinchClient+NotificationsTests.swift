@@ -30,6 +30,7 @@ class CinchClientNotificationsSpec: QuickSpec {
                         let note = response!.notifications!.first!
                         expect(note.accountFrom).toNot(beNil())
                         expect(note.accountTo).toNot(beNil())
+//                        expect(note.poll).toNot(beNil())
                         
                         done()
                     }

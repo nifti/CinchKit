@@ -207,6 +207,7 @@ class CommentsResponseSerializer : JSONObjectSerializer {
 
 class NotificationsResponseSerializer : JSONObjectSerializer {
     let accountsSerializer = AccountsSerializer()
+    let pollsSerializer = PollsResponseSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> CNHNotificationsResponse? {
         var nextLink : CNHApiLink?
@@ -223,12 +224,17 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
             accountIndex = self.indexById(accounts)
         }
         
-        let notifications =  json["notifications"].array?.map { self.decodeNotification(accountIndex, json: $0) }
+        var pollIndex : [String : CNHPoll]?
+        if let polls = json["linked"]["polls"].array?.map( { self.pollsSerializer.decodePoll(accountIndex, json: $0) } ) {
+            pollIndex = self.indexById(polls)
+        }
+        
+        let notifications =  json["notifications"].array?.map { self.decodeNotification(accountIndex, polls : pollIndex, json: $0) }
         
         return CNHNotificationsResponse(selfLink : selfLink, nextLink : nextLink, notifications : notifications)
     }
     
-    func decodeNotification(accounts : [String : CNHAccount]?, json : JSON) -> CNHNotification {
+    func decodeNotification(accounts : [String : CNHAccount]?, polls: [String : CNHPoll]?, json : JSON) -> CNHNotification {
         var accountFrom : CNHAccount?
         var accountTo : CNHAccount?
         
@@ -240,6 +246,11 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
             accountTo = accounts?[accId]
         }
         
+        var poll : CNHPoll?
+        if json["resourceType"].stringValue == "poll", let p = polls?[json["resourceId"].stringValue] {
+            poll = p
+        }
+        
         return CNHNotification(
             id: json["id"].stringValue,
             href : json["href"].URL!,
@@ -248,12 +259,23 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
             accountFrom : accountFrom,
             accountTo : accountTo,
             resourceId : json["resourceId"].stringValue,
-            resourceType : json["resourceType"].stringValue
+            resourceType : json["resourceType"].stringValue,
+            poll : poll
         )
     }
     
     internal func indexById(data : [CNHAccount]) -> [String : CNHAccount] {
         var result = [String : CNHAccount]()
+        
+        for item in data {
+            result[item.id] = item
+        }
+        
+        return result
+    }
+    
+    internal func indexById(data : [CNHPoll]) -> [String : CNHPoll] {
+        var result = [String : CNHPoll]()
         
         for item in data {
             result[item.id] = item
