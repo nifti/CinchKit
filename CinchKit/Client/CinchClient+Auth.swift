@@ -79,7 +79,6 @@ extension CinchClient {
             if let ids = params?["ids"] as? [String] {
                 accountsUrl = NSURL(string: accountsUrl.absoluteString! + "/" + ",".join(ids))!
                 params?.removeValueForKey("ids")
-                NSLog(accountsUrl.absoluteString!)
             }
             
             let serializer = FetchAccountsSerializer()

@@ -33,7 +33,7 @@ class CinchClientAuthSpec: QuickSpec {
             
             describe("fetch Accounts matching ids") {
                 it("should return single account") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.*"
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.+"
                     var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
                     
                     stubRequest("GET", path.regex())
@@ -41,10 +41,12 @@ class CinchClientAuthSpec: QuickSpec {
                     
                     waitUntil(timeout: 1) { done in
                         client!.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5c"]) { (accounts, error) in
-                            expect(error).to(beNil())
                             expect(accounts).toNot(beEmpty())
-                            expect(accounts!.count).to(equal(1))
-                            expect(accounts!.first!.links!.count).to(equal(3))
+                            expect(error).to(beNil())
+                            
+                            if let acc = accounts {
+                                expect(acc.count).to(equal(1))
+                            }
                             
                             done()
                         }
@@ -52,31 +54,22 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should return 404 not found error") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.*"
-                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
-                    
-                    stubRequest("GET", path.regex())
-                        .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
-                    
                     waitUntil(timeout: 1) { done in
+                        var path : NSString = "\(accountsResource!.href.absoluteString!)/.+"
+                        var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                        
+                        stubRequest("GET", path.regex())
+                            .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
+
                         client!.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5d"]) { (accounts, error) in
-                            expect(error).toNot(beNil())
                             expect(accounts).to(beNil())
-                            expect(error!.code).to(equal(404))
+                            expect(error).toNot(beNil())
                             
-                            done()
-                        }
-                    }
-                }
-                
-                it("should return error when accounts resource doesnt exist") {
-                    let c = CinchClient()
-                    
-                    waitUntil(timeout: 1) { done in
-                        c.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5d"]) { (accounts, error) in
-                            expect(error).toNot(beNil())
-                            expect(error!.domain).to(equal(CinchKitErrorDomain))
-                            expect(accounts).to(beNil())
+                            if let err = error {
+                                expect(err.domain).to(equal(CinchKitErrorDomain))
+                                expect(err.code).to(equal(404))
+                            }
+                            
                             
                             done()
                         }
@@ -259,7 +252,6 @@ class CinchClientAuthSpec: QuickSpec {
                     }
                 }
             }
-            
         }
     }
 }
