@@ -31,6 +31,59 @@ class CinchClientAuthSpec: QuickSpec {
                 LSNocilla.sharedInstance().stop()
             }
             
+            describe("fetch Accounts matching ids") {
+                it("should return single account") {
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.*"
+                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
+                        client!.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5c"]) { (accounts, error) in
+                            expect(error).to(beNil())
+                            expect(accounts).toNot(beEmpty())
+                            expect(accounts!.count).to(equal(1))
+                            expect(accounts!.first!.links!.count).to(equal(3))
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("should return 404 not found error") {
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.*"
+                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
+                        client!.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5d"]) { (accounts, error) in
+                            expect(error).toNot(beNil())
+                            expect(accounts).to(beNil())
+                            expect(error!.code).to(equal(404))
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("should return error when accounts resource doesnt exist") {
+                    let c = CinchClient()
+                    
+                    waitUntil(timeout: 1) { done in
+                        c.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5d"]) { (accounts, error) in
+                            expect(error).toNot(beNil())
+                            expect(error!.domain).to(equal(CinchKitErrorDomain))
+                            expect(accounts).to(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+            }
+            
             describe("fetch Accounts matching email") {
                 
                 it("should return single account") {
