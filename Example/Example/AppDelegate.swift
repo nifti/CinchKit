@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let client = CinchClient()
-        client.start {
+        client.start { (account) in
             println("client started")
             
             client.fetchLatestPolls() { (_, _) in

@@ -31,6 +31,52 @@ class CinchClientAuthSpec: QuickSpec {
                 LSNocilla.sharedInstance().stop()
             }
             
+            describe("fetch Accounts matching ids") {
+                it("should return single account") {
+                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.+"
+                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    
+                    stubRequest("GET", path.regex())
+                        .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 1) { done in
+                        client!.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5c"]) { (accounts, error) in
+                            expect(accounts).toNot(beEmpty())
+                            expect(error).to(beNil())
+                            
+                            if let acc = accounts {
+                                expect(acc.count).to(equal(1))
+                            }
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("should return 404 not found error") {
+                    waitUntil(timeout: 1) { done in
+                        var path : NSString = "\(accountsResource!.href.absoluteString!)/.+"
+                        var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                        
+                        stubRequest("GET", path.regex())
+                            .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
+
+                        client!.fetchAccountsMatchingIds(["c49ef0c0-8610-491d-9bb2-c494d4a52c5d"]) { (accounts, error) in
+                            expect(accounts).to(beNil())
+                            expect(error).toNot(beNil())
+                            
+                            if let err = error {
+                                expect(err.domain).to(equal(CinchKitErrorDomain))
+                                expect(err.code).to(equal(404))
+                            }
+                            
+                            
+                            done()
+                        }
+                    }
+                }
+            }
+            
             describe("fetch Accounts matching email") {
                 
                 it("should return single account") {
@@ -206,7 +252,6 @@ class CinchClientAuthSpec: QuickSpec {
                     }
                 }
             }
-            
         }
     }
 }

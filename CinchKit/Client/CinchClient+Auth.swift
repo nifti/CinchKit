@@ -10,6 +10,9 @@ import SwiftyJSON
 import Alamofire
 
 extension CinchClient {
+    public func fetchAccountsMatchingIds(ids: [String], completionHandler: ([CNHAccount]?, NSError?) -> ()) {
+        self.fetchAccountsMatchingParams(["ids": ids], completionHandler: completionHandler)
+    }
     
     public func fetchAccountsMatchingEmail(email : String, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
         self.fetchAccountsMatchingParams(["email" : email], completionHandler: completionHandler)
@@ -68,10 +71,18 @@ extension CinchClient {
         }
     }
     
-    internal func fetchAccountsMatchingParams(params : [String : AnyObject]?, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
+    internal func fetchAccountsMatchingParams(var params : [String : AnyObject]?, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
         if let accounts = self.rootResources?["accounts"] {
+            var accountsUrl: NSURL = accounts.href
+            
+            // Remove ids from query params because of ids should be passed in path
+            if let ids = params?["ids"] as? [String] {
+                accountsUrl = NSURL(string: accountsUrl.absoluteString! + "/" + ",".join(ids))!
+                params?.removeValueForKey("ids")
+            }
+            
             let serializer = FetchAccountsSerializer()
-            request(.GET, accounts.href, parameters: params, encoding : .URL , serializer: serializer, completionHandler: completionHandler)
+            request(.GET, accountsUrl, parameters: params, encoding: .URL , serializer: serializer, completionHandler: completionHandler)
         } else {
             return completionHandler(nil, clientNotConnectedError())
         }
