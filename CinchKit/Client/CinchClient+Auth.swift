@@ -41,9 +41,9 @@ extension CinchClient {
         }
     }
     
-//    public func refreshSession(completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
-//        self.refreshSession(includeAccount: false, completionHandler: completionHandler)
-//    }
+    //    public func refreshSession(completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+    //        self.refreshSession(includeAccount: false, completionHandler: completionHandler)
+    //    }
     
     public func refreshSession(includeAccount : Bool = false, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
         let serializer = TokenResponseSerializer()
@@ -56,18 +56,32 @@ extension CinchClient {
                 params = ["include" : "account"]
             }
             
-            request(.POST, token.href, headers: headers, parameters: params, encoding : CNHUtils.urlencoding(), serializer: serializer) { (auth, error) in
-                if let err = error {
-                    completionHandler?(nil, error)
-                } else if let a = auth {
-                    self.setActiveSession(a.accessTokenData)
-                    completionHandler?(a.account, nil)
-                } else {
-                    completionHandler?(nil, nil)
-                }
-            }
+            self.createSession(atURL: token.href, params: params, headers: headers, completionHandler: completionHandler)
         } else {
             completionHandler?(nil, nil)
+        }
+    }
+
+    public func createSession(var params : [String : AnyObject]? = nil, headers : [String : String]? = nil, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+        if let tokenURL = self.rootResources?["tokens"]?.href {
+            self.createSession(atURL: tokenURL, params: params, headers: headers, completionHandler: completionHandler)
+        } else {
+           completionHandler?(nil, nil)
+        }
+    }
+    
+    public func createSession(atURL url : NSURL, var params : [String : AnyObject]? = nil, headers : [String : String]? = nil, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+        let serializer = TokenResponseSerializer()
+        
+        request(.POST, url, headers: headers, parameters: params, encoding : CNHUtils.urlencoding(), serializer: serializer) { (auth, error) in
+            if let err = error {
+                completionHandler?(nil, error)
+            } else if let a = auth {
+                self.setActiveSession(a.accessTokenData)
+                completionHandler?(a.account, nil)
+            } else {
+                completionHandler?(nil, nil)
+            }
         }
     }
     

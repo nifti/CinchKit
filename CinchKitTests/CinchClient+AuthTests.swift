@@ -17,13 +17,15 @@ class CinchClientAuthSpec: QuickSpec {
         describe("Cinch Client Auth") {
             var client: CinchClient?
             var accountsResource : ApiResource?
+            var tokensResource : ApiResource?
             
             beforeEach {
                 LSNocilla.sharedInstance().start()
                 LSNocilla.sharedInstance().clearStubs()
                 client = CinchClient()
                 accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(client!.server.authServerURL)/accounts")!, title: "get and create accounts")
-                client!.rootResources = ["accounts" : accountsResource!]
+                tokensResource = ApiResource(id: "tokens", href: NSURL(string: "\(client!.server.authServerURL)/tokens")!, title: "Create and refresh authentication tokens")
+                client!.rootResources = ["accounts" : accountsResource!, "tokens" : tokensResource!]
             }
             
             afterEach {
@@ -242,6 +244,26 @@ class CinchClientAuthSpec: QuickSpec {
                     waitUntil(timeout: 2) { done in
                         
                         client!.refreshSession(includeAccount : true) { (account, error) in
+                            expect(error).to(beNil())
+                            expect(account).toNot(beNil())
+                            expect(client!.session.accessTokenData).toNot(beNil())
+                            expect(client!.session.accessTokenData!.expires.timeIntervalSince1970).to(equal(1425950710.000))
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("should create a session") {
+                    var data = CinchKitTestsHelper.loadJsonData("createTokenIncludeAccount")
+                    
+                    var path : NSString = tokensResource!.href.absoluteString!
+                    stubRequest("POST", path.regex())
+                        .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
+                    
+                    waitUntil(timeout: 2) { done in
+                        
+                        client!.createSession(params: ["facebookAccessToken" : "123"], headers: nil) { (account, error) in
                             expect(error).to(beNil())
                             expect(account).toNot(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())
