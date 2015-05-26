@@ -56,7 +56,7 @@ extension CinchClient {
                 params = ["include" : "account"]
             }
             
-            self.createSession(atURL: token.href, params: params, headers: headers, completionHandler: completionHandler)
+            self.createSession(atURL: token.href, params: params, headers: headers, encoding : CNHUtils.urlencoding(), completionHandler: completionHandler)
         } else {
             completionHandler?(nil, nil)
         }
@@ -70,10 +70,13 @@ extension CinchClient {
         }
     }
     
-    public func createSession(atURL url : NSURL, var params : [String : AnyObject]? = nil, headers : [String : String]? = nil, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+    public func createSession(atURL url : NSURL, var params : [String : AnyObject]? = nil,
+        headers : [String : String]? = nil, encoding: Alamofire.ParameterEncoding = .JSON,
+        completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+            
         let serializer = TokenResponseSerializer()
         
-        request(.POST, url, headers: headers, parameters: params, encoding : CNHUtils.urlencoding(), serializer: serializer) { (auth, error) in
+        request(.POST, url, headers: headers, parameters: params, encoding : encoding, serializer: serializer) { (auth, error) in
             if let err = error {
                 completionHandler?(nil, error)
             } else if let a = auth {
