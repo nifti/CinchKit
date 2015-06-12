@@ -148,6 +148,7 @@ class PollVotesSerializer : JSONObjectSerializer {
     }
 }
 
+
 class FollowersSerializer : JSONObjectSerializer {
     let accountsSerializer = AccountsSerializer()
     
@@ -282,5 +283,12 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         }
         
         return result
+    }
+}
+
+class EmptyResponseSerializer : JSONObjectSerializer {
+    
+    func jsonToObject(json: SwiftyJSON.JSON) -> String? {
+        return "OK"
     }
 }
