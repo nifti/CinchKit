@@ -25,33 +25,24 @@ public class CNHKeychain {
         var type = keychain.get("type")
         var href = keychain.get("href")
         var expires = keychain.get("expires")
+        var cognitoId = keychain.get("cognitoId")
+        var cognitoToken = keychain.get("cognitoToken")
         
-        // TODO refactor when upgrading to swift 1.2
-        if let id = accountID {
+        if let id = accountID, let acc = access, let ref = refresh, t = type , let url = href, let exp : NSString = expires, let cid = cognitoId, let cogToken = cognitoToken {
+            var timestamp = NSDate(timeIntervalSince1970: exp.doubleValue )
             
-            if let acc = access {
-                if let ref = refresh {
-                    if let t = type {
-                        if let url = href {
-                            if let exp : NSString = expires {
-                                var timestamp = NSDate(timeIntervalSince1970: exp.doubleValue )
-                                
-                                result = CNHAccessTokenData(
-                                    accountID : id,
-                                    href : NSURL(string: url)!,
-                                    access : acc,
-                                    refresh : ref,
-                                    type : t,
-                                    expires : timestamp
-                                )
-                            }
-                            
-                        }
-                    }
-                }
-            }
-            
+            result = CNHAccessTokenData(
+                accountID : id,
+                href : NSURL(string: url)!,
+                access : acc,
+                refresh : ref,
+                type : t,
+                expires : timestamp,
+                cognitoId : cid,
+                cognitoToken : cogToken
+            )
         }
+        
         return result
     }
     
@@ -69,6 +60,10 @@ public class CNHKeychain {
         } else if let err = keychain.set(accessTokenData.href.absoluteString!, key: "href") {
             return err
         } else if let err = keychain.set(expiresString, key: "expires") {
+            return err
+        } else if let err = keychain.set(accessTokenData.cognitoId, key: "cognitoId") {
+            return err
+        } else if let err = keychain.set(accessTokenData.cognitoToken, key: "cognitoToken") {
             return err
         } else {
             return nil
