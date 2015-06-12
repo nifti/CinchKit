@@ -34,7 +34,9 @@ class CinchSessionsSpec: QuickSpec {
                     access : "asdfhasjdhfasdf",
                     refresh : "rrrrrrrrrrrreeeeeeeeeffffrrrrrrreeeeeeessshhhhhhhhhh",
                     type : "Bearer",
-                    expires : expires
+                    expires : expires,
+                    cognitoId : "us-east-1:919501dd-5909-4ffd-9014-46a97f914dc9",
+                    cognitoToken : "eyJraWQiOiJ1cy1lYXN0LTExIiwidHlwIjoiSldTIiwiYWxnIjoiUlM1MTIifQ"
                 )
                 
                 let session = CNHSession()

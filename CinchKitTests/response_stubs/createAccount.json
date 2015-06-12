@@ -20,6 +20,8 @@
                    "expires": 1424991935000,
                    "type": "Bearer",
                    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNTU3ZWYwOGYtY2M2Ni00ZjUyLWJkNjItYWQzZjE2NGJhM2UwIiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQyNDk4ODMzNX0.ZonYRlTTVNyGpuGzcX0obtFjUotHUZwTup27zaHiMIw",
+                   "cognitoId": "us-east-1:919501dd-5909-4ffd-9014-46a97f914dc9",
+                   "cognitoToken": "eyJraWQiOiJ1cy1lYXN0LTExIiwidHlwIjoiSldTIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJ1cy1lYXN0LTE6OTE5NTAxZGQtNTkwOS00ZmZkLTkwMTQtNDZhOTdmOTE0ZGM5IiwiYXVkIjoidXMtZWFzdC0xOjExNGM1NDBhLTk4YmItNDM5Ni1hMmZlLTJkMWQxYWU2OGJkNyIsImFtciI6WyJhdXRoZW50aWNhdGVkIiwibG9naW4uY2x1dGNocmV0YWlsLmNpbmNoIl0sImlzcyI6Imh0dHBzOi8vY29nbml0by1pZGVudGl0eS5hbWF6b25hd3MuY29tIiwiZXhwIjoxNDM0MDc2MzIxLCJpYXQiOjE0MzQwNzU0MjF9.bGnLa2cb1b8kph2k1F7EGe5Y1AVwy9Wlcd6W-wy3qYJugUEZEExuN0fHd5mN4bq35FLwNNz4q0h_RHwjVbFsQUfhJjYtIcf-tlw62Mjqnik65uwBX4X8MHSAhl9zzQJErBwExzuETER_Ewr-J34lVWv8IUa5aIFBsrHHaQz5TmpMkaAqRUby4LxaHbYyhgOHFxtxZb0XyJX87po1SYyJ9gPZTCqV9VLjS1ZVu1o1Wo1RBq6MAB4FQpRAajlwy-wnBLEq2bl5U1fqnk9lHkvHIAJT1O54LFLHX-ipT3OeEd0y2ccODv1P8JMRgmDJeakcR5K6gsJO3uYHhFqgiiMu3Q",
                    "links": {
                    "self": "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens",
                    "account": {

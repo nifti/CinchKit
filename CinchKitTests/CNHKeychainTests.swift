@@ -47,6 +47,8 @@ class CinchKeychainSpec: QuickSpec {
                 expect(data!.refresh).to(equal(savedToken.refresh))
                 expect(data!.type).to(equal(savedToken.type))
                 expect(data!.href).to(equal(savedToken.href))
+                expect(data!.cognitoId).to(equal(savedToken.cognitoId))
+                expect(data!.cognitoToken).to(equal(savedToken.cognitoToken))
                 
 //                expect(savedToken.expires.timeIntervalSince1970).to(equal(data!.expires.timeIntervalSince1970))
             }

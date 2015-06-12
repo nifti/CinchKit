@@ -15,14 +15,18 @@ public struct CNHAccessTokenData {
     public let refresh: String
     public let type: String
     public let expires: NSDate
+    public let cognitoId: String
+    public let cognitoToken: String
     
-    public init(accountID : String, href : NSURL, access: String, refresh : String, type : String, expires : NSDate) {
+    public init(accountID : String, href : NSURL, access: String, refresh : String, type : String, expires : NSDate, cognitoId : String, cognitoToken : String) {
         self.accountID = accountID
         self.href = href
         self.access = access
         self.refresh = refresh
         self.type = type
         self.expires = expires
+        self.cognitoId = cognitoId
+        self.cognitoToken = cognitoToken
     }
 }
 

@@ -83,7 +83,9 @@ class TokensSerializer : JSONObjectSerializer {
             access : json["access"].stringValue,
             refresh : json["refresh"].stringValue,
             type : json["type"].stringValue,
-            expires : expires
+            expires : expires,
+            cognitoId : json["cognitoId"].stringValue,
+            cognitoToken : json["cognitoToken"].stringValue
         )
     }
 }
