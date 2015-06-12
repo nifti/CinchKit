@@ -135,5 +135,31 @@ class CinchClientPollsSpec: QuickSpec {
                 }
             }
         }
+        
+//        describe("vote on poll") {
+//            let c = CinchClient()
+//            
+//            it("should vote on poll") {
+//                let token = CNHAccessTokenData(
+//                    accountID : "123456",
+//                    href : NSURL(string: "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens")!,
+//                    access : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiODBjZDI3NGUtYTZkYS00Njk0LWE2YTUtMTgyMWZkY2NlOTAwIiwibmFtZSI6InVuaXQgdGVzdCIsInNjb3BlIjpbInVzZXIiLCJhY2Nlc3N0b2tlbiJdLCJpYXQiOjE0MzQxMjY0MTMsImV4cCI6MTQzNDEzMDAxM30._BxWq-D2tjBhlFI3t7ATj08OfaCv2crx60ThBhSS4Qs",
+//                    refresh : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiODBjZDI3NGUtYTZkYS00Njk0LWE2YTUtMTgyMWZkY2NlOTAwIiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQzNDEyNjQxM30.T0cL4oVt-2_L5mQpzzl4hVNlDQIdeBRFC9DoPDcY62o",
+//                    type : "Bearer",
+//                    expires : NSDate().dateByAddingTimeInterval(-300),
+//                    cognitoId : "us-east-1:919501dd-5909-4ffd-9014-46a97f914dc9",
+//                    cognitoToken : "eyJraWQiOiJ1cy1lYXN0LTExIiwidHlwIjoiSldTIiwiYWxnIjoiUlM1MTIifQ"
+//                )
+//                
+//                c.session.accessTokenData = token
+//                let url = NSURL(string: "http://identityservice-dev-peystnaps3.elasticbeanstalk.com/discussions/5db31c42-3f3a-4f2a-9070-2dac450a98ea/votes")!
+//                waitUntil(timeout: 5) { done in
+//                    c.voteOnPoll(atURL: url, candidateId: "258b33af-0a8d-4c21-8d89-c9198e64a232", queue: nil) { (msg, error) in
+//                        expect(error).to(beNil())
+//                        done()
+//                    }
+//                }
+//            }
+//        }
     }
 }

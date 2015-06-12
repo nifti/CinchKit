@@ -55,4 +55,9 @@ extension CinchClient {
         let serializer = PollVotesSerializer()
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+    
+    public func voteOnPoll(atURL url : NSURL, candidateId : String, queue: dispatch_queue_t? = nil, completionHandler : (String?, NSError?) -> ()) {
+        let serializer = EmptyResponseSerializer()
+        authorizedRequest(.POST, url, parameters: ["id" : candidateId], queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }

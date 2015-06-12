@@ -28,6 +28,14 @@ public class CinchClient {
         self.init(server: CNHServer.dotComServer())
     }
     
+    var authHeader : [String : String]? {
+        if self.session.isOpen, let token = self.session.accessTokenData {
+            return ["Authorization" : "\(token.type) \(token.access)"]
+        } else {
+            return nil
+        }
+    }
+    
     public required init(server : CNHServer) {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.HTTPMaximumConnectionsPerHost = 20
@@ -98,6 +106,10 @@ public class CinchClient {
         return NSError(domain: CinchKitErrorDomain, code: -1, userInfo: [NSLocalizedDescriptionKey : "Cinch Client not connected"])
     }
     
+    func clientNotAuthroizedError() -> NSError {
+        return NSError(domain: CinchKitErrorDomain, code: 403, userInfo: [NSLocalizedDescriptionKey : "Cinch client not authorized"])
+    }
+    
     func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, headers : [String : String]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {
         
         var path = NSURL(string: URLString.URLString)!
@@ -132,6 +144,35 @@ public class CinchClient {
                     } else {
                         completionHandler?(response, nil)
                     }
+            }
+    }
+    
+    func authorizedRequest<T : JSONObjectSerializer>( method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, headers : [String : String]? = nil,  encoding: Alamofire.ParameterEncoding = .JSON, queue: dispatch_queue_t? = nil,
+        serializer : T, completionHandler : ((T.ContentType?, NSError?) -> Void)? ) {
+            
+            if let auth = self.authHeader {
+                var finalHeaders : [String : String]
+                
+                if let h = headers {
+                    finalHeaders = h
+                } else {
+                    finalHeaders = [String : String]()
+                }
+                
+                finalHeaders["Authorization"] = auth["Authorization"]
+                request(method, URLString, parameters: parameters, headers: finalHeaders, encoding: encoding, queue: queue, serializer: serializer, completionHandler: completionHandler)
+            } else if self.session.sessionState == .Closed {
+                self.refreshSession(includeAccount: false) { (_, _) in
+                    if self.session.isOpen {
+                       self.authorizedRequest(method, URLString, parameters: parameters, headers: headers, encoding: encoding, queue: queue, serializer: serializer, completionHandler: completionHandler)
+                    } else {
+                        let err = self.clientNotAuthroizedError()
+                        completionHandler?(nil, err)
+                    }
+                }
+            } else {
+                let err = self.clientNotAuthroizedError()
+                completionHandler?(nil, err)
             }
     }
 }

@@ -50,6 +50,8 @@ public class CNHSession {
             
             if now.compare(tokenData.expires) == .OrderedAscending {
                 result = .Open
+            } else {
+                result = .Closed
             }
         }
         
