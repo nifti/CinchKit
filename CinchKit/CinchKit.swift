@@ -78,7 +78,8 @@ public class CinchClient {
         request(.GET, self.server.baseURL, serializer: serializer, completionHandler: { (resources, error) in
             if(error != nil) {
             } else {
-                self.rootResources  = self.authServerResourcesHack(resources)
+//                self.rootResources  = self.authServerResourcesHack(resources)
+                self.rootResources  = resources
             }
             
             completionHandler?()
