@@ -13,4 +13,14 @@ extension CinchClient {
         let serializer = FollowersSerializer()
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+    
+    public func followAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (String?, NSError?) -> ()) {
+        let serializer = EmptyResponseSerializer()
+        authorizedRequest(.POST, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
+    
+    public func unfollowAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (String?, NSError?) -> ()) {
+        let serializer = EmptyResponseSerializer()
+        authorizedRequest(.DELETE, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }
