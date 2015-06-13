@@ -42,13 +42,19 @@ class AccountsSerializer : JSONObjectSerializer {
         
         if let url = json["smallPicture"].URL {
            pictures[.Small] = url
+        } else if let url = json["metadata"]["smallPictureUrl"].URL {
+           pictures[.Small] = url
         }
         
         if let url = json["mediumPicture"].URL {
             pictures[.Medium] = url
+        } else if let url = json["metadata"]["mediumPictureUrl"].URL {
+           pictures[.Medium] = url
         }
         
         if let url = json["picture"].URL {
+            pictures[.Large] = url
+        } else if let url = json["metadata"]["mediumPictureUrl"].URL {
             pictures[.Large] = url
         }
         
