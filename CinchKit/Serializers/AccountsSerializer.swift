@@ -69,6 +69,9 @@ class AccountsSerializer : JSONObjectSerializer {
             username : json["username"].string,
             email : json["email"].string,
             pictures : pictures,
+            bio : json["metadata"]["bio"].string,
+            website : json["metadata"]["website"].string,
+            shareLink : json["metadata"]["shortLink"].string,
             links : links
         )
     }
