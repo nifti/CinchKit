@@ -88,6 +88,20 @@ extension CinchClient {
         }
     }
     
+    public func updateAccount(atURL url : NSURL, parameters: [String : AnyObject], queue: dispatch_queue_t? = nil, completionHandler : ((CNHAccount?, NSError?) -> ())?) {
+        let serializer = AccountsSerializer()
+        
+        authorizedRequest(.PUT, url, parameters: parameters, queue: queue, serializer: serializer) { (accounts, error) in
+            if let err = error {
+                completionHandler?(nil, error)
+            } else if let account = accounts?.first {
+                completionHandler?(account, nil)
+            } else {
+                completionHandler?(nil, nil)
+            }
+        }
+    }
+    
     internal func fetchAccountsMatchingParams(var params : [String : AnyObject]?, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
         if let accounts = self.rootResources?["accounts"] {
             var accountsUrl: NSURL = accounts.href
