@@ -21,7 +21,7 @@ class CinchClientPollsSpec: QuickSpec {
             }
             
             it("should return polls") {
-                let r = ApiResource(id: "polls", href: NSURL(string: "http://api.us-east-1.niftiws.com/discussions")!, title: "get and create polls")
+                let r = ApiResource(id: "polls", href: NSURL(string: "http://identityservice-dev-peystnaps3.elasticbeanstalk.com/discussions")!, title: "get and create polls")
                 
                 client.rootResources = ["polls" : r]
                 
@@ -39,10 +39,11 @@ class CinchClientPollsSpec: QuickSpec {
                         expect(first.author).toNot(beNil())
                         expect(first.links).toNot(beEmpty())
                         
-                        var candidate = first.candidates.first!
-                        expect(candidate.image).toNot(beEmpty())
-                        expect(candidate.images).toNot(beEmpty())
-                        expect(candidate.images![.Medium]).toNot(beNil())
+                        if let candidate = first.candidates.first {
+                            expect(candidate.image).toNot(beEmpty())
+                            expect(candidate.images).toNot(beEmpty())
+                            expect(candidate.images![.Medium]).toNot(beNil())
+                        }
                         
                         expect(NSThread.isMainThread()).to(equal(true))
                         

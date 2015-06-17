@@ -54,6 +54,10 @@ class PollsResponseSerializer : JSONObjectSerializer {
         
         let comments = commentsSerializer.jsonToObject(json["recentComments"])
         
+        if candidates == nil {
+            candidates = []
+        }
+        
         return CNHPoll(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
