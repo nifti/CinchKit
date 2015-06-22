@@ -105,6 +105,15 @@ extension CinchClient {
         }
     }
     
+    public func emailLogin(var params : [String : AnyObject]? = nil, completionHandler : ( (String?, NSError?) -> () )? = nil) {
+        if let tokenURL = self.rootResources?["tokens"]?.href {
+            let serializer = EmptyResponseSerializer()
+            request(.POST, tokenURL, parameters: params, serializer: serializer, completionHandler : completionHandler)
+        } else {
+            completionHandler?(nil, nil)
+        }
+    }
+    
     internal func fetchAccountsMatchingParams(var params : [String : AnyObject]?, completionHandler : ([CNHAccount]?, NSError?) -> ()) {
         if let accounts = self.rootResources?["accounts"] {
             var accountsUrl: NSURL = accounts.href
