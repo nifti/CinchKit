@@ -138,6 +138,9 @@ class CinchClientPollsSpec: QuickSpec {
         }
         
         describe("upload photo") {
+            LSNocilla.sharedInstance().start()
+            LSNocilla.sharedInstance().clearStubs()
+            
             let c = CinchClient()
             
             let r = ApiResource(id: "photos", href: NSURL(string: "http://api.us-east-1.niftiws.com/photos")!, title: "View photos")
@@ -166,12 +169,19 @@ class CinchClientPollsSpec: QuickSpec {
                 waitUntil(timeout: 1) { done in
                     let pURL = NSURL(string: "https://s3.amazonaws.com/cognito.dev.cinch.com/us-east-1:f0e72bd0-3529-4212-b852-cd0f7ebb68d2/8248E972-5DCD-4C42-AA5A-D137AADE91E0")
                     c.uploadCandidate(pURL!, queue: nil, completionHandler: { (photos, error) -> () in
-                        println("12345")
+                        expect(error).to(beNil())
+                        expect(photos).toNot(beNil())
+                        
+                        expect(photos!.count).to(equal(1))
+                        expect(photos!.first!.id).to(equal("a2efa1a8-c9ff-41cd-8675-461942fcf75c"))
                         
                         done()
                     })
                 }
             }
+            
+            LSNocilla.sharedInstance().clearStubs()
+            LSNocilla.sharedInstance().stop()
         }
         
 //        describe("vote on poll") {
