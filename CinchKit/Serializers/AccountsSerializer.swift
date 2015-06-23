@@ -184,3 +184,18 @@ class PollCategoriesSerializer : JSONObjectSerializer {
         )
     }
 }
+
+class PhotoSerializer: JSONObjectSerializer {
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHPhoto]? {
+        return json["photos"].array?.map(self.decodePhoto)
+    }
+    
+    private func decodePhoto(json: JSON) -> CNHPhoto {
+        return CNHPhoto(
+            id: json["id"].stringValue,
+            href: json["href"].stringValue,
+            width: json["width"].floatValue,
+            height: json["height"].floatValue
+        )
+    }
+}
