@@ -167,6 +167,8 @@ class CinchClientPollsSpec: QuickSpec {
                     let pURL = NSURL(string: "https://s3.amazonaws.com/cognito.dev.cinch.com/us-east-1:f0e72bd0-3529-4212-b852-cd0f7ebb68d2/8248E972-5DCD-4C42-AA5A-D137AADE91E0")
                     c.uploadCandidate(pURL!, queue: nil, completionHandler: { (photos, error) -> () in
                         println("12345")
+                        
+                        done()
                     })
                 }
             }

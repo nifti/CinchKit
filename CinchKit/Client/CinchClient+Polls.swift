@@ -73,6 +73,6 @@ extension CinchClient {
     
     public func uploadCandidate(atURL url: NSURL, photoURL: NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHPhoto]?, NSError?) -> ()) {
         let serializer = PhotoSerializer()
-        authorizedRequest(.POST, url, parameters: ["url": photoURL], queue: queue, serializer: serializer, completionHandler: completionHandler)
+        authorizedRequest(.POST, url, parameters: ["url": photoURL.absoluteString!], queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
 }
