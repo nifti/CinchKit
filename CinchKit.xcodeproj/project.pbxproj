@@ -53,6 +53,7 @@
 		C4EBFB121A9BECAB00493DB8 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4EBFB131A9BECAB00493DB8 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C488D8241A75BDA500294305 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
+		CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+ISO.swift"; path = "Extensions/NSDate+ISO.swift"; sourceTree = "<group>"; };
 		C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinchKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
+		CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uploadPhotos.json; path = response_stubs/uploadPhotos.json; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				C4B554F91A969A0700228AA5 /* createAccount.json */,
+				CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */,
 				C4047DB91A9FD5B4000C3067 /* createToken.json */,
 				C43689821AAE76A000F0609E /* createTokenIncludeAccount.json */,
 				C4A4D2D71AA0EB500091921A /* fetchAccount.json */,
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */,
+				CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */,
 				C43689831AAE76A000F0609E /* createTokenIncludeAccount.json in Resources */,
 				C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */,
 				C4280CA21AA0F13400D39C1A /* accountNotFound.json in Resources */,

@@ -137,6 +137,40 @@ class CinchClientPollsSpec: QuickSpec {
             }
         }
         
+//        describe("upload photo") {
+//            let c = CinchClient()
+//            
+//            let r = ApiResource(id: "photos", href: NSURL(string: "http://api.us-east-1.niftiws.com/photos")!, title: "View photos")
+//            c.rootResources = ["photos": r]
+//            
+//            let token = CNHAccessTokenData(
+//                accountID : "72d25ff9-1d37-4814-b2bd-bc149c222220",
+//                href : NSURL(string: "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens")!,
+//                access : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwIiwibmFtZSI6Im1pa2hhaWwgdmV0b3Noa2luIiwic2NvcGUiOlsidXNlciIsImFjY2Vzc3Rva2VuIl0sImlhdCI6MTQzNTA4NTEyNCwiZXhwIjoxNDM1MDg4NzI0fQ.3MQ3KbIMwUpato_AbzocRSaTk8h7sSebw8hkNv_LX-4",
+//                refresh : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwIiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQzNTA4NTEyNH0.QiYTIKMfH28FrHI7l5ADugj0G4a_dH_cBHQGd-_TIBk",
+//                type : "Bearer",
+//                expires : NSDate(timeIntervalSince1970: 1435093753),
+//                cognitoId : "us-east-1:e155b672-cda1-4ddb-aedb-f814002fada1",
+//                cognitoToken : "eyJraWQiOiJ1cy1lYXN0LTExIiwidHlwIjoiSldTIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJ1cy1lYXN0LTE6ZTE1NWI2NzItY2RhMS00ZGRiLWFlZGItZjgxNDAwMmZhZGExIiwiYXVkIjoidXMtZWFzdC0xOjExNGM1NDBhLTk4YmItNDM5Ni1hMmZlLTJkMWQxYWU2OGJkNyIsImFtciI6WyJhdXRoZW50aWNhdGVkIiwibG9naW4uY2x1dGNocmV0YWlsLmNpbmNoIl0sImlzcyI6Imh0dHBzOi8vY29nbml0by1pZGVudGl0eS5hbWF6b25hd3MuY29tIiwiZXhwIjoxNDM1MDg2MDI0LCJpYXQiOjE0MzUwODUxMjR9.Hl7-B9jEYmxozN8mVqkBwArA-Kl615ndt2wPKr0jVEVBxYcZxT76thBTPezk6RZSrz6B7IYIW2AFztH-6AG7X35YjooQDo3Hr7lRd92L3po1eg4Egt9zaVuLi-JGrWIoNjA24LD2rzJ5MSYg-mGCGsP5bYTxafAzkNRd5lURORxq8pjNIRPWVZo67GYiwWbN1sv63oiaahMXevxXF1S6F9_7Fm8x-W9BehQzTuau-FbPSqHED9LgFQWW5boUfcqafIDrDI3YO6TkSWR0qab5oXzq1d0nG_9rzYMFGfk4HtMpdM6PGxfbe8BfziMBicUU7UJigADJLnK3OGr6LFJm9w"
+//            )
+//
+//            c.session.accessTokenData = token
+//            
+//            it("should return single photo") {
+//                waitUntil(timeout: 3) { done in
+//                    let pURL = NSURL(string: "https://s3.amazonaws.com/cognito.dev.cinch.com/us-east-1:f0e72bd0-3529-4212-b852-cd0f7ebb68d2/8248E972-5DCD-4C42-AA5A-D137AADE91E0")
+//                    c.uploadCandidate(pURL!, queue: nil, completionHandler: { (photos, error) -> () in
+//                        expect(error).to(beNil())
+//                        expect(photos).toNot(beNil())
+//                        
+//                        expect(photos!.count).to(equal(1))
+//                        
+//                        done()
+//                    })
+//                }
+//            }
+//        }
+        
 //        describe("vote on poll") {
 //            let c = CinchClient()
 //            

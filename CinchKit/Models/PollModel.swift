@@ -142,3 +142,10 @@ public struct CNHNotificationsResponse {
     public let nextLink : CNHApiLink?
     public let notifications : [CNHNotification]?
 }
+
+public struct CNHPhoto {
+    public let id: String
+    public let href: String
+    public let width: Float
+    public let height: Float
+}
