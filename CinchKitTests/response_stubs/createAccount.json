@@ -9,6 +9,7 @@
                  "email": "unit@test.com",
                  "name": "unit test",
                  "username": "unittest",
+                 "roles" : ["user"],
                  "createdAt": "2015-02-26T22:05:35.547Z"
                  }
                  ],

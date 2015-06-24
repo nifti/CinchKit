@@ -58,6 +58,16 @@ class AccountsSerializer : JSONObjectSerializer {
             pictures[.Large] = url
         }
         
+        var accountRoles = [AccountRole]()
+        
+        if let roles = json["roles"].array {
+            for role in roles {
+                if let r = AccountRole(rawValue: role.stringValue) {
+                    accountRoles.append(r)
+                }
+            }
+        }
+        
         var links = linkSerializer.jsonToObject(json["links"])
         
         return CNHAccount(
@@ -72,7 +82,8 @@ class AccountsSerializer : JSONObjectSerializer {
             bio : json["metadata"]["bio"].string,
             website : json["metadata"]["website"].string,
             shareLink : json["metadata"]["shortLink"].string,
-            links : links
+            links : links,
+            roles : accountRoles
         )
     }
 }

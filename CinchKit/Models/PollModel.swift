@@ -12,6 +12,10 @@ public enum PictureVersion : String {
     case Small = "small", Medium = "medium", Large = "large", Original = "original"
 }
 
+public enum AccountRole : String {
+    case Admin = "admin", User = "user"
+}
+
 public struct CNHAccount {
     public let id: String
     public let href: String
@@ -24,6 +28,7 @@ public struct CNHAccount {
     public let shareLink: String?
     
     public let links : [String : NSURL]?
+    public let roles : [AccountRole]?
 }
 
 public struct CNHAccountStats {
