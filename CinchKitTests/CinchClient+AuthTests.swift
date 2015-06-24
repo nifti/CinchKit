@@ -198,6 +198,7 @@ class CinchClientAuthSpec: QuickSpec {
                             expect(error).to(beNil())
                             expect(account).toNot(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())
+                            expect(account!.roles).toNot(beEmpty())
                             
                             done()
                         }
