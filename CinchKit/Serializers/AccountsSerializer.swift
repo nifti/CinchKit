@@ -186,12 +186,17 @@ class PollCategoriesSerializer : JSONObjectSerializer {
     private func decodeCategory(json : JSON) -> CNHPollCategory {
         var links = linkSerializer.jsonToObject(json["links"])
         
+        var icons = [NSURL]()
+        for iconLink in json["images"].arrayValue {
+            icons.append(iconLink.URL!)
+        }
+        
         return CNHPollCategory(
             id: json["id"].stringValue,
             name: json["name"].stringValue,
             hideWhenCreating: json["hideWhenCreating"].boolValue,
             links: links,
-            icons: nil
+            icons: icons
         )
     }
 }

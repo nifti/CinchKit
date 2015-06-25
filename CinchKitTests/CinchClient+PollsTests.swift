@@ -115,6 +115,10 @@ class CinchClientPollsSpec: QuickSpec {
                     c.fetchCategories(queue: nil, completionHandler: { (categories, error ) in
                         expect(error).to(beNil())
                         expect(categories).toNot(beEmpty())
+                        
+                        expect(categories!.first!.icons).toNot(beEmpty())
+                        expect(categories!.first!.icons?.count).to(equal(3))
+                        
                         done()
                     })
                 }
