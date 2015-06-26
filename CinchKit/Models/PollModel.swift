@@ -112,6 +112,10 @@ public struct CNHFollowersResponse {
     public let followers : [CNHAccount]?
 }
 
+public enum CNHCommentType : String {
+    case Picture = "picture", Comment = "comment"
+}
+
 public struct CNHComment {
     public let id: String
     public let href : NSURL
@@ -119,6 +123,8 @@ public struct CNHComment {
     
     public let message : String
     public let author : CNHAccount?
+    public let type : CNHCommentType
+    public let links : [String : NSURL]?
 }
 
 public struct CNHCommentsResponse {

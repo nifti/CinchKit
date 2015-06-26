@@ -13,4 +13,9 @@ extension CinchClient {
         let serializer = CommentsResponseSerializer()
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+    
+    public func createComment(atURL url : NSURL, params : [String : AnyObject], queue: dispatch_queue_t? = nil, completionHandler : (CNHCommentsResponse?, NSError?) -> ()) {
+        let serializer = CommentsResponseSerializer()
+        authorizedRequest(.POST, url, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }

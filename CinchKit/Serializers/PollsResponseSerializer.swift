@@ -173,6 +173,7 @@ class FollowersSerializer : JSONObjectSerializer {
 
 class CommentsSerializer : JSONObjectSerializer {
     let accountsSerializer = AccountsSerializer()
+    let linkSerializer = LinksSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> [CNHComment]? {
         return json.array?.map(self.decodeComment)
@@ -181,12 +182,24 @@ class CommentsSerializer : JSONObjectSerializer {
     func decodeComment(json : JSON) -> CNHComment {
         let author = accountsSerializer.decodeAccount(json["author"])
         
+        let type : CNHCommentType
+        
+        if let t = CNHCommentType(rawValue: json["type"].stringValue) {
+            type = t
+        } else {
+            type = CNHCommentType.Comment
+        }
+        
+        var links = linkSerializer.jsonToObject(json["links"])
+        
         return CNHComment(
             id: json["id"].stringValue,
             href: json["href"].URL!,
             created : NSDate.dateFromISOString(json["created"].stringValue),
             message : json["message"].stringValue,
-            author : author
+            author : author,
+            type : type,
+            links : links
         )
     }
 }
