@@ -41,8 +41,6 @@ class CinchClientPollsSpec: QuickSpec {
                         
                         if let candidate = first.candidates.first {
                             expect(candidate.image).toNot(beEmpty())
-                            expect(candidate.images).toNot(beEmpty())
-                            expect(candidate.images![.Medium]).toNot(beNil())
                         }
                         
                         expect(NSThread.isMainThread()).to(equal(true))
@@ -197,6 +195,56 @@ class CinchClientPollsSpec: QuickSpec {
 //                        expect(error).to(beNil())
 //                        done()
 //                    }
+//                }
+//            }
+//        }
+        
+//        describe("creating a poll") {
+//            let c = CinchClient()
+//            
+//            let r = ApiResource(id: "polls", href: NSURL(string: "http://identityservice-dev-peystnaps3.elasticbeanstalk.com/discussions")!, title: "get and create polls")
+//            c.rootResources = ["polls" : r]
+//            
+//            let token = CNHAccessTokenData(
+//                accountID : "72d25ff9-1d37-4814-b2bd-bc149c222220",
+//                href : NSURL(string: "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens")!,
+//                access : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwIiwibmFtZSI6Im1pa2hhaWwgdmV0b3Noa2luIiwic2NvcGUiOlsidXNlciIsImFjY2Vzc3Rva2VuIl0sImlhdCI6MTQzNTA4NTEyNCwiZXhwIjoxNDM1MDg4NzI0fQ.3MQ3KbIMwUpato_AbzocRSaTk8h7sSebw8hkNv_LX-4",
+//                refresh : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwIiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQzNTA4NTEyNH0.QiYTIKMfH28FrHI7l5ADugj0G4a_dH_cBHQGd-_TIBk",
+//                type : "Bearer",
+//                expires : NSDate(timeIntervalSince1970: 1435093753),
+//                cognitoId : "us-east-1:e155b672-cda1-4ddb-aedb-f814002fada1",
+//                cognitoToken : "eyJraWQiOiJ1cy1lYXN0LTExIiwidHlwIjoiSldTIiwiYWxnIjoiUlM1MTIifQ.eyJzdWIiOiJ1cy1lYXN0LTE6ZTE1NWI2NzItY2RhMS00ZGRiLWFlZGItZjgxNDAwMmZhZGExIiwiYXVkIjoidXMtZWFzdC0xOjExNGM1NDBhLTk4YmItNDM5Ni1hMmZlLTJkMWQxYWU2OGJkNyIsImFtciI6WyJhdXRoZW50aWNhdGVkIiwibG9naW4uY2x1dGNocmV0YWlsLmNpbmNoIl0sImlzcyI6Imh0dHBzOi8vY29nbml0by1pZGVudGl0eS5hbWF6b25hd3MuY29tIiwiZXhwIjoxNDM1MDg2MDI0LCJpYXQiOjE0MzUwODUxMjR9.Hl7-B9jEYmxozN8mVqkBwArA-Kl615ndt2wPKr0jVEVBxYcZxT76thBTPezk6RZSrz6B7IYIW2AFztH-6AG7X35YjooQDo3Hr7lRd92L3po1eg4Egt9zaVuLi-JGrWIoNjA24LD2rzJ5MSYg-mGCGsP5bYTxafAzkNRd5lURORxq8pjNIRPWVZo67GYiwWbN1sv63oiaahMXevxXF1S6F9_7Fm8x-W9BehQzTuau-FbPSqHED9LgFQWW5boUfcqafIDrDI3YO6TkSWR0qab5oXzq1d0nG_9rzYMFGfk4HtMpdM6PGxfbe8BfziMBicUU7UJigADJLnK3OGr6LFJm9w"
+//            )
+//
+//            c.session.accessTokenData = token
+//
+//            it("should return the poll") {
+//                waitUntil(timeout: 5) { done in
+//                    let params = [
+//                        "topic": "Test...",
+//                        "public": true,
+//                        "type": "multiple",
+//                        "photos": ["5acf28d6-d183-430a-9515-072abee49952", "7fc474ba-e208-4fd2-aa69-af68a1584e1d"]
+//                    ]
+//                    
+//                    c.createPoll(params as! [String : AnyObject], queue: nil, completionHandler: { (response, error) -> () in
+//                        expect(error).to(beNil())
+//                        expect(response).toNot(beNil())
+//                        expect(response!.selfLink).toNot(beNil())
+//                        
+//                        var polls = response!.polls
+//                        var first = polls!.first!
+//                        expect(first.candidates).toNot(beNil())
+//                        expect(first.links).toNot(beEmpty())
+//                        
+//                        if let candidate = first.candidates.first {
+//                            expect(candidate.image).toNot(beEmpty())
+//                        }
+//                        
+//                        expect(NSThread.isMainThread()).to(equal(true))
+//
+//                        done()
+//                    })
 //                }
 //            }
 //        }

@@ -75,4 +75,15 @@ extension CinchClient {
         let serializer = PhotoSerializer()
         authorizedRequest(.POST, url, parameters: ["url": photoURL.absoluteString!], queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+    
+    public func createPoll(params: [String: AnyObject], queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
+        let serializer = PollsResponseSerializer()
+        if let polls = self.rootResources?["polls"] {
+            authorizedRequest(.POST, polls.href, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        } else {
+            dispatch_async(queue ?? dispatch_get_main_queue(), {
+                completionHandler(nil, self.clientNotConnectedError())
+            })
+        }
+    }
 }
