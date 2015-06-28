@@ -39,6 +39,8 @@ class CinchClientPollsSpec: QuickSpec {
                         expect(first.author).toNot(beNil())
                         expect(first.links).toNot(beEmpty())
                         
+                        expect(first.categoryId).toNot(beNil())
+                        
                         if let candidate = first.candidates.first {
                             expect(candidate.image).toNot(beEmpty())
                         }
@@ -236,6 +238,7 @@ class CinchClientPollsSpec: QuickSpec {
 //                        var first = polls!.first!
 //                        expect(first.candidates).toNot(beNil())
 //                        expect(first.links).toNot(beEmpty())
+//                        expect(first.author).toNot(beNil())
 //                        
 //                        if let candidate = first.candidates.first {
 //                            expect(candidate.image).toNot(beEmpty())

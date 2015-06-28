@@ -67,6 +67,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
             votesTotal : json["votesTotal"].intValue,
             messagesTotal : json["messagesTotal"].intValue,
             isPublic : json["public"].boolValue,
+            categoryId: json["category"].stringValue,
             created : json["created"].stringValue,
             updated : json["updated"].stringValue,
             author : account,
