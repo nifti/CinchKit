@@ -21,6 +21,7 @@ class CinchClientPollsSpec: QuickSpec {
             }
             
             it("should return polls") {
+                client.session.close()
                 let r = ApiResource(id: "polls", href: NSURL(string: "http://identityservice-dev-peystnaps3.elasticbeanstalk.com/discussions")!, title: "get and create polls")
                 
                 client.rootResources = ["polls" : r]
