@@ -144,10 +144,7 @@ class CinchClientPollsSpec: QuickSpec {
         
 //        describe("upload photo") {
 //            let c = CinchClient()
-//            
-//            let r = ApiResource(id: "photos", href: NSURL(string: "http://api.us-east-1.niftiws.com/photos")!, title: "View photos")
-//            c.rootResources = ["photos": r]
-//            
+//
 //            let token = CNHAccessTokenData(
 //                accountID : "72d25ff9-1d37-4814-b2bd-bc149c222220",
 //                href : NSURL(string: "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com/tokens")!,
@@ -163,8 +160,9 @@ class CinchClientPollsSpec: QuickSpec {
 //            
 //            it("should return single photo") {
 //                waitUntil(timeout: 3) { done in
-//                    let pURL = NSURL(string: "https://s3.amazonaws.com/cognito.dev.cinch.com/us-east-1:f0e72bd0-3529-4212-b852-cd0f7ebb68d2/8248E972-5DCD-4C42-AA5A-D137AADE91E0")
-//                    c.uploadCandidate(pURL!, queue: nil, completionHandler: { (photos, error) -> () in
+//                    let uUrl = NSURL(string: "http://api.us-east-1.niftiws.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/photos")
+//                    let pUrl = NSURL(string: "https://s3.amazonaws.com/cognito.dev.cinch.com/us-east-1:f0e72bd0-3529-4212-b852-cd0f7ebb68d2/8248E972-5DCD-4C42-AA5A-D137AADE91E0")
+//                    c.uploadCandidate(atURL: uUrl!, photoURL: pUrl!, queue: nil, completionHandler: { (photos, error) -> () in
 //                        expect(error).to(beNil())
 //                        expect(photos).toNot(beNil())
 //                        
@@ -175,7 +173,7 @@ class CinchClientPollsSpec: QuickSpec {
 //                }
 //            }
 //        }
-        
+
 //        describe("vote on poll") {
 //            let c = CinchClient()
 //            

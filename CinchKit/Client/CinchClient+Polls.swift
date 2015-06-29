@@ -67,16 +67,6 @@ extension CinchClient {
         authorizedRequest(.POST, url, parameters: ["id" : candidateId], queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
     
-    public func uploadCandidate(photoURL: NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHPhoto]?, NSError?) -> ()) {
-        if let photos = self.rootResources?["photos"] {
-            self.uploadCandidate(atURL: photos.href, photoURL: photoURL, queue: queue, completionHandler: completionHandler)
-        } else {
-            dispatch_async(queue ?? dispatch_get_main_queue(), {
-                completionHandler(nil, self.clientNotConnectedError())
-            })
-        }
-    }
-    
     public func uploadCandidate(atURL url: NSURL, photoURL: NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHPhoto]?, NSError?) -> ()) {
         let serializer = PhotoSerializer()
         authorizedRequest(.POST, url, parameters: ["url": photoURL.absoluteString!], queue: queue, serializer: serializer, completionHandler: completionHandler)
