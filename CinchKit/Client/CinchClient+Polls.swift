@@ -27,7 +27,13 @@ extension CinchClient {
     
     public func fetchPolls(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
         let serializer = PollsResponseSerializer()
-        request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        
+        // when user is logged in we want to send auth headers when fetching polls
+        if self.session.isOpen || self.session.sessionState == .Closed {
+            authorizedRequest(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        } else {
+            request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        }
     }
     
     public func fetchStats(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (CNHAccountStats?, NSError?) -> ()) {
