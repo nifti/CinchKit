@@ -93,6 +93,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
             created : json["created"].stringValue,
             voters : json["voters"].array?.map({ $0.stringValue }),
             type : json["type"].stringValue,
+            option : json["option"].string,
             images : images
         )
     }

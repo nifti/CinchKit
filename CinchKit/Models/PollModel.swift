@@ -68,6 +68,7 @@ public struct CNHPollCandidate {
     public let created : String
     public let voters : [String]?
     public let type : String
+    public let option : String?
     public let images : [PictureVersion : NSURL]?
 }
 
