@@ -41,10 +41,6 @@ extension CinchClient {
         }
     }
     
-    //    public func refreshSession(completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
-    //        self.refreshSession(includeAccount: false, completionHandler: completionHandler)
-    //    }
-    
     public func refreshSession(includeAccount : Bool = false, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
         let serializer = TokenResponseSerializer()
         

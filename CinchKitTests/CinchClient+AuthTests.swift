@@ -23,8 +23,10 @@ class CinchClientAuthSpec: QuickSpec {
                 LSNocilla.sharedInstance().start()
                 LSNocilla.sharedInstance().clearStubs()
                 client = CinchClient()
-                accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(client!.server.authServerURL)/accounts")!, title: "get and create accounts")
-                tokensResource = ApiResource(id: "tokens", href: NSURL(string: "\(client!.server.authServerURL)/tokens")!, title: "Create and refresh authentication tokens")
+                
+                let authServerURL = NSURL(string: "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com")!
+                accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(authServerURL)/accounts")!, title: "get and create accounts")
+                tokensResource = ApiResource(id: "tokens", href: NSURL(string: "\(authServerURL)/tokens")!, title: "Create and refresh authentication tokens")
                 client!.rootResources = ["accounts" : accountsResource!, "tokens" : tokensResource!]
             }
             

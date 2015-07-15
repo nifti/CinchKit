@@ -8,7 +8,6 @@
 
 public struct CNHServer {
     public let baseURL : NSURL
-    public let authServerURL = NSURL(string: "http://cinchauth-dev-krttxjjzkv.elasticbeanstalk.com")!
     
     public init(baseURL : NSURL) {
        self.baseURL = baseURL

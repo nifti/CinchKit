@@ -55,7 +55,18 @@ public class CinchClient {
             ongoing--
             
             if ongoing == 0 {
-                completionHandler?(activeAccount)
+                // when an active account has not been loaded
+                // attempt to update the stored href of any existing auth token data
+                // if that href was updated then attempt to refresh a session
+                if let account = activeAccount {
+                    completionHandler?(account)
+                } else if self.updateActiveAccessTokenDataHref() {
+                    self.refreshSession(includeAccount : true) { (account, _) in
+                        completionHandler?(account)
+                    }
+                } else {
+                    completionHandler?(nil)
+                }
             }
         }
         
@@ -78,7 +89,6 @@ public class CinchClient {
         request(.GET, self.server.baseURL, serializer: serializer, completionHandler: { (resources, error) in
             if(error != nil) {
             } else {
-//                self.rootResources  = self.authServerResourcesHack(resources)
                 self.rootResources  = resources
             }
             
@@ -86,21 +96,24 @@ public class CinchClient {
         })
     }
     
-    func authServerResourcesHack(resources: [String : ApiResource]?) -> [String : ApiResource]? {
-        var result = resources
-        
-        // temporary hack
-        if let r = resources?["accounts"] {
-            var accResource : ApiResource = ApiResource(id: r.id, href: NSURL(string: "\(self.server.authServerURL)/accounts")!, title: r.title)
-            result?.updateValue(accResource, forKey: "accounts")
+    private func updateActiveAccessTokenDataHref() -> Bool {
+        if let token = self.session.accessTokenData, let apiToken = self.rootResources?["tokens"] {
+            let updatedToken = CNHAccessTokenData(
+                accountID: token.accountID,
+                href: apiToken.href,
+                access: token.access,
+                refresh: token.refresh,
+                type: token.type,
+                expires: token.expires,
+                cognitoId: token.cognitoId,
+                cognitoToken: token.cognitoToken
+            )
+            
+            self.session.accessTokenData = updatedToken
+            return true
+        } else {
+            return false
         }
-        
-        if let r = resources?["tokens"] {
-            var accResource : ApiResource = ApiResource(id: r.id, href: NSURL(string: "\(self.server.authServerURL)/tokens")!, title: r.title)
-            result?.updateValue(accResource, forKey: "tokens")
-        }
-        
-        return result
     }
     
     func clientNotConnectedError() -> NSError {
