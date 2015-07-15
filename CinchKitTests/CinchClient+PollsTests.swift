@@ -22,7 +22,7 @@ class CinchClientPollsSpec: QuickSpec {
             
             it("should return polls") {
                 client.session.close()
-                let r = ApiResource(id: "polls", href: NSURL(string: "http://identityservice-dev-peystnaps3.elasticbeanstalk.com/discussions")!, title: "get and create polls")
+                let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions")!, title: "get and create polls")
                 
                 client.rootResources = ["polls" : r]
                 
@@ -93,7 +93,7 @@ class CinchClientPollsSpec: QuickSpec {
             let c = CinchClient()
             
             it("should fetch stats") {
-                let url = NSURL(string: "http://notificationservice-dev-ypmnhvb6mb.elasticbeanstalk.com//accounts/12738370-1867-407e-bbe4-2a045f755a8a/stats")!
+                let url = NSURL(string: "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/12738370-1867-407e-bbe4-2a045f755a8a/stats")!
                 waitUntil(timeout: 5) { done in
                     c.fetchStats(atURL: url, queue: nil) { (response, error ) in
                         expect(error).to(beNil())
