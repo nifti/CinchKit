@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4300E241A75C41D009F2024 /* CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4852ADF1A75B8EE00CC0952 /* CinchKit.framework */; };
-		C4300E251A75C41D009F2024 /* CinchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4852ADF1A75B8EE00CC0952 /* CinchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4300E2A1A75C472009F2024 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4300E291A75C472009F2024 /* Alamofire.framework */; };
-		C4300E2B1A75C472009F2024 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4300E291A75C472009F2024 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4852AA31A75B31F00CC0952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AA21A75B31F00CC0952 /* AppDelegate.swift */; };
 		C4852AA51A75B31F00CC0952 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852AA41A75B31F00CC0952 /* ViewController.swift */; };
 		C4852AA81A75B31F00CC0952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4852AA61A75B31F00CC0952 /* Main.storyboard */; };
@@ -20,13 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C4300E261A75C41D009F2024 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C4852AD91A75B8EE00CC0952 /* CinchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C4506EE01A75B1B60053248E;
-			remoteInfo = CinchKit;
-		};
 		C4852AB31A75B31F00CC0952 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4852A951A75B31F00CC0952 /* Project object */;
@@ -50,23 +39,7 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		C4300E281A75C41D009F2024 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C4300E251A75C41D009F2024 /* CinchKit.framework in Embed Frameworks */,
-				C4300E2B1A75C472009F2024 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		C4300E291A75C472009F2024 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C4852A9D1A75B31F00CC0952 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4852AA11A75B31F00CC0952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4852AA21A75B31F00CC0952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,8 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4300E241A75C41D009F2024 /* CinchKit.framework in Frameworks */,
-				C4300E2A1A75C472009F2024 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +74,6 @@
 		C4300E2C1A75C47D009F2024 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C4300E291A75C472009F2024 /* Alamofire.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -185,12 +155,10 @@
 				C4852A991A75B31F00CC0952 /* Sources */,
 				C4852A9A1A75B31F00CC0952 /* Frameworks */,
 				C4852A9B1A75B31F00CC0952 /* Resources */,
-				C4300E281A75C41D009F2024 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C4300E271A75C41D009F2024 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -316,11 +284,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C4300E271A75C41D009F2024 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CinchKit;
-			targetProxy = C4300E261A75C41D009F2024 /* PBXContainerItemProxy */;
-		};
 		C4852AB41A75B31F00CC0952 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C4852A9C1A75B31F00CC0952 /* Example */;
@@ -429,11 +392,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CinchKit-donlsootjygepfhjnvsrsgbgcdic/Build/Products/Debug-iphoneos",
-					/Users/fitz/Code/cinch/CinchKit/Carthage/Build/iOS,
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -445,11 +406,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CinchKit-donlsootjygepfhjnvsrsgbgcdic/Build/Products/Debug-iphoneos",
-					/Users/fitz/Code/cinch/CinchKit/Carthage/Build/iOS,
 				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28923C46DC0AB8FEEDE0999F /* Pods_CinchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B92DC6BA36FC7ED6A5C72C /* Pods_CinchKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		6DBE125970CE3A5A575E563A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D7D632578E24DAC9BCB08 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		8A7EC30C59F8E55AA4F13E47 /* Pods_CinchKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F848609B3710A3B579605C68 /* Pods_CinchKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BD35807E6984A8D994CC6877 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E9D4B715BB040A0CE3E670 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BE12C4308E4AFC81CEA4D44B /* Pods_CinchKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B96682DC2B8A82453990D0 /* Pods_CinchKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */ = {isa = PBXBuildFile; fileRef = C4047DB91A9FD5B4000C3067 /* createToken.json */; };
 		C4047DBC1A9FD9BE000C3067 /* CinchKitTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */; };
 		C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */; };
@@ -45,7 +44,6 @@
 		C4CABC3D1AEA7911004AF795 /* NSDate+ISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */; };
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
 		CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */; };
-		D7F1B214F520BBF54ABA11D1 /* Pods_CinchKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F848609B3710A3B579605C68 /* Pods_CinchKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,10 +69,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17B96682DC2B8A82453990D0 /* Pods_CinchKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinchKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EAC0F3F733ADDF07A7CAD4C /* Pods-CinchKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKit/Pods-CinchKit.release.xcconfig"; sourceTree = "<group>"; };
 		2EFD08EBAA80F82F872E16AA /* Pods-CinchKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AD44B040BB72F43B7A042C5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		B62D7D632578E24DAC9BCB08 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E9D4B715BB040A0CE3E670 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4047DB91A9FD5B4000C3067 /* createToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = createToken.json; path = response_stubs/createToken.json; sourceTree = "<group>"; };
 		C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKitTestsHelper.swift; sourceTree = "<group>"; };
 		C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollsResponseSerializer.swift; path = Serializers/PollsResponseSerializer.swift; sourceTree = "<group>"; };
@@ -97,11 +96,9 @@
 		C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHSession.swift; path = Client/CNHSession.swift; sourceTree = "<group>"; };
 		C47573FF1A9E345200C7C5B9 /* CNHTokenData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHTokenData.swift; path = Models/CNHTokenData.swift; sourceTree = "<group>"; };
 		C47574011A9E35F900C7C5B9 /* CNHSessionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHSessionsTests.swift; sourceTree = "<group>"; };
-		C47574031A9E727500C7C5B9 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNHKeychain.swift; path = Client/CNHKeychain.swift; sourceTree = "<group>"; };
 		C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHKeychainTests.swift; sourceTree = "<group>"; };
 		C4852AD41A75B72A00CC0952 /* CinchKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CinchKit.swift; sourceTree = "<group>"; };
-		C488D8241A75BDA500294305 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Followers.swift"; path = "Client/CinchClient+Followers.swift"; sourceTree = "<group>"; };
 		C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+FollowersTests.swift"; sourceTree = "<group>"; };
 		C4A4D2D71AA0EB500091921A /* fetchAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fetchAccount.json; path = response_stubs/fetchAccount.json; sourceTree = "<group>"; };
@@ -109,11 +106,8 @@
 		C4B554FC1A96D23500228AA5 /* ErrorResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorResponseSerializer.swift; path = Serializers/ErrorResponseSerializer.swift; sourceTree = "<group>"; };
 		C4BBA2E81A7693AF00B23DC7 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = Models/ApiResource.swift; sourceTree = "<group>"; };
 		C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Polls.swift"; path = "Client/CinchClient+Polls.swift"; sourceTree = "<group>"; };
-		C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+PollsTests.swift"; sourceTree = "<group>"; };
 		C4BBA2FA1A76F6C200B23DC7 /* PollModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PollModel.swift; path = Models/PollModel.swift; sourceTree = "<group>"; };
-		C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		C4BBAC8F1B023F840002E5B9 /* CinchClient+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Notifications.swift"; path = "Client/CinchClient+Notifications.swift"; sourceTree = "<group>"; };
 		C4BBAC911B02438D0002E5B9 /* CinchClient+NotificationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+NotificationsTests.swift"; sourceTree = "<group>"; };
 		C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+ISO.swift"; path = "Extensions/NSDate+ISO.swift"; sourceTree = "<group>"; };
@@ -121,9 +115,7 @@
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
 		CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uploadPhotos.json; path = response_stubs/uploadPhotos.json; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		E2B92DC6BA36FC7ED6A5C72C /* Pods_CinchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF873D0E47834F5EEE44939B /* Pods-CinchKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKit/Pods-CinchKit.debug.xcconfig"; sourceTree = "<group>"; };
-		F848609B3710A3B579605C68 /* Pods_CinchKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CinchKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1F6B472838211ED9C3C36E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,9 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28923C46DC0AB8FEEDE0999F /* Pods_CinchKit.framework in Frameworks */,
-				D7F1B214F520BBF54ABA11D1 /* Pods_CinchKitTests.framework in Frameworks */,
-				6DBE125970CE3A5A575E563A /* Pods.framework in Frameworks */,
+				BD35807E6984A8D994CC6877 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A7EC30C59F8E55AA4F13E47 /* Pods_CinchKitTests.framework in Frameworks */,
+				BE12C4308E4AFC81CEA4D44B /* Pods_CinchKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +142,8 @@
 		58F4D213680BC7207F9E3903 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2B92DC6BA36FC7ED6A5C72C /* Pods_CinchKit.framework */,
-				F848609B3710A3B579605C68 /* Pods_CinchKitTests.framework */,
-				B62D7D632578E24DAC9BCB08 /* Pods.framework */,
+				88E9D4B715BB040A0CE3E670 /* Pods.framework */,
+				17B96682DC2B8A82453990D0 /* Pods_CinchKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,11 +189,6 @@
 		C4300E1F1A75C0D8009F2024 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C47574031A9E727500C7C5B9 /* KeychainAccess.framework */,
-				C4BBA2FC1A76FDF400B23DC7 /* SwiftyJSON.framework */,
-				C4BBA2ED1A76F01700B23DC7 /* Nimble.framework */,
-				C4BBA2EF1A76F01B00B23DC7 /* Quick.framework */,
-				C488D8241A75BDA500294305 /* Alamofire.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -653,10 +637,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CinchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -675,10 +656,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CinchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -694,7 +672,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -714,7 +691,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CinchKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
