@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal extension NSDate {
+internal class CinchKitDateTools {
     class func ISOStringFromDate(date: NSDate) -> String {
         var dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
@@ -18,13 +18,13 @@ internal extension NSDate {
         return dateFormatter.stringFromDate(date).stringByAppendingString("Z")
     }
     
-    class func dateFromISOString(string: String) -> NSDate {
+    class func dateFromISOString(str: String) -> NSDate {
         var dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
-        if let date = dateFormatter.dateFromString(string) {
+        if let date = dateFormatter.dateFromString(str) {
             return date
         } else {
             return NSDate()

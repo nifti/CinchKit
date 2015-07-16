@@ -147,8 +147,8 @@ class PollVotesSerializer : JSONObjectSerializer {
         return CNHVote(
             id: json["photoId"].string,
             photoURL: json["photoURL"].URL,
-            created : NSDate.dateFromISOString(json["created"].stringValue),
-            updated : NSDate.dateFromISOString(json["updated"].stringValue),
+            created : CinchKitDateTools.dateFromISOString(json["created"].stringValue),
+            updated : CinchKitDateTools.dateFromISOString(json["updated"].stringValue),
             account : account
         )
     }
@@ -197,7 +197,7 @@ class CommentsSerializer : JSONObjectSerializer {
         return CNHComment(
             id: json["id"].stringValue,
             href: json["href"].URL!,
-            created : NSDate.dateFromISOString(json["created"].stringValue),
+            created :CinchKitDateTools.dateFromISOString(json["created"].stringValue),
             message : json["message"].stringValue,
             author : author,
             type : type,
@@ -274,7 +274,7 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         return CNHNotification(
             id: json["id"].stringValue,
             href : json["href"].URL!,
-            created : NSDate.dateFromISOString(json["createdAt"].stringValue),
+            created : CinchKitDateTools.dateFromISOString(json["createdAt"].stringValue),
             action : json["action"].stringValue,
             accountFrom : accountFrom,
             accountTo : accountTo,
