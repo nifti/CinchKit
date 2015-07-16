@@ -52,8 +52,8 @@ public struct CNHPoll {
     public let messagesTotal: Int
     public let isPublic : Bool
     public let categoryId : String
-    public let created : String
-    public let updated : String
+    public let created : NSDate
+    public let updated : NSDate
     public let author : CNHAccount?
     public let candidates : [CNHPollCandidate]
     public let comments : [CNHComment]?
@@ -65,7 +65,7 @@ public struct CNHPollCandidate {
     public let href: String
     public let image: String
     public let votes : Int
-    public let created : String
+    public let created : NSDate
     public let voters : [String]?
     public let type : String
     public let option : String?
