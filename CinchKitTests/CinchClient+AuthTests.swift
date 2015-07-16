@@ -11,6 +11,7 @@ import Foundation
 import Quick
 import Nimble
 import CinchKit
+import Nocilla
 
 class CinchClientAuthSpec: QuickSpec {
     override func spec() {

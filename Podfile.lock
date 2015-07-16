@@ -1,10 +1,25 @@
 PODS:
+  - Alamofire (1.2.3)
+  - KeychainAccess (1.2.1)
+  - Nimble (0.4.2)
   - Nocilla (0.9.0)
+  - Quick (0.3.1)
+  - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 1.2)
+  - KeychainAccess (~> 1.2)
+  - Nimble (~> 0.4.0)
   - Nocilla
+  - Quick (~> 0.3.0)
+  - SwiftyJSON (~> 2.2.0)
 
 SPEC CHECKSUMS:
-  Nocilla: 4d713c56e7357fd0cac0363854d4a58021ad3f41
+  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  KeychainAccess: 3d7922baf90762a976adb7f6030d74c1a4110a1d
+  Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
+  Nocilla: d7d96e8a11e363f0d7c976d48b320c43d61fb471
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+  SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 
-COCOAPODS: 0.36.0.beta.2
+COCOAPODS: 0.37.2

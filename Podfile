@@ -1,11 +1,16 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '6.0'
+source 'https://github.com/CocoaPods/Specs.git'
 
-target 'CinchKit' do
+use_frameworks!
 
-end
+platform :ios, '8.0'
+
+pod 'Alamofire', '~> 1.2'
+pod 'SwiftyJSON', '~> 2.2.0'
+pod 'KeychainAccess', '~> 1.2'
 
 target 'CinchKitTests' do
+  pod 'Quick', '~> 0.3.0'
+  pod 'Nimble', '~> 0.4.0'
   pod 'Nocilla'
 end
 

@@ -23,3 +23,6 @@ DerivedData
 # AppCode specific files
 .idea/
 *.iml
+
+# CocoaPods
+Pods
