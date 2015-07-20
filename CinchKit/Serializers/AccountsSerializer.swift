@@ -29,8 +29,10 @@ class LinksSerializer : JSONObjectSerializer {
     }
 }
 
-class AccountsSerializer : JSONObjectSerializer {
-    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHAccount]? {
+public class AccountsSerializer : JSONObjectSerializer {
+    public init() {}
+    
+    public func jsonToObject(json: SwiftyJSON.JSON) -> [CNHAccount]? {
         var accounts = json.array?.map(self.decodeAccount)
         return accounts
     }
