@@ -258,11 +258,11 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         var accountFrom : CNHAccount?
         var accountTo : CNHAccount?
         
-        if let accId = json["accountFrom"].string {
+        if let accId = json["senderId"].string {
             accountFrom = accounts?[accId]
         }
         
-        if let accId = json["accountTo"].string {
+        if let accId = json["recipientId"].string {
             accountTo = accounts?[accId]
         }
         
