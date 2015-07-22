@@ -228,6 +228,7 @@ class CommentsResponseSerializer : JSONObjectSerializer {
 class NotificationsResponseSerializer : JSONObjectSerializer {
     let accountsSerializer = AccountsSerializer()
     let pollsSerializer = PollsResponseSerializer()
+    let categoriesSerializer = CategoriesSerializer()
     
     func jsonToObject(json: SwiftyJSON.JSON) -> CNHNotificationsResponse? {
         var nextLink : CNHApiLink?
@@ -239,7 +240,6 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "notifications")
         
         var accountIndex : [String : CNHAccount]?
-        
         if let accounts = accountsSerializer.jsonToObject(json["linked"]["accounts"]) {
             accountIndex = self.indexById(accounts)
         }
@@ -248,39 +248,55 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         if let polls = json["linked"]["polls"].array?.map( { self.pollsSerializer.decodePoll(accountIndex, json: $0) } ) {
             pollIndex = self.indexById(polls)
         }
-        
-        let notifications =  json["notifications"].array?.map { self.decodeNotification(accountIndex, polls : pollIndex, json: $0) }
+
+        var categoryIndex : [String : CNHCategory]?
+        if let categories = categoriesSerializer.jsonToObject(json["linked"]) {
+            categoryIndex = self.indexById(categories)
+        }
+
+        let notifications = json["notifications"].array?.map {
+            self.decodeNotification(accountIndex, polls : pollIndex, categories: categoryIndex, json: $0)
+        }
         
         return CNHNotificationsResponse(selfLink : selfLink, nextLink : nextLink, notifications : notifications)
     }
     
-    func decodeNotification(accounts : [String : CNHAccount]?, polls: [String : CNHPoll]?, json : JSON) -> CNHNotification {
-        var accountFrom : CNHAccount?
-        var accountTo : CNHAccount?
-        
-        if let accId = json["senderId"].string {
-            accountFrom = accounts?[accId]
+    func decodeNotification(accounts : [String : CNHAccount]?, polls : [String : CNHPoll]?, categories : [String : CNHCategory]?, json : JSON) -> CNHNotification {
+        var senderAccount : CNHAccount?
+        var recipientAccount : CNHAccount?
+
+        var resourcePoll : CNHPoll?
+        var resourceAccount : CNHAccount?
+        var resourceCategory : CNHCategory?
+
+        if let acc = accounts?[json["senderId"].stringValue] {
+            senderAccount = acc
         }
-        
-        if let accId = json["recipientId"].string {
-            accountTo = accounts?[accId]
+
+        if let acc = accounts?[json["recipientId"].stringValue] {
+            recipientAccount = acc
         }
-        
-        var poll : CNHPoll?
-        if json["resourceType"].stringValue == "poll", let p = polls?[json["resourceId"].stringValue] {
-            poll = p
+
+        if json["resourceType"].stringValue == "poll", let poll = polls?[json["resourceId"].stringValue] {
+            resourcePoll = poll
+        } else if json["resourceType"].stringValue == "account", let acc = accounts?[json["resourceId"].stringValue] {
+            resourceAccount = acc
+        } else if json["resourceType"].stringValue == "category", let cat = categories?[json["resourceId"].stringValue] {
+            resourceCategory = cat
         }
-        
+
         return CNHNotification(
             id: json["id"].stringValue,
             href : json["href"].URL!,
             created : CinchKitDateTools.dateFromISOString(json["createdAt"].stringValue),
             action : json["action"].stringValue,
-            accountFrom : accountFrom,
-            accountTo : accountTo,
-            resourceId : json["resourceId"].stringValue,
-            resourceType : json["resourceType"].stringValue,
-            poll : poll
+
+            senderAccount : senderAccount,
+            recipientAccount : recipientAccount,
+
+            resourcePoll : resourcePoll,
+            resourceAccount : resourceAccount,
+            resourceCategory : resourceCategory
         )
     }
     
@@ -300,8 +316,43 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         for item in data {
             result[item.id] = item
         }
-        
+
         return result
+    }
+
+    internal func indexById(data : [CNHCategory]) -> [String : CNHCategory] {
+        var result = [String : CNHCategory]()
+
+        for item in data {
+            result[item.id] = item
+        }
+
+        return result
+    }
+}
+
+class CategoriesSerializer : JSONObjectSerializer {
+    let linkSerializer = LinksSerializer()
+
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHCategory]? {
+        return json["categories"].array?.map(self.decodeCategory)
+    }
+
+    private func decodeCategory(json : JSON) -> CNHCategory {
+        var links = linkSerializer.jsonToObject(json["links"])
+
+        var icons = [NSURL]()
+        for iconLink in json["images"].arrayValue {
+            icons.append(iconLink.URL!)
+        }
+
+        return CNHCategory(
+            id: json["id"].stringValue,
+            name: json["name"].stringValue,
+            hideWhenCreating: json["hideWhenCreating"].boolValue,
+            links: links,
+            icons: icons
+        )
     }
 }
 

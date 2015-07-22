@@ -41,7 +41,7 @@ extension CinchClient {
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
     
-    public func fetchCategories(queue: dispatch_queue_t? = nil, completionHandler : ([CNHPollCategory]?, NSError?) -> ()) {
+    public func fetchCategories(queue: dispatch_queue_t? = nil, completionHandler : ([CNHCategory]?, NSError?) -> ()) {
         
         if let categories = self.rootResources?["categories"] {
             self.fetchCategories(atURL: categories.href, queue: queue, completionHandler: completionHandler)
@@ -52,8 +52,8 @@ extension CinchClient {
         }
     }
     
-    public func fetchCategories(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHPollCategory]?, NSError?) -> ()) {
-        let serializer = PollCategoriesSerializer()
+    public func fetchCategories(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHCategory]?, NSError?) -> ()) {
+        let serializer = CategoriesSerializer()
         request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
     

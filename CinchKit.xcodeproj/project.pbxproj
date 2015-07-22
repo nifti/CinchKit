@@ -44,6 +44,7 @@
 		C4CABC3D1AEA7911004AF795 /* NSDate+ISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CABC3C1AEA7911004AF795 /* NSDate+ISO.swift */; };
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
 		CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */; };
+		CB9978AD1B5F818E00CD9338 /* fetchNotifications.json in Resources */ = {isa = PBXBuildFile; fileRef = CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CinchKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
 		CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uploadPhotos.json; path = response_stubs/uploadPhotos.json; sourceTree = "<group>"; };
+		CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fetchNotifications.json; path = response_stubs/fetchNotifications.json; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF873D0E47834F5EEE44939B /* Pods-CinchKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKit/Pods-CinchKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FD1F6B472838211ED9C3C36E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				C43689821AAE76A000F0609E /* createTokenIncludeAccount.json */,
 				C4A4D2D71AA0EB500091921A /* fetchAccount.json */,
 				C4280CA11AA0F13400D39C1A /* accountNotFound.json */,
+				CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */,
 			);
 			name = response_stubs;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				C4B554FA1A969A0700228AA5 /* createAccount.json in Resources */,
 				CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */,
 				C43689831AAE76A000F0609E /* createTokenIncludeAccount.json in Resources */,
+				CB9978AD1B5F818E00CD9338 /* fetchNotifications.json in Resources */,
 				C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */,
 				C4280CA21AA0F13400D39C1A /* accountNotFound.json in Resources */,
 				C4A4D2D81AA0EB500091921A /* fetchAccount.json in Resources */,
