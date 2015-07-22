@@ -52,6 +52,7 @@ class CinchClientNotificationsSpec: QuickSpec {
                         expect(note.resourcePoll).notTo(beNil())
                         expect(note.resourceAccount).to(beNil())
                         expect(note.resourceCategory).to(beNil())
+                        expect(note.action).to(equal("created"))
 
                         note = response!.notifications![1]
                         expect(note.senderAccount).notTo(beNil())
@@ -59,6 +60,7 @@ class CinchClientNotificationsSpec: QuickSpec {
                         expect(note.resourcePoll).to(beNil())
                         expect(note.resourceAccount).notTo(beNil())
                         expect(note.resourceCategory).to(beNil())
+                        expect(note.action).to(equal("following"))
 
                         note = response!.notifications![4]
                         expect(note.senderAccount).notTo(beNil())
@@ -66,6 +68,7 @@ class CinchClientNotificationsSpec: QuickSpec {
                         expect(note.resourcePoll).to(beNil())
                         expect(note.resourceAccount).to(beNil())
                         expect(note.resourceCategory).notTo(beNil())
+                        expect(note.action).to(equal("following"))
 
                         done()
                     }
