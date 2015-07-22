@@ -142,10 +142,7 @@ public struct CNHNotification {
     public let action : String
 
     public let senderAccount : CNHAccount?
-    public let senderCategory: CNHCategory?
-
     public let recipientAccount : CNHAccount?
-    public let recipientCategory: CNHCategory?
 
     public let resourcePoll : CNHPoll?
     public let resourceAccount : CNHAccount?

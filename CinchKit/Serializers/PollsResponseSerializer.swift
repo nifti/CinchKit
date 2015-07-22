@@ -263,33 +263,26 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
     
     func decodeNotification(accounts : [String : CNHAccount]?, polls : [String : CNHPoll]?, categories : [String : CNHCategory]?, json : JSON) -> CNHNotification {
         var senderAccount : CNHAccount?
-        var senderCategory: CNHCategory?
-
         var recipientAccount : CNHAccount?
-        var recipientCategory: CNHCategory?
 
         var resourcePoll : CNHPoll?
         var resourceAccount : CNHAccount?
         var resourceCategory : CNHCategory?
 
-        if json["senderType"].stringValue == "account", let a = accounts?[json["senderId"].stringValue] {
-            senderAccount = a
-        } else if json["senderType"].stringValue == "category", let c = categories?[json["senderId"].stringValue] {
-            senderCategory = c
+        if let acc = accounts?[json["senderId"].stringValue] {
+            senderAccount = acc
         }
 
-        if json["recipientType"].stringValue == "account", let a = accounts?[json["recipientId"].stringValue] {
-            recipientAccount = a
-        } else if json["recipientType"].stringValue == "category", let c = categories?[json["recipientId"].stringValue] {
-            recipientCategory = c
+        if let acc = accounts?[json["recipientId"].stringValue] {
+            recipientAccount = acc
         }
 
-        if json["resourceType"].stringValue == "poll", let p = polls?[json["resourceId"].stringValue] {
-            resourcePoll = p
-        } else if json["resourceType"].stringValue == "account", let a = accounts?[json["resourceId"].stringValue] {
-            resourceAccount = a
-        } else if json["resourceType"].stringValue == "category", let c = categories?[json["resourceId"].stringValue] {
-            resourceCategory = c
+        if json["resourceType"].stringValue == "poll", let poll = polls?[json["resourceId"].stringValue] {
+            resourcePoll = poll
+        } else if json["resourceType"].stringValue == "account", let acc = accounts?[json["resourceId"].stringValue] {
+            resourceAccount = acc
+        } else if json["resourceType"].stringValue == "category", let cat = categories?[json["resourceId"].stringValue] {
+            resourceCategory = cat
         }
 
         return CNHNotification(
@@ -299,10 +292,7 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
             action : json["action"].stringValue,
 
             senderAccount : senderAccount,
-            senderCategory: senderCategory,
-
             recipientAccount : recipientAccount,
-            recipientCategory: recipientCategory,
 
             resourcePoll : resourcePoll,
             resourceAccount : resourceAccount,

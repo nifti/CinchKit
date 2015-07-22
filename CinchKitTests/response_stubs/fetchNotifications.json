@@ -1,67 +1,134 @@
 {
     "links": {
-        "self": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications?limit=6",
-        "next": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications?limit=6&after=eyJyZWNpcGllbnRJZCI6IjcyZDI1ZmY5LTFkMzctNDgxNC1iMmJkLWJjMTQ5YzIyMjIyMCIsImlkIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwOjcyZDI1ZmY5LTFkMzctNDgxNC1iMmJkLWJjMTQ5YzIyMjIyMDowZmMyN2NmNS0wOTY1LTQyN2EtYTYxNy0xMDFjZjk4N2ZlNDI6Zm9sbG93aW5nIiwiY3JlYXRlZEF0IjoiMjAxNS0wNy0yMFQxMjoxMzozOC41NzZaIn0"
+        "self": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications?limit=10",
+        "next": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications?limit=10&after=eyJyZWNpcGllbnRJZCI6IjcyZDI1ZmY5LTFkMzctNDgxNC1iMmJkLWJjMTQ5YzIyMjIyMCIsImlkIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwOjcyZDI1ZmY5LTFkMzctNDgxNC1iMmJkLWJjMTQ5YzIyMjIyMDpiYjdmZWIzMi02YjVjLTQ5ZjUtYjUyYy00MzllZWEwZWJlZmU6Zm9sbG93aW5nIiwiY3JlYXRlZEF0IjoiMjAxNS0wNy0yMVQxOTo0Mzo1Ny4xMDlaIn0"
     },
     "linked": {
+        "accounts": [
+                     {
+                     "id": "a9341364-be2f-4d46-a9bd-1456b5549c30",
+                     "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30",
+                     "name": "mikhail",
+                     "username": "vetmig",
+                     "links": {
+                     "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30",
+                     "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/notifications",
+                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/discussions",
+                     "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/followers",
+                     "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/following",
+                     "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/notifications",
+                     "photos": "http://api.us-east-1.niftiws.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/photos",
+                     "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/stats",
+                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/votes"
+                     }
+                     },
+                     {
+                     "id": "0fc27cf5-0965-427a-a617-101cf987fe42",
+                     "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
+                     "name": "maria",
+                     "username": "vetikm",
+                     "metadata": {
+                     "shortLink": "http://bit.ly/1JseMsx",
+                     "mediumPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/060f7218-0386-410c-b86c-c1b7557b131e/medium.jpg",
+                     "mediumPictureId": "ecb8a908-30fb-4216-9bb5-9f8f01b65592",
+                     "smallPictureId": "a5ea983b-ca63-4b59-8e67-d4d93e9b48c2",
+                     "smallPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/060f7218-0386-410c-b86c-c1b7557b131e/small.jpg"
+                     },
+                     "links": {
+                     "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
+                     "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
+                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
+                     "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/followers",
+                     "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/following",
+                     "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
+                     "photos": "http://api.us-east-1.niftiws.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/photos",
+                     "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/stats",
+                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
+                     }
+                     },
+                     {
+                     "id": "72d25ff9-1d37-4814-b2bd-bc149c222220",
+                     "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
+                     "name": "mikhail vetoshkin",
+                     "username": "mvetoshkin",
+                     "metadata": {
+                     "shortLink": "http://bit.ly/1vyZ6Il",
+                     "mediumPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/7a283125-2eed-4ca3-93a7-04f16c4971af/medium.jpg",
+                     "mediumPictureId": "978e37be-2a0c-4f8a-b75b-ff94df3b2e1c",
+                     "smallPictureId": "9d129949-4f52-40f3-b2b6-db41466d0031",
+                     "smallPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/7a283125-2eed-4ca3-93a7-04f16c4971af/small.jpg"
+                     },
+                     "links": {
+                     "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
+                     "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
+                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
+                     "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/followers",
+                     "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/following",
+                     "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
+                     "photos": "http://api.us-east-1.niftiws.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/photos",
+                     "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/stats",
+                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
+                     }
+                     }
+                     ],
         "polls": [
                   {
-                  "id": "f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924",
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924",
+                  "id": "e6dd194d-f694-46f6-92f6-4942696142b5",
+                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5",
                   "topic": "Follow category test",
                   "type": "multiple",
-                  "shortLink": "http://bit.ly/1RNR9Ps",
+                  "shortLink": "http://bit.ly/1LuTv1F",
                   "messagesTotal": 0,
-                  "votesTotal": 2,
+                  "votesTotal": 0,
                   "public": true,
-                  "created": "2015-07-21T20:57:06.539Z",
-                  "updated": "2015-07-21T20:58:34.047Z",
+                  "created": "2015-07-22T20:55:34.809Z",
+                  "updated": "2015-07-22T20:55:36.037Z",
                   "category": "bb7feb32-6b5c-49f5-b52c-439eea0ebefe",
                   "candidates": [
                                  {
-                                 "id": "cc1f1351-0a19-4669-a466-28e70dd5f78f",
-                                 "href": "http://d2gml06uoei3b2.cloudfront.net/7474c6a4-44b9-47e6-8243-141f5179ae7e/medium.jpg",
-                                 "image": "http://d2gml06uoei3b2.cloudfront.net/7474c6a4-44b9-47e6-8243-141f5179ae7e/medium.jpg",
-                                 "votes": 2,
+                                 "id": "3962cc23-ea65-4ce8-89d6-c67f5b6a3303",
+                                 "href": "http://d2gml06uoei3b2.cloudfront.net/d508328c-ca72-4d23-a861-8f8fc3f3e503/medium.jpg",
+                                 "image": "http://d2gml06uoei3b2.cloudfront.net/d508328c-ca72-4d23-a861-8f8fc3f3e503/medium.jpg",
+                                 "votes": 0,
                                  "type": "photos",
                                  "images": [
                                             {
-                                            "id": "cc1f1351-0a19-4669-a466-28e70dd5f78f",
-                                            "url": "http://d2gml06uoei3b2.cloudfront.net/cc1f1351-0a19-4669-a466-28e70dd5f78f/original.jpg",
+                                            "id": "3962cc23-ea65-4ce8-89d6-c67f5b6a3303",
+                                            "url": "http://d2gml06uoei3b2.cloudfront.net/3962cc23-ea65-4ce8-89d6-c67f5b6a3303/original.jpg",
                                             "name": "original"
                                             },
                                             {
-                                            "id": "8824e096-feaa-46d5-896e-146a39dc9010",
-                                            "url": "http://d2gml06uoei3b2.cloudfront.net/7474c6a4-44b9-47e6-8243-141f5179ae7e/medium.jpg",
+                                            "id": "bb77d529-775b-4738-96c6-555a34fcd0bd",
+                                            "url": "http://d2gml06uoei3b2.cloudfront.net/d508328c-ca72-4d23-a861-8f8fc3f3e503/medium.jpg",
                                             "name": "medium"
                                             },
                                             {
-                                            "id": "4d3d3bd4-3d81-42e6-85b4-9895b79b2fb4",
-                                            "url": "http://d2gml06uoei3b2.cloudfront.net/7474c6a4-44b9-47e6-8243-141f5179ae7e/small.jpg",
+                                            "id": "33bba6b0-a29f-4216-b5c6-654a470ab317",
+                                            "url": "http://d2gml06uoei3b2.cloudfront.net/d508328c-ca72-4d23-a861-8f8fc3f3e503/small.jpg",
                                             "name": "small"
                                             }
                                             ]
                                  },
                                  {
-                                 "id": "1be984bd-cb86-4a8a-a8aa-f0a07d35feb8",
-                                 "href": "http://d2gml06uoei3b2.cloudfront.net/a00d7c60-7f34-4b00-8e0e-58b3ece28acd/medium.jpg",
-                                 "image": "http://d2gml06uoei3b2.cloudfront.net/a00d7c60-7f34-4b00-8e0e-58b3ece28acd/medium.jpg",
+                                 "id": "1e321eba-c523-41fc-8f94-16a65d67d746",
+                                 "href": "http://d2gml06uoei3b2.cloudfront.net/2be51bc3-e782-4844-b990-63b8ffd74caa/medium.jpg",
+                                 "image": "http://d2gml06uoei3b2.cloudfront.net/2be51bc3-e782-4844-b990-63b8ffd74caa/medium.jpg",
                                  "votes": 0,
                                  "type": "photos",
                                  "images": [
                                             {
-                                            "id": "1be984bd-cb86-4a8a-a8aa-f0a07d35feb8",
-                                            "url": "http://d2gml06uoei3b2.cloudfront.net/1be984bd-cb86-4a8a-a8aa-f0a07d35feb8/original.jpg",
+                                            "id": "1e321eba-c523-41fc-8f94-16a65d67d746",
+                                            "url": "http://d2gml06uoei3b2.cloudfront.net/1e321eba-c523-41fc-8f94-16a65d67d746/original.jpg",
                                             "name": "original"
                                             },
                                             {
-                                            "id": "975907f7-c18b-4ed1-b073-3dd5bbafc247",
-                                            "url": "http://d2gml06uoei3b2.cloudfront.net/a00d7c60-7f34-4b00-8e0e-58b3ece28acd/medium.jpg",
+                                            "id": "53c58768-547a-4125-b7f8-5917adcb40d6",
+                                            "url": "http://d2gml06uoei3b2.cloudfront.net/2be51bc3-e782-4844-b990-63b8ffd74caa/medium.jpg",
                                             "name": "medium"
                                             },
                                             {
-                                            "id": "d9163ff2-369d-40a2-8c58-8ae7274a8c0a",
-                                            "url": "http://d2gml06uoei3b2.cloudfront.net/a00d7c60-7f34-4b00-8e0e-58b3ece28acd/small.jpg",
+                                            "id": "7ae1306b-4639-46aa-a43d-fe058fdd5e13",
+                                            "url": "http://d2gml06uoei3b2.cloudfront.net/2be51bc3-e782-4844-b990-63b8ffd74caa/small.jpg",
                                             "name": "small"
                                             }
                                             ]
@@ -73,13 +140,13 @@
                   "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30"
                   },
                   "messages": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924/messages"
+                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/messages"
                   },
                   "comments": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924/messages?type=comment"
+                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/messages?type=comment"
                   },
                   "vote": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924/votes"
+                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/votes"
                   }
                   }
                   },
@@ -295,56 +362,6 @@
                   }
                   }
                   ],
-        "accounts": [
-                     {
-                     "id": "0fc27cf5-0965-427a-a617-101cf987fe42",
-                     "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
-                     "name": "maria",
-                     "username": "vetikm",
-                     "metadata": {
-                     "shortLink": "http://bit.ly/1JseMsx",
-                     "mediumPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/060f7218-0386-410c-b86c-c1b7557b131e/medium.jpg",
-                     "mediumPictureId": "ecb8a908-30fb-4216-9bb5-9f8f01b65592",
-                     "smallPictureId": "a5ea983b-ca63-4b59-8e67-d4d93e9b48c2",
-                     "smallPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/060f7218-0386-410c-b86c-c1b7557b131e/small.jpg"
-                     },
-                     "links": {
-                     "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
-                     "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
-                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
-                     "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/followers",
-                     "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/following",
-                     "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
-                     "photos": "http://api.us-east-1.niftiws.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/photos",
-                     "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/stats",
-                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
-                     }
-                     },
-                     {
-                     "id": "72d25ff9-1d37-4814-b2bd-bc149c222220",
-                     "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
-                     "name": "mikhail vetoshkin",
-                     "username": "mvetoshkin",
-                     "metadata": {
-                     "shortLink": "http://bit.ly/1vyZ6Il",
-                     "mediumPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/7a283125-2eed-4ca3-93a7-04f16c4971af/medium.jpg",
-                     "mediumPictureId": "978e37be-2a0c-4f8a-b75b-ff94df3b2e1c",
-                     "smallPictureId": "9d129949-4f52-40f3-b2b6-db41466d0031",
-                     "smallPictureUrl": "http://d2gml06uoei3b2.cloudfront.net/7a283125-2eed-4ca3-93a7-04f16c4971af/small.jpg"
-                     },
-                     "links": {
-                     "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
-                     "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
-                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
-                     "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/followers",
-                     "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/following",
-                     "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
-                     "photos": "http://api.us-east-1.niftiws.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/photos",
-                     "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/stats",
-                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
-                     }
-                     }
-                     ],
         "categories": [
                        {
                        "id": "bb7feb32-6b5c-49f5-b52c-439eea0ebefe",
@@ -364,40 +381,40 @@
     },
     "notifications": [
                       {
-                      "id": "0fc27cf5-0965-427a-a617-101cf987fe42:72d25ff9-1d37-4814-b2bd-bc149c222220:f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924:voted",
-                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/0fc27cf5-0965-427a-a617-101cf987fe42:72d25ff9-1d37-4814-b2bd-bc149c222220:f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924:voted",
+                      "id": "a9341364-be2f-4d46-a9bd-1456b5549c30:72d25ff9-1d37-4814-b2bd-bc149c222220:e6dd194d-f694-46f6-92f6-4942696142b5:created",
+                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/a9341364-be2f-4d46-a9bd-1456b5549c30:72d25ff9-1d37-4814-b2bd-bc149c222220:e6dd194d-f694-46f6-92f6-4942696142b5:created",
+                      "senderId": "a9341364-be2f-4d46-a9bd-1456b5549c30",
+                      "senderType": "account",
+                      "recipientId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
+                      "recipientType": "account",
+                      "resourceId": "e6dd194d-f694-46f6-92f6-4942696142b5",
+                      "resourceType": "poll",
+                      "action": "created",
+                      "createdAt": "2015-07-22T20:55:34.809Z"
+                      },
+                      {
+                      "id": "0fc27cf5-0965-427a-a617-101cf987fe42:72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:following",
+                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/0fc27cf5-0965-427a-a617-101cf987fe42:72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:following",
                       "senderId": "0fc27cf5-0965-427a-a617-101cf987fe42",
                       "senderType": "account",
                       "recipientId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
                       "recipientType": "account",
-                      "resourceId": "f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924",
-                      "resourceType": "poll",
-                      "action": "voted",
-                      "createdAt": "2015-07-21T20:58:34.005Z"
+                      "resourceId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
+                      "resourceType": "account",
+                      "action": "following",
+                      "createdAt": "2015-07-22T18:26:50.337Z"
                       },
                       {
-                      "id": "72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924:voted",
-                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924:voted",
+                      "id": "72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:0fc27cf5-0965-427a-a617-101cf987fe42:following",
+                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:0fc27cf5-0965-427a-a617-101cf987fe42:following",
                       "senderId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
                       "senderType": "account",
                       "recipientId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
                       "recipientType": "account",
-                      "resourceId": "f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924",
-                      "resourceType": "poll",
-                      "action": "voted",
-                      "createdAt": "2015-07-21T20:57:56.306Z"
-                      },
-                      {
-                      "id": "bb7feb32-6b5c-49f5-b52c-439eea0ebefe:72d25ff9-1d37-4814-b2bd-bc149c222220:f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924:created",
-                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/bb7feb32-6b5c-49f5-b52c-439eea0ebefe:72d25ff9-1d37-4814-b2bd-bc149c222220:f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924:created",
-                      "senderId": "bb7feb32-6b5c-49f5-b52c-439eea0ebefe",
-                      "senderType": "category",
-                      "recipientId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
-                      "recipientType": "account",
-                      "resourceId": "f11dc7e9-7ddc-43e6-a8d0-fae9c85cc924",
-                      "resourceType": "poll",
-                      "action": "created",
-                      "createdAt": "2015-07-21T20:57:06.539Z"
+                      "resourceId": "0fc27cf5-0965-427a-a617-101cf987fe42",
+                      "resourceType": "account",
+                      "action": "following",
+                      "createdAt": "2015-07-22T18:08:12.437Z"
                       },
                       {
                       "id": "72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:8cc05188-5bff-4ee5-b058-64cc7c0a006a:voted",
@@ -422,18 +439,6 @@
                       "resourceType": "category",
                       "action": "following",
                       "createdAt": "2015-07-21T19:43:57.109Z"
-                      },
-                      {
-                      "id": "72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:0fc27cf5-0965-427a-a617-101cf987fe42:following",
-                      "href": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications/72d25ff9-1d37-4814-b2bd-bc149c222220:72d25ff9-1d37-4814-b2bd-bc149c222220:0fc27cf5-0965-427a-a617-101cf987fe42:following",
-                      "senderId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
-                      "senderType": "account",
-                      "recipientId": "72d25ff9-1d37-4814-b2bd-bc149c222220",
-                      "recipientType": "account",
-                      "resourceId": "0fc27cf5-0965-427a-a617-101cf987fe42",
-                      "resourceType": "account",
-                      "action": "following",
-                      "createdAt": "2015-07-20T12:13:38.576Z"
                       }
                       ]
 }
