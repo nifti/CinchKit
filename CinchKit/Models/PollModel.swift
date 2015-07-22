@@ -84,7 +84,7 @@ public struct CNHPollsResponse {
     public let polls : [CNHPoll]?
 }
 
-public struct CNHPollCategory {
+public struct CNHCategory {
     public let id: String
     public let name: String
     public let hideWhenCreating: Bool
@@ -140,14 +140,16 @@ public struct CNHNotification {
     public let href : NSURL
     public let created : NSDate
     public let action : String
-    
-    public let accountFrom : CNHAccount?
-    public let accountTo : CNHAccount?
-    
-    public let resourceId : String
-    public let resourceType : String
-    
-    public let poll : CNHPoll?
+
+    public let senderAccount : CNHAccount?
+    public let senderCategory: CNHCategory?
+
+    public let recipientAccount : CNHAccount?
+    public let recipientCategory: CNHCategory?
+
+    public let resourcePoll : CNHPoll?
+    public let resourceAccount : CNHAccount?
+    public let resourceCategory : CNHCategory?
 }
 
 public struct CNHNotificationsResponse {

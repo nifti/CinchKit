@@ -178,31 +178,6 @@ class AccountStatsSerializer : JSONObjectSerializer {
     }
 }
 
-class PollCategoriesSerializer : JSONObjectSerializer {
-    let linkSerializer = LinksSerializer()
-    
-    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHPollCategory]? {
-        return json["categories"].array?.map(self.decodeCategory)
-    }
-    
-    private func decodeCategory(json : JSON) -> CNHPollCategory {
-        var links = linkSerializer.jsonToObject(json["links"])
-        
-        var icons = [NSURL]()
-        for iconLink in json["images"].arrayValue {
-            icons.append(iconLink.URL!)
-        }
-        
-        return CNHPollCategory(
-            id: json["id"].stringValue,
-            name: json["name"].stringValue,
-            hideWhenCreating: json["hideWhenCreating"].boolValue,
-            links: links,
-            icons: icons
-        )
-    }
-}
-
 class PhotoSerializer: JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> [CNHPhoto]? {
         return json["photos"].array?.map(self.decodePhoto)
