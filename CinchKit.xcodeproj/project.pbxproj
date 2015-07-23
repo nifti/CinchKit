@@ -45,6 +45,8 @@
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
 		CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */; };
 		CB9978AD1B5F818E00CD9338 /* fetchNotifications.json in Resources */ = {isa = PBXBuildFile; fileRef = CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */; };
+		CBAC482E1B6135870061671F /* CinchClient+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC482D1B6135870061671F /* CinchClient+Categories.swift */; };
+		CBAC48301B6137350061671F /* CinchClient+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC482F1B6137350061671F /* CinchClient+Categories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
 		CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uploadPhotos.json; path = response_stubs/uploadPhotos.json; sourceTree = "<group>"; };
 		CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fetchNotifications.json; path = response_stubs/fetchNotifications.json; sourceTree = "<group>"; };
+		CBAC482D1B6135870061671F /* CinchClient+Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Categories.swift"; path = "Client/CinchClient+Categories.swift"; sourceTree = "<group>"; };
+		CBAC482F1B6137350061671F /* CinchClient+Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Categories.swift"; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF873D0E47834F5EEE44939B /* Pods-CinchKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKit/Pods-CinchKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FD1F6B472838211ED9C3C36E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,12 +182,13 @@
 			isa = PBXGroup;
 			children = (
 				C41DDDAB1A8D48E300B9523A /* CinchClient+Auth.swift */,
+				CBAC482D1B6135870061671F /* CinchClient+Categories.swift */,
 				C4610AAF1AF3B7F80031EB53 /* CinchClient+Comments.swift */,
 				C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */,
 				C4BBAC8F1B023F840002E5B9 /* CinchClient+Notifications.swift */,
 				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
-				C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */,
 				C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */,
+				C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -252,17 +257,18 @@
 		C4506EF01A75B1B60053248E /* CinchKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C4B554F81A9699DD00228AA5 /* response_stubs */,
-				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
-				C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */,
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
+				CBAC482F1B6137350061671F /* CinchClient+Categories.swift */,
 				C4610AB11AF3BF700031EB53 /* CinchClient+CommentsTests.swift */,
 				C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */,
 				C4BBAC911B02438D0002E5B9 /* CinchClient+NotificationsTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
+				C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */,
+				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
+				C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */,
 				C47574081A9E8D8E00C7C5B9 /* CNHKeychainTests.swift */,
 				C47574011A9E35F900C7C5B9 /* CNHSessionsTests.swift */,
-				C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */,
+				C4B554F81A9699DD00228AA5 /* response_stubs */,
 				C4506EF11A75B1B60053248E /* Supporting Files */,
 			);
 			path = CinchKitTests;
@@ -503,6 +509,7 @@
 				C470C0381A77F82F00C4DB2A /* CNHServer.swift in Sources */,
 				C4BBA2EC1A76E20500B23DC7 /* CinchClient+Polls.swift in Sources */,
 				C47574001A9E345200C7C5B9 /* CNHTokenData.swift in Sources */,
+				CBAC482E1B6135870061671F /* CinchClient+Categories.swift in Sources */,
 				C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */,
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */,
@@ -524,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAC48301B6137350061671F /* CinchClient+Categories.swift in Sources */,
 				C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */,
 				C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */,
 				C4610AB21AF3BF700031EB53 /* CinchClient+CommentsTests.swift in Sources */,
