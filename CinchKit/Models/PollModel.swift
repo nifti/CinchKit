@@ -90,6 +90,7 @@ public struct CNHCategory {
     public let hideWhenCreating: Bool
     public let links : [String : NSURL]?
     public let icons : [NSURL]?
+    public let position : Int
 }
 
 public struct CNHVote {

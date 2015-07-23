@@ -351,7 +351,8 @@ class CategoriesSerializer : JSONObjectSerializer {
             name: json["name"].stringValue,
             hideWhenCreating: json["hideWhenCreating"].boolValue,
             links: links,
-            icons: icons
+            icons: icons,
+            position: json["position"].intValue
         )
     }
 }

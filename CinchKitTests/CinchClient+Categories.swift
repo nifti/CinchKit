@@ -19,7 +19,7 @@ class CinchClientCategoriesSpec: QuickSpec {
         describe("fetching categories") {
             let c = CinchClient()
 
-            let r = ApiResource(id: "categories", href: NSURL(string: "http://api.us-east-1.niftiws.com/categories")!, title: "poll categories")
+            let r = ApiResource(id: "categories", href: NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/categories")!, title: "poll categories")
             c.rootResources = ["categories" : r]
 
             it("should fetch categories") {
@@ -28,8 +28,14 @@ class CinchClientCategoriesSpec: QuickSpec {
                         expect(error).to(beNil())
                         expect(categories).toNot(beEmpty())
 
-                        expect(categories!.first!.icons).toNot(beEmpty())
-                        expect(categories!.first!.icons?.count).to(equal(3))
+                        if let cats = categories {
+                            expect(cats.first!.icons).toNot(beEmpty())
+                            expect(cats.first!.icons?.count).to(equal(3))
+
+                            expect(cats[0].position).to(equal(0))
+                            expect(cats[1].position).to(equal(1))
+                            expect(cats[2].position).to(equal(2))
+                        }
 
                         done()
                     })
