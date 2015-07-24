@@ -45,17 +45,7 @@ class CinchClientCategoriesSpec: QuickSpec {
 
         describe("following categories") {
             let c = CinchClient()
-
-            let authServerURL = NSURL(string: "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/")!
-            let accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(authServerURL)/accounts")!, title: "get and create accounts")
-            let tokensResource = ApiResource(id: "tokens", href: NSURL(string: "\(authServerURL)/tokens")!, title: "Create and refresh authentication tokens")
-            c.rootResources = ["accounts" : accountsResource, "tokens" : tokensResource]
-
-            let refreshToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwIiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQzNzY2NzI1OX0.zqqSGmpcNZz-6lmO_ejTOYZuKLcp__l1yRUtWQcYxYg"
-            c.session.accessTokenData = CNHAccessTokenData(accountID: "",
-                href: NSURL(string: "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/tokens")!,
-                access: "", refresh: refreshToken, type: "Bearer", expires: NSDate(), cognitoId: "", cognitoToken: ""
-            )
+            CinchKitTestsHelper.setTestUserSession(c)
 
             it("should follow category") {
                 waitUntil(timeout: 5) { done in

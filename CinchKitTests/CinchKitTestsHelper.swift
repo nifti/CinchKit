@@ -30,4 +30,21 @@ class CinchKitTestsHelper {
             cognitoToken : "eyJraWQiOiJ1cy1lYXN0LTExIiwidHlwIjoiSldTIiwiYWxnIjoiUlM1MTIifQ"
         )
     }
+
+    class func setTestUserSession(client: CinchClient) -> Void {
+        let authServerURL = NSURL(string: "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/")!
+        let accountsResource = ApiResource(id: "accounts", href: NSURL(string: "\(authServerURL)/accounts")!, title: "get and create accounts")
+        let tokensResource = ApiResource(id: "tokens", href: NSURL(string: "\(authServerURL)/tokens")!, title: "Create and refresh authentication tokens")
+        client.rootResources = ["accounts" : accountsResource, "tokens" : tokensResource]
+
+        let refreshToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNzJkMjVmZjktMWQzNy00ODE0LWIyYmQtYmMxNDljMjIyMjIwIiwic2NvcGUiOlsicmVmcmVzaHRva2VuIl0sImlhdCI6MTQzNzY2NzI1OX0.zqqSGmpcNZz-6lmO_ejTOYZuKLcp__l1yRUtWQcYxYg"
+        client.session.accessTokenData = CNHAccessTokenData(accountID: "",
+            href: NSURL(string: "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/tokens")!,
+            access: "", refresh: refreshToken, type: "Bearer", expires: NSDate(), cognitoId: "", cognitoToken: ""
+        )
+    }
+
+    class func getTestUserId() -> String {
+        return "72d25ff9-1d37-4814-b2bd-bc149c222220"
+    }
 }

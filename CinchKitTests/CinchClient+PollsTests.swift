@@ -103,6 +103,23 @@ class CinchClientPollsSpec: QuickSpec {
                     }
                 }
             }
+
+            it("should set stats") {
+                let c = CinchClient()
+                CinchKitTestsHelper.setTestUserSession(c)
+
+                let url = NSURL(string: "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/\(CinchKitTestsHelper.getTestUserId())/stats")!
+                waitUntil(timeout: 5) { done in
+                    c.refreshSession { (account, error) in
+                        c.setStats(atURL: url, params: ["unreadCount": 0], queue: nil) { (response, error ) in
+                            expect(error).to(beNil())
+                            expect(response).to(beNil())
+
+                            done()
+                        }
+                    }
+                }
+            }
         }
         
         describe("fetch votes") {
