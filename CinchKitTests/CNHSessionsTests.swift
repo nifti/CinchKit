@@ -43,8 +43,10 @@ class CinchSessionsSpec: QuickSpec {
                 session.accessTokenData = tokenData
                 
                 expect(session.isOpen).to(beTrue())
+                
+                session.close()
             }
-            
+
         }
     }
 }
