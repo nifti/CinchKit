@@ -75,5 +75,36 @@ class CinchClientNotificationsSpec: QuickSpec {
                 }
             }
         }
+
+        describe("sending notifications") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            let n = ApiResource(id: "notifications", href: NSURL(string: "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications")!, title: "Send notifications")
+            c.rootResources = ["notifications" : n]
+
+            it("should send notification") {
+                waitUntil(timeout: 5) { done in
+                    c.refreshSession { (account, error) in
+                        let params = [
+                            "senderId": CinchKitTestsHelper.getTestUserId(),
+                            "senderType": "account",
+                            "recipientId": CinchKitTestsHelper.getTestUserId(),
+                            "recipientType": "account",
+                            "resourceId": CinchKitTestsHelper.getTestUserId(),
+                            "resourceType": "account",
+                            "action": "shared"
+                        ]
+
+                        c.sendNotification(params, queue: nil, completionHandler: { (response, error) -> () in
+                            expect(error).to(beNil())
+                            expect(response).to(beNil())
+
+                            done()
+                        })
+                    }
+                }
+            }
+        }
     }
 }
