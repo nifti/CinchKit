@@ -73,14 +73,15 @@ extension CinchClient {
         let serializer = TokenResponseSerializer()
         
         request(.POST, url, headers: headers, parameters: params, encoding : encoding, serializer: serializer) { (auth, error) in
-            if let err = error {
+            if let err = error where err.code == 401 {
                 self.revokeActiveSession()
+                completionHandler?(nil, error)
+            } else if let err = error {
                 completionHandler?(nil, error)
             } else if let a = auth {
                 self.setActiveSession(a.accessTokenData)
                 completionHandler?(a.account, nil)
             } else {
-                self.revokeActiveSession()
                 completionHandler?(nil, nil)
             }
         }
