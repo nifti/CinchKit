@@ -87,8 +87,6 @@ class CinchClientNotificationsSpec: QuickSpec {
                 waitUntil(timeout: 5) { done in
                     c.refreshSession { (account, error) in
                         let params = [
-                            "senderId": CinchKitTestsHelper.getTestUserId(),
-                            "senderType": "account",
                             "recipientId": CinchKitTestsHelper.getTestUserId(),
                             "recipientType": "account",
                             "resourceId": CinchKitTestsHelper.getTestUserId(),
