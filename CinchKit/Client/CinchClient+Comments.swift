@@ -18,4 +18,9 @@ extension CinchClient {
         let serializer = CommentsResponseSerializer()
         authorizedRequest(.POST, url, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
+
+    public func removeComment(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (String?, NSError?) -> ()) {
+        let serializer = EmptyResponseSerializer()
+        authorizedRequest(.DELETE, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }
