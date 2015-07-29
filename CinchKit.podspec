@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source_files = 'CinchKit/**/*.swift'
   s.requires_arc = true
 
-  s.dependency 'Alamofire', '~> 1.2.3'
+  s.dependency 'Alamofire', '~> 1.2.0'
   s.dependency 'SwiftyJSON', '~> 2.2.0'
-  s.dependency 'KeychainAccess', '~> 1.2'
+  s.dependency 'KeychainAccess', '~> 1.2.0'
 end
