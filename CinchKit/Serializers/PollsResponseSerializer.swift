@@ -269,6 +269,10 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
         var resourceAccount : CNHAccount?
         var resourceCategory : CNHCategory?
 
+        var extraCategory : CNHCategory?
+        var extraCandidate : CNHPollCandidate?
+        var extraAccount : CNHAccount?
+
         if let acc = accounts?[json["senderId"].stringValue] {
             senderAccount = acc
         }
@@ -279,10 +283,28 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
 
         if json["resourceType"].stringValue == "poll", let poll = polls?[json["resourceId"].stringValue] {
             resourcePoll = poll
+
+            if let extra = json["extra"].dictionaryObject, let candId = extra["candidateId"] as? String {
+                for candidate in poll.candidates {
+                    if candidate.id == candId {
+                        extraCandidate = candidate
+                    }
+                }
+            }
         } else if json["resourceType"].stringValue == "account", let acc = accounts?[json["resourceId"].stringValue] {
             resourceAccount = acc
         } else if json["resourceType"].stringValue == "category", let cat = categories?[json["resourceId"].stringValue] {
             resourceCategory = cat
+        }
+
+        if let extra = json["extra"].dictionaryObject {
+            if let catId = extra["categoryId"] as? String, let cat = categories?[catId] {
+                extraCategory = cat
+            }
+
+            if let accId = extra["accountId"] as? String, let acc = accounts?[accId] {
+                extraAccount = acc
+            }
         }
 
         return CNHNotification(
@@ -296,7 +318,11 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
 
             resourcePoll : resourcePoll,
             resourceAccount : resourceAccount,
-            resourceCategory : resourceCategory
+            resourceCategory : resourceCategory,
+
+            extraCategory : extraCategory,
+            extraCandidate : extraCandidate,
+            extraAccount : extraAccount
         )
     }
     

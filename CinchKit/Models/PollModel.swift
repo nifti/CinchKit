@@ -148,6 +148,10 @@ public struct CNHNotification {
     public let resourcePoll : CNHPoll?
     public let resourceAccount : CNHAccount?
     public let resourceCategory : CNHCategory?
+
+    public let extraCategory : CNHCategory?
+    public let extraCandidate : CNHPollCandidate?
+    public let extraAccount : CNHAccount?
 }
 
 public struct CNHNotificationsResponse {

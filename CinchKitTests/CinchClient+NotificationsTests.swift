@@ -44,7 +44,7 @@ class CinchClientNotificationsSpec: QuickSpec {
                         expect(response).notTo(beNil())
                         expect(response!.nextLink).notTo(beNil())
                         expect(response!.notifications).notTo(beEmpty())
-                        expect(response!.notifications?.count).to(equal(5))
+                        expect(response!.notifications?.count).to(equal(6))
 
                         var note = response!.notifications![0]
                         expect(note.senderAccount).notTo(beNil())
@@ -52,9 +52,18 @@ class CinchClientNotificationsSpec: QuickSpec {
                         expect(note.resourcePoll).notTo(beNil())
                         expect(note.resourceAccount).to(beNil())
                         expect(note.resourceCategory).to(beNil())
-                        expect(note.action).to(equal("created"))
+                        expect(note.action).to(equal("voted"))
+                        expect(note.extraCandidate!.id).to(equal("0278e2ed-5d8e-4556-88ef-c9e075524857:YES"))
 
                         note = response!.notifications![1]
+                        expect(note.senderAccount).notTo(beNil())
+                        expect(note.recipientAccount).notTo(beNil())
+                        expect(note.resourcePoll).notTo(beNil())
+                        expect(note.resourceAccount).to(beNil())
+                        expect(note.resourceCategory).to(beNil())
+                        expect(note.action).to(equal("created"))
+
+                        note = response!.notifications![2]
                         expect(note.senderAccount).notTo(beNil())
                         expect(note.recipientAccount).notTo(beNil())
                         expect(note.resourcePoll).to(beNil())
@@ -62,7 +71,7 @@ class CinchClientNotificationsSpec: QuickSpec {
                         expect(note.resourceCategory).to(beNil())
                         expect(note.action).to(equal("following"))
 
-                        note = response!.notifications![4]
+                        note = response!.notifications![5]
                         expect(note.senderAccount).notTo(beNil())
                         expect(note.recipientAccount).notTo(beNil())
                         expect(note.resourcePoll).to(beNil())
