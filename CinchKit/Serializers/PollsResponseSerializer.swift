@@ -296,7 +296,9 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
 
             resourcePoll : resourcePoll,
             resourceAccount : resourceAccount,
-            resourceCategory : resourceCategory
+            resourceCategory : resourceCategory,
+
+            extra: json["extra"].dictionaryObject
         )
     }
     
