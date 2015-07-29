@@ -4,9 +4,9 @@ use_frameworks!
 
 platform :ios, '8.0'
 
-pod 'Alamofire', '~> 1.2'
+pod 'Alamofire', '~> 1.2.0'
 pod 'SwiftyJSON', '~> 2.2.0'
-pod 'KeychainAccess', '~> 1.2'
+pod 'KeychainAccess', '~> 1.2.0'
 
 target 'CinchKitTests' do
   pod 'Quick', '~> 0.3.0'
