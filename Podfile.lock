@@ -7,7 +7,7 @@ PODS:
   - SwiftyJSON (2.2.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 1.2)
+  - Alamofire (~> 1.2.3)
   - KeychainAccess (~> 1.2)
   - Nimble (~> 0.4.0)
   - Nocilla
