@@ -35,7 +35,7 @@ internal class CNHUtils {
     }
     
     internal class func urlencoding() -> ParameterEncoding {
-        let encodingClosure: (URLRequestConvertible, [String: AnyObject]?) -> (NSURLRequest, NSError?) = { (URLRequest, parameters) in
+        let encodingClosure: (URLRequestConvertible, [String: AnyObject]?) -> (NSMutableURLRequest, NSError?) = { (URLRequest, parameters) in
             var mutableURLRequest: NSMutableURLRequest! = URLRequest.URLRequest.mutableCopy() as! NSMutableURLRequest
             var error: NSError? = nil
             

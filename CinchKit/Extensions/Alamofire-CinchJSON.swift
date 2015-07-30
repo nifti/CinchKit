@@ -45,8 +45,8 @@ extension Request {
     */
     
     public func responseCinchJSON<T : JSONObjectSerializer>(queue: dispatch_queue_t? = nil, serializer : T, options: NSJSONReadingOptions = .AllowFragments, completionHandler: (NSURLRequest, NSHTTPURLResponse?, T.ContentType?, NSError?) -> Void) -> Self {
-        
-        return response(queue: queue, serializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
+
+        return response(queue: queue, responseSerializer: Request.JSONResponseSerializer(options: options), completionHandler: { (request, response, object, error) -> Void in
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
                 var errorResponse : NSError?

@@ -4,7 +4,7 @@ use_frameworks!
 
 platform :ios, '8.0'
 
-pod 'Alamofire', '~> 1.2.0'
+pod 'Alamofire', '~> 1.3.0'
 pod 'SwiftyJSON', '~> 2.2.0'
 pod 'KeychainAccess', '~> 1.2.0'
 
