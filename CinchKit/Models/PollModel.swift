@@ -54,6 +54,7 @@ public struct CNHPoll {
     public let categoryId : String
     public let created : NSDate
     public let updated : NSDate
+    public let displayAt : NSDate
     public let author : CNHAccount?
     public let candidates : [CNHPollCandidate]
     public let comments : [CNHComment]?

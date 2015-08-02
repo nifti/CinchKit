@@ -58,6 +58,14 @@ class PollsResponseSerializer : JSONObjectSerializer {
             candidates = []
         }
         
+        let displayAt : NSDate
+        
+        if let displayStr = json["displayAt"].string {
+            displayAt = CinchKitDateTools.dateFromISOString(displayStr)
+        } else {
+            displayAt = CinchKitDateTools.dateFromISOString(json["created"].stringValue)
+        }
+        
         return CNHPoll(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
@@ -70,6 +78,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
             categoryId: json["category"].stringValue,
             created : CinchKitDateTools.dateFromISOString(json["created"].stringValue),
             updated : CinchKitDateTools.dateFromISOString(json["updated"].stringValue),
+            displayAt : displayAt,
             author : account,
             candidates : candidates!,
             comments : comments,
