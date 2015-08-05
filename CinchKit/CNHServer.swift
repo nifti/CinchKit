@@ -14,6 +14,6 @@ public struct CNHServer {
     }
     
     static func dotComServer() -> CNHServer {
-        return CNHServer(baseURL : NSURL(string : "http://api.us-east-1.cinchws.com.s3-website-us-east-1.amazonaws.com")!)
+        return CNHServer(baseURL : NSURL(string : "http://api.us-east-1.cinchws.net")!)
     }
 }
