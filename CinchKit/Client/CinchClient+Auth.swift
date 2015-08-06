@@ -106,7 +106,7 @@ extension CinchClient {
             let serializer = EmptyResponseSerializer()
             request(.POST, tokenURL, parameters: params, serializer: serializer, completionHandler : completionHandler)
         } else {
-            completionHandler?(nil, nil)
+            completionHandler?(nil, clientNotConnectedError())
         }
     }
     
