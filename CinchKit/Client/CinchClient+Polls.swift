@@ -38,7 +38,12 @@ extension CinchClient {
     
     public func fetchStats(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (CNHAccountStats?, NSError?) -> ()) {
         let serializer = AccountStatsSerializer()
-        request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+
+        if self.session.isOpen || self.session.sessionState == .Closed {
+            authorizedRequest(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        } else {
+            request(.GET, url, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        }
     }
 
     public func setStats(atURL url : NSURL, params: [String: Int], queue: dispatch_queue_t? = nil, completionHandler : (String?, NSError?) -> ()) {
