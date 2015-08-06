@@ -39,6 +39,9 @@ public class CinchClient {
     public required init(server : CNHServer) {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.HTTPMaximumConnectionsPerHost = 20
+        configuration.timeoutIntervalForRequest = 10
+        configuration.timeoutIntervalForResource = 30
+        
         manager = Alamofire.Manager(configuration: configuration)
         self.server = server
     }
