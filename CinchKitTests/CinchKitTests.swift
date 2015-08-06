@@ -36,13 +36,14 @@ class CinchKitTests: XCTestCase {
     }
     
     func testCreateClientWithServer() {
-        let s = CNHServer(baseURL : NSURL(string: "http://api.us-east-1.niftiws.com")!)
+        let s = CNHServer(baseURL : NSURL(string: "http://api.us-east-1.cinchws.net")!)
         
         let client = CinchClient(server: s)
         let expectation = expectationWithDescription("GET root resources")
         
         client.start({ (_) in
             expect(client.rootResources).toNot(beNil())
+            expect(client.isStarted).to(beTrue())
             expectation.fulfill()
             return
         })
@@ -50,8 +51,13 @@ class CinchKitTests: XCTestCase {
         waitForExpectationsWithTimeout(5, handler: nil)
     }
     
+    func testClientInitiallyShouldNotBeStarted() {
+        let client = CinchClient()
+        expect(client.isStarted).to(beFalse())
+    }
+    
     func testClientStartPerformance() {
-        let s = CNHServer(baseURL : NSURL(string: "http://api.us-east-1.niftiws.com")!)
+        let s = CNHServer(baseURL : NSURL(string: "http://api.us-east-1.cinchws.net")!)
         
         let client = CinchClient(server: s)
 

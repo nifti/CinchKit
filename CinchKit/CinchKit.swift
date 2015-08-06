@@ -22,6 +22,10 @@ public class CinchClient {
     
     public var rootResources : [String : ApiResource]?
     
+    public var isStarted : Bool {
+       return rootResources != nil
+    }
+    
     private(set) public var session = CNHSession()
     
     public convenience init() {
