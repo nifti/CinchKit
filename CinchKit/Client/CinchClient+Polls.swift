@@ -76,4 +76,9 @@ extension CinchClient {
             })
         }
     }
+
+    public func deletePoll(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
+        let serializer = EmptyResponseSerializer()
+        authorizedRequest(.DELETE, url, parameters: nil, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
 }
