@@ -137,6 +137,44 @@ class CinchClientPollsSpec: QuickSpec {
                 }
             }
         }
+
+        describe("bump poll") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            it("should bump the poll") {
+                waitUntil(timeout: 5) { done in
+                    c.refreshSession { (account, error) in
+                        let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/b4f5fc75-ea4e-4ddc-9488-0b73387167ad")!
+                        c.bumpPoll(atURL: url, queue: nil, completionHandler: { (response, error) -> () in
+                            expect(error).to(beNil())
+                            expect(response).notTo(beNil())
+
+                            done()
+                        })
+                    }
+                }
+            }
+        }
+
+        describe("change category") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            it("should change poll's category") {
+                waitUntil(timeout: 5) { done in
+                    c.refreshSession { (account, error) in
+                        let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/b4f5fc75-ea4e-4ddc-9488-0b73387167ad")!
+                        c.changePollCategory(atURL: url, categoryId: "f0935034-f9a4-4572-aa3e-dd1cf1967ebf", queue: nil, completionHandler: { (response, error) -> () in
+                            expect(error).to(beNil())
+                            expect(response).notTo(beNil())
+
+                            done()
+                        })
+                    }
+                }
+            }
+        }
         
 //        describe("upload photo") {
 //            let c = CinchClient()

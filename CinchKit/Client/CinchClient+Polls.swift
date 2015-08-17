@@ -77,6 +77,22 @@ extension CinchClient {
         }
     }
 
+    public func bumpPoll(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((CNHPollsResponse?, NSError?) -> ())?) {
+        let serializer = PollsResponseSerializer()
+        let params: [String: AnyObject] = [
+            "recentPosition": 0
+        ]
+        authorizedRequest(.PUT, url, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
+
+    public func changePollCategory(atURL url : NSURL, categoryId: String, queue: dispatch_queue_t? = nil, completionHandler : ((CNHPollsResponse?, NSError?) -> ())?) {
+        let serializer = PollsResponseSerializer()
+        let params: [String: AnyObject] = [
+            "category": categoryId
+        ]
+        authorizedRequest(.PUT, url, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
+
     public func deletePoll(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
         let serializer = EmptyResponseSerializer()
         authorizedRequest(.DELETE, url, parameters: nil, queue: queue, serializer: serializer, completionHandler: completionHandler)
