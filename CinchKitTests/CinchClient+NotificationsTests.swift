@@ -32,7 +32,7 @@ class CinchClientNotificationsSpec: QuickSpec {
             it("should fetch notifications") {
                 var data = CinchKitTestsHelper.loadJsonData("fetchNotifications")
 
-                let urlStr = "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications"
+                let urlStr = "http://notification-service-vpxjdpudmk.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications"
                 let url = NSURL(string: urlStr)!
 
                 stubRequest("GET", urlStr).andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
@@ -89,7 +89,7 @@ class CinchClientNotificationsSpec: QuickSpec {
             let c = CinchClient()
             CinchKitTestsHelper.setTestUserSession(c)
 
-            let n = ApiResource(id: "notifications", href: NSURL(string: "http://notification-service-bd2cm278ft.elasticbeanstalk.com/notifications")!, title: "Send notifications")
+            let n = ApiResource(id: "notifications", href: NSURL(string: "http://notification-service-vpxjdpudmk.elasticbeanstalk.com/notifications")!, title: "Send notifications")
             c.rootResources = ["notifications" : n]
 
             it("should send notification") {

@@ -19,7 +19,7 @@ class CinchClientFollowersSpec: QuickSpec {
             let c = CinchClient()
             
             it("should fetch followers") {
-                let url = NSURL(string: "http://api.us-east-1.niftiws.com/accounts/f6704e5b-2206-4f85-b694-df08dc0d731d/followers")!
+                let url = NSURL(string: "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/f6704e5b-2206-4f85-b694-df08dc0d731d/followers")!
                 waitUntil(timeout: 5) { done in
                     c.fetchFollowers(atURL: url, queue: nil) { (response, error ) in
                         expect(error).to(beNil())
