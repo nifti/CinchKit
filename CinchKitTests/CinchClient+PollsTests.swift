@@ -200,26 +200,6 @@ class CinchClientPollsSpec: QuickSpec {
                     }
                 }
             }
-
-            it("should report poll from anonymous") {
-                c.session.close()
-
-                waitUntil(timeout: 5) { done in
-                    c.refreshSession { (account, error) in
-                        let params = [
-                            "resourceId": "1234567890",
-                            "type": "poll",
-                            "reason": "Test"
-                        ]
-
-                        c.sendComplaint(params, queue: nil, completionHandler: { (response, error) -> () in
-                            expect(error).to(beNil())
-
-                            done()
-                        })
-                    }
-                }
-            }
         }
         
 //        describe("upload photo") {

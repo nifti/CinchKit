@@ -102,11 +102,7 @@ extension CinchClient {
         let serializer = EmptyResponseSerializer()
         
         if let complaints = self.rootResources?["complaints"] {
-            if self.session.isOpen || self.session.sessionState == .Closed {
-                authorizedRequest(.POST, complaints.href, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
-            } else {
-                request(.POST, complaints.href, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
-            }
+            authorizedRequest(.POST, complaints.href, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
         } else {
             dispatch_async(queue ?? dispatch_get_main_queue(), {
                 completionHandler?(nil, self.clientNotConnectedError())
