@@ -201,6 +201,24 @@ class CinchClientPollsSpec: QuickSpec {
                 }
             }
         }
+
+        describe("make poll private") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            it("should make poll private") {
+                waitUntil(timeout: 5) { done in
+                    c.refreshSession { (account, error) in
+                        let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/42ec38f3-5658-4708-8c20-0c70414b7c6f")!
+                        c.makePollPrivate(atURL: url, queue: nil, completionHandler: { (response, error) -> () in
+                            expect(error).to(beNil())
+
+                            done()
+                        })
+                    }
+                }
+            }
+        }
         
 //        describe("upload photo") {
 //            let c = CinchClient()
