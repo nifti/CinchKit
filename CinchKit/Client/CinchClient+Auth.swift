@@ -100,6 +100,14 @@ extension CinchClient {
             }
         }
     }
+
+    public func deleteAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
+        let serializer = EmptyResponseSerializer()
+        
+        authorizedRequest(.DELETE, url, parameters: nil, queue: queue, serializer: serializer) { (_, error) in
+            completionHandler?(nil, error)
+        }
+    }
     
     public func emailLogin(var params : [String : AnyObject]? = nil, completionHandler : ( (String?, NSError?) -> () )? = nil) {
         if let tokenURL = self.rootResources?["tokens"]?.href {
