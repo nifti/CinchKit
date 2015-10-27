@@ -101,7 +101,7 @@ extension CinchClient {
         }
     }
 
-    public func deleteAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((CNHAccount?, NSError?) -> ())?) {
+    public func deleteAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
         let serializer = EmptyResponseSerializer()
         
         authorizedRequest(.DELETE, url, parameters: nil, queue: queue, serializer: serializer) { (_, error) in
