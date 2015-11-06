@@ -86,8 +86,11 @@ public class AccountsSerializer : JSONObjectSerializer {
             shareLink : json["metadata"]["shortLink"].string,
 
             instagramId : json["instagramId"].string,
+            instagramName : json["instagramName"].string,
             facebookId : json["facebookId"].string,
+            facebookName : json["facebookName"].string,
             twitterId : json["twitterId"].string,
+            twitterName : json["twitterName"].string,
 
             links : links,
             roles : accountRoles

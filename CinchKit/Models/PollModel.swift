@@ -28,8 +28,11 @@ public struct CNHAccount {
     public let shareLink: String?
 
     public let instagramId: String?
+    public let instagramName: String?
     public let facebookId: String?
+    public let facebookName: String?
     public let twitterId: String?
+    public let twitterName: String?
     
     public let links : [String : NSURL]?
     public let roles : [AccountRole]?
