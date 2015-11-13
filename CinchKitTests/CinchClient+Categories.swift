@@ -32,9 +32,9 @@ class CinchClientCategoriesSpec: QuickSpec {
                             expect(cats.first!.icons).toNot(beEmpty())
                             expect(cats.first!.icons?.count).to(equal(3))
 
-                            expect(cats[0].position).to(equal(0))
-                            expect(cats[1].position).to(equal(1))
-                            expect(cats[2].position).to(equal(2))
+                            expect(cats[0].position).to(equal(1))
+                            expect(cats[1].position).to(equal(2))
+                            expect(cats[2].position).to(equal(3))
                         }
 
                         done()

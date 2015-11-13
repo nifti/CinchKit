@@ -118,7 +118,7 @@ extension CinchClient {
                 blocked = false
             }
 
-            completionHandler(blocked, error)
+            completionHandler(blocked, blocked == false ? nil : error)
         }
     }
 
