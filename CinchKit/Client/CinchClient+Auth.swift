@@ -109,16 +109,19 @@ extension CinchClient {
         }
     }
 
-    public func checkBlockedAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (Bool, NSError?) -> ()) {
-        let serializer = EmptyResponseSerializer()
+    public func checkBlockedAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (Bool?, NSError?) -> ()) {
+        let serializer = AccountsSerializer()
 
-        authorizedRequest(.GET, url, parameters: nil, queue: queue, serializer: serializer) { (_, error) in
-            var blocked = true
-            if let err = error where err.code == 404 {
-                blocked = false
+        authorizedRequest(.GET, url, parameters: nil, queue: queue, serializer: serializer) { (accounts, error) in
+            var blocked = false
+            if accounts != nil {
+                blocked = true
             }
 
-            completionHandler(blocked, blocked == false ? nil : error)
+            completionHandler(
+                error == nil || error!.code == 404 ? blocked : nil,
+                error != nil && error!.code != 404 ? error : nil
+            )
         }
     }
 
