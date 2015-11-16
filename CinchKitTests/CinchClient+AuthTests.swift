@@ -281,3 +281,27 @@ class CinchClientAuthSpec: QuickSpec {
         }
     }
 }
+
+class CinchBlockedAccountsSpec: QuickSpec {
+    override func spec() {
+        describe("check blocked user") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            it("should return blocked user") {
+                waitUntil(timeout: 105) { done in
+                    c.refreshSession { (account, error) in
+                        let url = NSURL(string: "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/blockedAccounts/0fc27cf5-0965-427a-a617-101cf987fe42")!
+
+                        c.checkBlockedAccount(atURL: url, queue: nil, completionHandler: { (blocked, error) -> () in
+                            expect(error).to(beNil())
+                            expect(blocked).to(equal(true))
+
+                            done()
+                        })
+                    }
+                }
+            }
+        }
+    }
+}

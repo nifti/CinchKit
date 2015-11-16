@@ -110,7 +110,7 @@ extension CinchClient {
     }
 
     public func checkBlockedAccount(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (Bool?, NSError?) -> ()) {
-        let serializer = AccountsSerializer()
+        let serializer = FetchAccountsSerializer()
 
         authorizedRequest(.GET, url, parameters: nil, queue: queue, serializer: serializer) { (accounts, error) in
             var blocked = false
