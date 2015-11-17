@@ -13,7 +13,7 @@ class LinksSerializer : JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> [String : NSURL]? {
         var result = [String : NSURL]()
         
-        for (key: String, subJson: JSON) in json {
+        for (key, subJson): (String, JSON) in json {
             if let str = subJson.string {
                 if let url = NSURL(string: str) {
                     result[key] = url
@@ -33,7 +33,7 @@ public class AccountsSerializer : JSONObjectSerializer {
     public init() {}
     
     public func jsonToObject(json: SwiftyJSON.JSON) -> [CNHAccount]? {
-        var accounts = json.array?.map(self.decodeAccount)
+        let accounts = json.array?.map(self.decodeAccount)
         return accounts
     }
     
@@ -70,7 +70,7 @@ public class AccountsSerializer : JSONObjectSerializer {
             }
         }
         
-        var links = linkSerializer.jsonToObject(json["links"])
+        let links = linkSerializer.jsonToObject(json["links"])
         
         return CNHAccount(
             id: json["id"].stringValue,
@@ -104,8 +104,8 @@ class TokensSerializer : JSONObjectSerializer {
     }
     
     private func decodeToken(json : JSON) -> CNHAccessTokenData {
-        var exp = json["expires"].doubleValue
-        var expires = NSDate(timeIntervalSince1970: (exp / 1000) )
+        let exp = json["expires"].doubleValue
+        let expires = NSDate(timeIntervalSince1970: (exp / 1000) )
         
         return CNHAccessTokenData(
             accountID : json["links"]["account"]["id"].stringValue,

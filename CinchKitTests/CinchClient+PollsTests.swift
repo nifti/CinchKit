@@ -34,8 +34,8 @@ class CinchClientPollsSpec: QuickSpec {
                         expect(response!.nextLink).toNot(beNil())
                         expect(response!.nextLink!.href).toNot(beNil())
                         
-                        var polls = response!.polls
-                        var first = polls!.first!
+                        let polls = response!.polls
+                        let first = polls!.first!
                         expect(first.candidates).toNot(beNil())
                         expect(first.author).toNot(beNil())
                         expect(first.links).toNot(beEmpty())
@@ -61,9 +61,9 @@ class CinchClientPollsSpec: QuickSpec {
                 c.rootResources = ["polls" : r]
                 
                 waitUntil(timeout: 10) { done in
-                    var queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+                    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
                     
-                    c.fetchLatestPolls(queue: queue) { ( response, error ) in
+                    c.fetchLatestPolls(queue) { ( response, error ) in
                         expect(error).to(beNil())
                         expect(response).toNot(beNil())
                         
@@ -113,7 +113,6 @@ class CinchClientPollsSpec: QuickSpec {
                     c.refreshSession { (account, error) in
                         c.setStats(atURL: url, params: ["unreadCount": 0], queue: nil) { (response, error ) in
                             expect(error).to(beNil())
-                            expect(response).to(beNil())
 
                             done()
                         }

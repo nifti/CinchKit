@@ -12,7 +12,7 @@ import CinchKit
 class CinchKitTestsHelper {
     
     class func loadJsonData(filename : String) -> NSData? {
-        var filepath = NSBundle(forClass: CinchKitTestsHelper.self).pathForResource(filename, ofType: "json")
+        let filepath = NSBundle(forClass: CinchKitTestsHelper.self).pathForResource(filename, ofType: "json")
         return NSData(contentsOfFile: filepath!)
     }
     

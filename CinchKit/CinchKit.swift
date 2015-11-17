@@ -68,7 +68,7 @@ public class CinchClient {
                 if let account = activeAccount {
                     completionHandler?(account)
                 } else if self.updateActiveAccessTokenDataHref() {
-                    self.refreshSession(includeAccount : true) { (account, _) in
+                    self.refreshSession(true) { (account, _) in
                         completionHandler?(account)
                     }
                 } else {
@@ -77,10 +77,10 @@ public class CinchClient {
             }
         }
         
-        var queue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT)
+        let queue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT)
 
         dispatch_async(queue) {
-            self.refreshSession(includeAccount : true) { (account, _) in
+            self.refreshSession(true) { (account, _) in
                 activeAccount = account
                 handler()
             }
@@ -133,8 +133,8 @@ public class CinchClient {
     
     func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]? = nil, headers : [String : String]? = nil, encoding: Alamofire.ParameterEncoding = .JSON) -> Alamofire.Request {
         
-        var path = NSURL(string: URLString.URLString)!
-        var mutableURLRequest = NSMutableURLRequest(URL: path)
+        let path = NSURL(string: URLString.URLString)!
+        let mutableURLRequest = NSMutableURLRequest(URL: path)
         mutableURLRequest.HTTPMethod = method.rawValue
         
         if let head = headers {
@@ -156,7 +156,7 @@ public class CinchClient {
             let start = CACurrentMediaTime()
             
             request(method, URLString, parameters: parameters, headers: headers, encoding: encoding)
-                .responseCinchJSON(queue: queue, serializer: serializer) { (_, httpResponse, response, error) in
+                .responseCinchJSON(queue, serializer: serializer) { (_, httpResponse, response, error) in
                     CNHUtils.logResponseTime(start, response : httpResponse,  message : "response: \(method.rawValue) \(URLString.URLString)")
                     
                     if(error != nil) {
@@ -183,7 +183,7 @@ public class CinchClient {
                 finalHeaders["Authorization"] = auth["Authorization"]
                 request(method, URLString, parameters: parameters, headers: finalHeaders, encoding: encoding, queue: queue, serializer: serializer, completionHandler: completionHandler)
             } else if self.session.sessionState == .Closed {
-                self.refreshSession(includeAccount: false) { (_, _) in
+                self.refreshSession(false) { (_, _) in
                     if self.session.isOpen {
                        self.authorizedRequest(method, URLString, parameters: parameters, headers: headers, encoding: encoding, queue: queue, serializer: serializer, completionHandler: completionHandler)
                     } else {

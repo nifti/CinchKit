@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CinchKit'
-  s.version = '0.11.3'
+  s.version = '1.0.1'
   s.license = 'MIT'
   s.summary = 'Cinch iOS SDK'
   s.homepage = 'https://github.com/nifti/CinchKit'
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source_files = 'CinchKit/**/*.swift'
   s.requires_arc = true
 
-  s.dependency 'Alamofire', '~> 1.3.0'
-  s.dependency 'SwiftyJSON', '~> 2.2.0'
-  s.dependency 'KeychainAccess', '~> 1.2.0'
+  s.dependency 'Alamofire', '~> 3.1'
+  s.dependency 'SwiftyJSON', '~> 2.3'
+  s.dependency 'KeychainAccess', '~> 2.3'
 end

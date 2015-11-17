@@ -13,7 +13,7 @@ internal class CNHUtils {
     
     internal class func logResponseTime(start : CFTimeInterval, response : NSHTTPURLResponse?, message : String?) {
         let end = CACurrentMediaTime()
-        var elapsedTime = end - start
+        let elapsedTime = end - start
         
         let numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = .DecimalStyle
@@ -30,14 +30,14 @@ internal class CNHUtils {
                 latency = time
             }
             
-            println("\(prefix) \(resp.statusCode) -  \(latency)s")
+            print("\(prefix) \(resp.statusCode) -  \(latency)s")
         }
     }
     
     internal class func urlencoding() -> ParameterEncoding {
         let encodingClosure: (URLRequestConvertible, [String: AnyObject]?) -> (NSMutableURLRequest, NSError?) = { (URLRequest, parameters) in
-            var mutableURLRequest: NSMutableURLRequest! = URLRequest.URLRequest.mutableCopy() as! NSMutableURLRequest
-            var error: NSError? = nil
+            let mutableURLRequest: NSMutableURLRequest! = URLRequest.URLRequest.mutableCopy() as! NSMutableURLRequest
+            let error: NSError? = nil
             
             if let URLComponents = NSURLComponents(URL: mutableURLRequest.URL!, resolvingAgainstBaseURL: false) {
                 URLComponents.percentEncodedQuery = (URLComponents.percentEncodedQuery != nil ? URLComponents.percentEncodedQuery! + "&" : "") + self.query(parameters!)
@@ -52,12 +52,12 @@ internal class CNHUtils {
     
     private class func query(parameters: [String: AnyObject]) -> String {
         var components: [(String, String)] = []
-        for key in sorted(Array(parameters.keys), <) {
+        for key in Array(parameters.keys).sort(<) {
             let value: AnyObject! = parameters[key]
             components += queryComponents(key, value)
         }
         
-        return join("&", components.map{"\($0)=\($1)"} as [String])
+        return (components.map{"\($0)=\($1)"} as [String]).joinWithSeparator("&")
     }
     
     private class func queryComponents(key: String, _ value: AnyObject) -> [(String, String)] {
@@ -71,7 +71,7 @@ internal class CNHUtils {
                 components += queryComponents("\(key)[]", value)
             }
         } else {
-            components.extend([(escape(key), escape("\(value)"))])
+            components.appendContentsOf([(escape(key), escape("\(value)"))])
         }
         
         return components

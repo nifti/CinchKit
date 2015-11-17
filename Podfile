@@ -4,13 +4,13 @@ use_frameworks!
 
 platform :ios, '8.0'
 
-pod 'Alamofire', '~> 1.3.0'
-pod 'SwiftyJSON', '~> 2.2.0'
-pod 'KeychainAccess', '~> 1.2.0'
+pod 'Alamofire', '~> 3.1'
+pod 'SwiftyJSON', '~> 2.3'
+pod 'KeychainAccess', '~> 2.3'
 
 target 'CinchKitTests' do
-  pod 'Quick', '~> 0.3.0'
-  pod 'Nimble', '~> 0.4.0'
-  pod 'Nocilla'
+  pod 'Quick', '~> 0.8'
+  pod 'Nimble', '~> 3.0'
+  pod 'Nocilla', '~> 0.10'
 end
 

@@ -8,14 +8,8 @@
 
 import SwiftyJSON
 
-extension CinchClient {
-    
-//    public func fetchLatestPolls(completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
-//        fetchLatestPolls(queue: nil, completionHandler: completionHandler)
-//    }
-    
+extension CinchClient {    
     public func fetchLatestPolls(queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {
-        
         if let polls = self.rootResources?["polls"] {
             self.fetchPolls(atURL: polls.href, queue: queue, completionHandler: completionHandler)
         } else {
@@ -63,7 +57,7 @@ extension CinchClient {
     
     public func uploadCandidate(atURL url: NSURL, photoURL: NSURL, queue: dispatch_queue_t? = nil, completionHandler : ([CNHPhoto]?, NSError?) -> ()) {
         let serializer = PhotoSerializer()
-        authorizedRequest(.POST, url, parameters: ["url": photoURL.absoluteString!], queue: queue, serializer: serializer, completionHandler: completionHandler)
+        authorizedRequest(.POST, url, parameters: ["url": photoURL.absoluteString], queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
     
     public func createPoll(params: [String: AnyObject], queue: dispatch_queue_t? = nil, completionHandler : (CNHPollsResponse?, NSError?) -> ()) {

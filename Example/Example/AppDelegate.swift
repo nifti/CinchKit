@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let client = CinchClient()
         client.start { (account) in
-            println("client started")
+            print("client started")
             
             client.fetchLatestPolls() { (_, _) in
-                println("fetched polls")
+                print("fetched polls")
             }
         }
         

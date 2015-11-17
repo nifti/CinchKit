@@ -27,7 +27,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
             nextLink = CNHApiLink(id: nil, href: href, type: "polls")
         }
         
-        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "polls")
+        let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "polls")
         
         return CNHPollsResponse(selfLink : selfLink, nextLink : nextLink, polls: polls)
     }
@@ -50,7 +50,7 @@ class PollsResponseSerializer : JSONObjectSerializer {
             account = accounts?[authorId]
         }
         
-        var links = linkSerializer.jsonToObject(json["links"])
+        let links = linkSerializer.jsonToObject(json["links"])
         
         let comments = commentsSerializer.jsonToObject(json["recentComments"])
         
@@ -142,7 +142,7 @@ class PollVotesSerializer : JSONObjectSerializer {
             nextLink = CNHApiLink(id: nil, href: href, type: "votes")
         }
         
-        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "votes")
+        let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "votes")
         
         let votes = json["votes"].array?.map(self.decodeVote)
         
@@ -174,7 +174,7 @@ class FollowersSerializer : JSONObjectSerializer {
             nextLink = CNHApiLink(id: nil, href: href, type: "followers")
         }
         
-        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "followers")
+        let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "followers")
         
         let accounts = accountsSerializer.jsonToObject(json["accounts"])
         
@@ -201,7 +201,7 @@ class CommentsSerializer : JSONObjectSerializer {
             type = CNHCommentType.Comment
         }
         
-        var links = linkSerializer.jsonToObject(json["links"])
+        let links = linkSerializer.jsonToObject(json["links"])
         
         return CNHComment(
             id: json["id"].stringValue,
@@ -226,7 +226,7 @@ class CommentsResponseSerializer : JSONObjectSerializer {
             nextLink = CNHApiLink(id: nil, href: href, type: "comments")
         }
         
-        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "comments")
+        let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "comments")
         
         let comments = commentsSerializer.jsonToObject(json["messages"])
         
@@ -246,7 +246,7 @@ class NotificationsResponseSerializer : JSONObjectSerializer {
             nextLink = CNHApiLink(id: nil, href: href, type: "notifications")
         }
         
-        var selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "notifications")
+        let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "notifications")
         
         var accountIndex : [String : CNHAccount]?
         if let accounts = accountsSerializer.jsonToObject(json["linked"]["accounts"]) {
@@ -374,7 +374,7 @@ class CategoriesSerializer : JSONObjectSerializer {
     }
 
     private func decodeCategory(json : JSON) -> CNHCategory {
-        var links = linkSerializer.jsonToObject(json["links"])
+        let links = linkSerializer.jsonToObject(json["links"])
 
         var icons = [NSURL]()
         for iconLink in json["images"].arrayValue {

@@ -39,7 +39,7 @@ class CinchKeychainSpec: QuickSpec {
                 
                 expect(err).to(beNil())
                 
-                var data = keychain!.load()
+                let data = keychain!.load()
                 expect(data).toNot(beNil())
                 
                 expect(data!.accountID).to(equal(savedToken.accountID))
@@ -59,7 +59,7 @@ class CinchKeychainSpec: QuickSpec {
                 
                 keychain!.clear()
                 
-                var data = keychain!.load()
+                let data = keychain!.load()
                 expect(data).to(beNil())
             }
         }

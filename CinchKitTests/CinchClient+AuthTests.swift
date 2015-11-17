@@ -38,8 +38,8 @@ class CinchClientAuthSpec: QuickSpec {
             
             describe("fetch Accounts matching ids") {
                 it("should return single account") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)/.+"
-                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    let path : NSString = "\(accountsResource!.href.absoluteString)/.+"
+                    let data = CinchKitTestsHelper.loadJsonData("fetchAccount")
                     
                     stubRequest("GET", path.regex())
                         .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
@@ -60,8 +60,8 @@ class CinchClientAuthSpec: QuickSpec {
                 
                 it("should return 404 not found error") {
                     waitUntil(timeout: 1) { done in
-                        var path : NSString = "\(accountsResource!.href.absoluteString!)/.+"
-                        var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                        let path : NSString = "\(accountsResource!.href.absoluteString)/.+"
+                        let data = CinchKitTestsHelper.loadJsonData("accountNotFound")
                         
                         stubRequest("GET", path.regex())
                             .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
@@ -85,8 +85,8 @@ class CinchClientAuthSpec: QuickSpec {
             describe("fetch Accounts matching email") {
                 
                 it("should return single account") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?email\\=.*"
-                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    let path : NSString = "\(accountsResource!.href.absoluteString)\\?email\\=.*"
+                    let data = CinchKitTestsHelper.loadJsonData("fetchAccount")
                     
                     stubRequest("GET", path.regex())
                         .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
@@ -103,8 +103,8 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should return 404 not found error") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?email\\=.*"
-                    var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                    let path : NSString = "\(accountsResource!.href.absoluteString)\\?email\\=.*"
+                    let data = CinchKitTestsHelper.loadJsonData("accountNotFound")
                     
                     stubRequest("GET", path.regex())
                         .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
@@ -138,8 +138,8 @@ class CinchClientAuthSpec: QuickSpec {
             describe("fetch Accounts matching username") {
                 
                 it("should return single account") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?username\\=.*"
-                    var data = CinchKitTestsHelper.loadJsonData("fetchAccount")
+                    let path : NSString = "\(accountsResource!.href.absoluteString)\\?username\\=.*"
+                    let data = CinchKitTestsHelper.loadJsonData("fetchAccount")
                     
                     stubRequest("GET", path.regex())
                         .andReturn(200).withHeader("Content-Type", "application/json").withBody(data)
@@ -155,8 +155,8 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should return 404 not found") {
-                    var path : NSString = "\(accountsResource!.href.absoluteString!)\\?username\\=.*"
-                    var data = CinchKitTestsHelper.loadJsonData("accountNotFound")
+                    let path : NSString = "\(accountsResource!.href.absoluteString)\\?username\\=.*"
+                    let data = CinchKitTestsHelper.loadJsonData("accountNotFound")
                     
                     stubRequest("GET", path.regex())
                         .andReturn(404).withHeader("Content-Type", "application/json").withBody(data)
@@ -190,8 +190,8 @@ class CinchClientAuthSpec: QuickSpec {
             describe("create account") {
                 
                 it("should return created account") {
-                    var str : NSString = accountsResource!.href.absoluteString!
-                    var data = CinchKitTestsHelper.loadJsonData("createAccount")
+                    let str : NSString = accountsResource!.href.absoluteString
+                    let data = CinchKitTestsHelper.loadJsonData("createAccount")
 
                     stubRequest("POST", str).andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
@@ -212,9 +212,9 @@ class CinchClientAuthSpec: QuickSpec {
             describe("refreshSession") {
                 
                 it("should return new session") {
-                    var data = CinchKitTestsHelper.loadJsonData("createToken")
+                    let data = CinchKitTestsHelper.loadJsonData("createToken")
 
-                    var token = CinchKitTestsHelper.validAuthToken()
+                    let token = CinchKitTestsHelper.validAuthToken()
                     
                     client!.session.accessTokenData = token
                     
@@ -235,19 +235,19 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should return new session with account") {
-                    var data = CinchKitTestsHelper.loadJsonData("createTokenIncludeAccount")
+                    let data = CinchKitTestsHelper.loadJsonData("createTokenIncludeAccount")
                     
-                    var token = CinchKitTestsHelper.validAuthToken()
+                    let token = CinchKitTestsHelper.validAuthToken()
                     
                     client!.session.accessTokenData = token
                     
-                    var path : NSString = "\(token.href.absoluteString!)?include=account"
+                    let path : NSString = "\(token.href.absoluteString)?include=account"
                     stubRequest("POST", path).withHeader("Authorization", "Bearer \(token.refresh)")
                         .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
                     waitUntil(timeout: 2) { done in
                         
-                        client!.refreshSession(includeAccount : true) { (account, error) in
+                        client!.refreshSession(true) { (account, error) in
                             expect(error).to(beNil())
                             expect(account).toNot(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())
@@ -259,15 +259,15 @@ class CinchClientAuthSpec: QuickSpec {
                 }
                 
                 it("should create a session") {
-                    var data = CinchKitTestsHelper.loadJsonData("createTokenIncludeAccount")
+                    let data = CinchKitTestsHelper.loadJsonData("createTokenIncludeAccount")
                     
-                    var path : NSString = tokensResource!.href.absoluteString!
+                    let path : NSString = tokensResource!.href.absoluteString
                     stubRequest("POST", path.regex())
                         .andReturn(201).withHeader("Content-Type", "application/json").withBody(data)
                     
                     waitUntil(timeout: 2) { done in
                         
-                        client!.createSession(params: ["facebookAccessToken" : "123"], headers: nil) { (account, error) in
+                        client!.createSession(["facebookAccessToken" : "123"], headers: nil) { (account, error) in
                             expect(error).to(beNil())
                             expect(account).toNot(beNil())
                             expect(client!.session.accessTokenData).toNot(beNil())

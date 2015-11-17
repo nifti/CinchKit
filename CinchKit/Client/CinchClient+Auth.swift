@@ -27,7 +27,7 @@ extension CinchClient {
         
         if let accounts = self.rootResources?["accounts"] {
             request(.POST, accounts.href, parameters: parameters, serializer: serializer) { (auth, error) in
-                if let err = error {
+                if let _ = error {
                     completionHandler?(nil, error)
                 } else if let a = auth {
                     self.setActiveSession(a.accessTokenData)
@@ -42,8 +42,6 @@ extension CinchClient {
     }
     
     public func refreshSession(includeAccount : Bool = false, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
-        let serializer = TokenResponseSerializer()
-        
         if let token = self.session.accessTokenData {
             let headers = ["Authorization" : "\(token.type) \(token.refresh)"]
             var params : [String : AnyObject]?
@@ -58,7 +56,7 @@ extension CinchClient {
         }
     }
 
-    public func createSession(var params : [String : AnyObject]? = nil, headers : [String : String]? = nil, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
+    public func createSession(params : [String : AnyObject]? = nil, headers : [String : String]? = nil, completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
         if let tokenURL = self.rootResources?["tokens"]?.href {
             self.createSession(atURL: tokenURL, params: params, headers: headers, completionHandler: completionHandler)
         } else {
@@ -66,7 +64,7 @@ extension CinchClient {
         }
     }
     
-    public func createSession(atURL url : NSURL, var params : [String : AnyObject]? = nil,
+    public func createSession(atURL url : NSURL, params : [String : AnyObject]? = nil,
         headers : [String : String]? = nil, encoding: Alamofire.ParameterEncoding = .JSON,
         completionHandler : ( (CNHAccount?, NSError?) -> () )? = nil) {
             
@@ -76,7 +74,7 @@ extension CinchClient {
             if let err = error where err.code == 401 {
                 self.revokeActiveSession()
                 completionHandler?(nil, error)
-            } else if let err = error {
+            } else if let _ = error {
                 completionHandler?(nil, error)
             } else if let a = auth {
                 self.setActiveSession(a.accessTokenData)
@@ -91,7 +89,7 @@ extension CinchClient {
         let serializer = AccountsSerializer()
         
         authorizedRequest(.PUT, url, parameters: parameters, queue: queue, serializer: serializer) { (accounts, error) in
-            if let err = error {
+            if let _ = error {
                 completionHandler?(nil, error)
             } else if let account = accounts?.first {
                 completionHandler?(account, nil)
@@ -143,7 +141,7 @@ extension CinchClient {
         }
     }
 
-    public func emailLogin(var params : [String : AnyObject]? = nil, completionHandler : ( (String?, NSError?) -> () )? = nil) {
+    public func emailLogin(params : [String : AnyObject]? = nil, completionHandler : ( (String?, NSError?) -> () )? = nil) {
         if let tokenURL = self.rootResources?["tokens"]?.href {
             let serializer = EmptyResponseSerializer()
             request(.POST, tokenURL, parameters: params, serializer: serializer, completionHandler : completionHandler)
@@ -158,7 +156,7 @@ extension CinchClient {
             
             // Remove ids from query params because of ids should be passed in path
             if let ids = params?["ids"] as? [String] {
-                accountsUrl = NSURL(string: accountsUrl.absoluteString! + "/" + ",".join(ids))!
+                accountsUrl = NSURL(string: accountsUrl.absoluteString + "/" + ids.joinWithSeparator(","))!
                 params?.removeValueForKey("ids")
             }
             

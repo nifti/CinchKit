@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD35807E6984A8D994CC6877 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E9D4B715BB040A0CE3E670 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		BE12C4308E4AFC81CEA4D44B /* Pods_CinchKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B96682DC2B8A82453990D0 /* Pods_CinchKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BD35807E6984A8D994CC6877 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E9D4B715BB040A0CE3E670 /* Pods.framework */; };
+		BE12C4308E4AFC81CEA4D44B /* Pods_CinchKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B96682DC2B8A82453990D0 /* Pods_CinchKitTests.framework */; };
 		C4047DBA1A9FD5B4000C3067 /* createToken.json in Resources */ = {isa = PBXBuildFile; fileRef = C4047DB91A9FD5B4000C3067 /* createToken.json */; };
 		C4047DBC1A9FD9BE000C3067 /* CinchKitTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */; };
 		C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C412B4801A8D0DF100CFAAB9 /* PollsResponseSerializer.swift */; };
@@ -368,7 +368,9 @@
 		C4506ED81A75B1B60053248E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = cinch;
 				TargetAttributes = {
 					C4506EE01A75B1B60053248E = {
@@ -576,6 +578,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -653,6 +656,7 @@
 				INFOPLIST_FILE = CinchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.clutchretail.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -672,6 +676,7 @@
 				INFOPLIST_FILE = CinchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.clutchretail.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -691,6 +696,7 @@
 				);
 				INFOPLIST_FILE = CinchKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.clutchretail.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CinchKitTests/CinchKitTests-Bridging-Header.h";
 			};
@@ -706,6 +712,7 @@
 				);
 				INFOPLIST_FILE = CinchKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.clutchretail.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CinchKitTests/CinchKitTests-Bridging-Header.h";
 			};

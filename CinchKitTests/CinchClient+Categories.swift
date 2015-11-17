@@ -24,7 +24,7 @@ class CinchClientCategoriesSpec: QuickSpec {
 
             it("should fetch categories") {
                 waitUntil(timeout: 5) { done in
-                    c.fetchCategories(queue: nil, completionHandler: { (categories, error ) in
+                    c.fetchCategories(nil, completionHandler: { (categories, error ) in
                         expect(error).to(beNil())
                         expect(categories).toNot(beEmpty())
 

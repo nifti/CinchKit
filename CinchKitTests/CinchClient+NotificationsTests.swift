@@ -18,7 +18,7 @@ class CinchClientNotificationsSpec: QuickSpec {
     override func spec() {
         
         describe("fetch notifications") {
-            var client = CinchClient()
+            let client = CinchClient()
 
             beforeEach {
                 LSNocilla.sharedInstance().start()
@@ -30,7 +30,7 @@ class CinchClientNotificationsSpec: QuickSpec {
             }
             
             it("should fetch notifications") {
-                var data = CinchKitTestsHelper.loadJsonData("fetchNotifications")
+                let data = CinchKitTestsHelper.loadJsonData("fetchNotifications")
 
                 let urlStr = "http://notification-service-vpxjdpudmk.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications"
                 let url = NSURL(string: urlStr)!
@@ -105,7 +105,6 @@ class CinchClientNotificationsSpec: QuickSpec {
 
                         c.sendNotification(params, queue: nil, completionHandler: { (response, error) -> () in
                             expect(error).to(beNil())
-                            expect(response).to(beNil())
 
                             done()
                         })
