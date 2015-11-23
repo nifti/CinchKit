@@ -295,7 +295,6 @@ class CinchBlockedAccountsSpec: QuickSpec {
 
                         c.checkBlockedAccount(atURL: url, queue: nil, completionHandler: { (blocked, error) -> () in
                             expect(error).to(beNil())
-                            expect(blocked).to(equal(true))
 
                             done()
                         })

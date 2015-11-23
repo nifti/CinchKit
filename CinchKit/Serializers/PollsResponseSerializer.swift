@@ -65,7 +65,20 @@ class PollsResponseSerializer : JSONObjectSerializer {
         } else {
             displayAt = CinchKitDateTools.dateFromISOString(json["created"].stringValue)
         }
-        
+
+        // -----
+
+        var recentVoters = [CNHAccount]()
+        if let accs = accounts, let arr = json["recentVoters"].array {
+            for acc in arr {
+                if let voter = accs[acc.stringValue] {
+                    recentVoters.append(voter)
+                }
+            }
+        }
+
+        // -----
+
         return CNHPoll(
             id: json["id"].stringValue,
             href : json["href"].stringValue,
@@ -82,7 +95,8 @@ class PollsResponseSerializer : JSONObjectSerializer {
             author : account,
             candidates : candidates!,
             comments : comments,
-            links : links
+            links : links,
+            recentVoters : recentVoters
         )
     }
     
@@ -393,7 +407,6 @@ class CategoriesSerializer : JSONObjectSerializer {
 }
 
 class EmptyResponseSerializer : JSONObjectSerializer {
-    
     func jsonToObject(json: SwiftyJSON.JSON) -> String? {
         return "OK"
     }

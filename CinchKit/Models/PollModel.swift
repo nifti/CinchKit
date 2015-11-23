@@ -66,6 +66,7 @@ public struct CNHPoll {
     public let candidates : [CNHPollCandidate]
     public let comments : [CNHComment]?
     public let links : [String : NSURL]?
+    public let recentVoters : [CNHAccount]?
 }
 
 public struct CNHPollCandidate {
