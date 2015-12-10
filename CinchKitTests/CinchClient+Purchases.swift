@@ -32,9 +32,20 @@ class CinchClientPurchasesSpec: QuickSpec {
         }
 
         describe("update purchase") {
-            it("should update a purchase") {
+            it("should update the purchase") {
                 waitUntil(timeout: 5) { done in
                     c.updatePurchase("1111111111", queue: nil, completionHandler: { (_, error) -> () in
+                        expect(error).to(beNil())
+                        done()
+                    })
+                }
+            }
+        }
+
+        describe("delete purchase") {
+            it("should delete the purchase") {
+                waitUntil(timeout: 5) { done in
+                    c.deletePurchase("com.clutchretail.cinch.bump", queue: nil, completionHandler: { (_, error) -> () in
                         expect(error).to(beNil())
                         done()
                     })
