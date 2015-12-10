@@ -34,7 +34,7 @@ class CinchClientPurchasesSpec: QuickSpec {
         describe("update purchase") {
             it("should update the purchase") {
                 waitUntil(timeout: 5) { done in
-                    c.updatePurchase("1111111111", queue: nil, completionHandler: { (_, error) -> () in
+                    c.updatePurchase("1111111111", sandbox: true, queue: nil, completionHandler: { (_, error) -> () in
                         expect(error).to(beNil())
                         done()
                     })

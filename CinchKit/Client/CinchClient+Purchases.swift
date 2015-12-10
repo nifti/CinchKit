@@ -27,11 +27,14 @@ extension CinchClient {
         }
     }
 
-    public func updatePurchase(receipt: String, queue: dispatch_queue_t? = nil, completionHandler: ((String?, NSError?) -> ())?) {
+    public func updatePurchase(receipt: String, sandbox: Bool = false, queue: dispatch_queue_t? = nil, completionHandler: ((String?, NSError?) -> ())?) {
         let serializer = EmptyResponseSerializer()
 
         if let purchases = self.rootResources?["purchases"] {
-            let params: [String: AnyObject] = ["receipt": receipt]
+            let params: [String: AnyObject] = [
+                "receipt": receipt,
+                "sandbox": sandbox
+            ]
             authorizedRequest(.PUT, purchases.href, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
         } else {
             dispatch_async(queue ?? dispatch_get_main_queue(), {
