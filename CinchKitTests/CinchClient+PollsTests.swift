@@ -22,7 +22,7 @@ class CinchClientPollsSpec: QuickSpec {
             
             it("should return polls") {
                 client.session.close()
-                let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions")!, title: "get and create polls")
+                let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions")!, title: "get and create polls")
                 
                 client.rootResources = ["polls" : r]
                 
@@ -56,7 +56,7 @@ class CinchClientPollsSpec: QuickSpec {
             it("should return on specific queue") {
                 let c = CinchClient()
                 
-                let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions")!, title: "get and create polls")
+                let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions")!, title: "get and create polls")
                 
                 c.rootResources = ["polls" : r]
                 
@@ -125,7 +125,7 @@ class CinchClientPollsSpec: QuickSpec {
             let c = CinchClient()
             
             it("should fetch votes") {
-                let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/041e52d3-42cf-40d3-812f-e9f83bfc10e3/votes")!
+                let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/041e52d3-42cf-40d3-812f-e9f83bfc10e3/votes")!
                 waitUntil(timeout: 5) { done in
                     c.fetchVotes(atURL: url, queue: nil) { (response, error ) in
                         expect(error).to(beNil())
@@ -144,7 +144,7 @@ class CinchClientPollsSpec: QuickSpec {
             it("should bump the poll") {
                 waitUntil(timeout: 5) { done in
                     c.refreshSession { (account, error) in
-                        let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/3f277983-e3bc-479a-be3f-4d0dfb3a95ef")!
+                        let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/3f277983-e3bc-479a-be3f-4d0dfb3a95ef")!
                         c.bumpPoll(atURL: url, queue: nil, completionHandler: { (response, error) -> () in
                             expect(error).to(beNil())
                             expect(response).notTo(beNil())
@@ -163,7 +163,7 @@ class CinchClientPollsSpec: QuickSpec {
             it("should change poll's category") {
                 waitUntil(timeout: 5) { done in
                     c.refreshSession { (account, error) in
-                        let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/3f277983-e3bc-479a-be3f-4d0dfb3a95ef")!
+                        let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/3f277983-e3bc-479a-be3f-4d0dfb3a95ef")!
                         c.changePollCategory(atURL: url, categoryId: "f0935034-f9a4-4572-aa3e-dd1cf1967ebf", queue: nil, completionHandler: { (response, error) -> () in
                             expect(error).to(beNil())
                             expect(response).notTo(beNil())
@@ -179,7 +179,7 @@ class CinchClientPollsSpec: QuickSpec {
             let c = CinchClient()
             CinchKitTestsHelper.setTestUserSession(c)
 
-            let r = ApiResource(id: "complaints", href: NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/complaints")!, title: "send complaint")
+            let r = ApiResource(id: "complaints", href: NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/complaints")!, title: "send complaint")
             c.rootResources = ["complaints" : r]
 
             it("should report poll from user") {
@@ -208,7 +208,7 @@ class CinchClientPollsSpec: QuickSpec {
             it("should make poll private") {
                 waitUntil(timeout: 5) { done in
                     c.refreshSession { (account, error) in
-                        let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/42ec38f3-5658-4708-8c20-0c70414b7c6f")!
+                        let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/42ec38f3-5658-4708-8c20-0c70414b7c6f")!
                         c.makePollPrivate(atURL: url, queue: nil, completionHandler: { (response, error) -> () in
                             expect(error).to(beNil())
 
@@ -280,7 +280,7 @@ class CinchClientPollsSpec: QuickSpec {
 //        describe("creating a poll") {
 //            let c = CinchClient()
 //            
-//            let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions")!, title: "get and create polls")
+//            let r = ApiResource(id: "polls", href: NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions")!, title: "get and create polls")
 //            c.rootResources = ["polls" : r]
 //            
 //            let token = CNHAccessTokenData(

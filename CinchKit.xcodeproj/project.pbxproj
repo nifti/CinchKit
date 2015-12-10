@@ -45,6 +45,8 @@
 		C4F3820B1A90FB96001A392C /* CNHUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F3820A1A90FB96001A392C /* CNHUtils.swift */; };
 		CB1BA4021B39EEDB009EECA6 /* uploadPhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */; };
 		CB9978AD1B5F818E00CD9338 /* fetchNotifications.json in Resources */ = {isa = PBXBuildFile; fileRef = CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */; };
+		CBA8C2051C1A066C009BC7E9 /* CinchClient+Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8C2041C1A066C009BC7E9 /* CinchClient+Purchases.swift */; };
+		CBA8C2071C1A0A07009BC7E9 /* CinchClient+Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8C2061C1A0A07009BC7E9 /* CinchClient+Purchases.swift */; };
 		CBAC482E1B6135870061671F /* CinchClient+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC482D1B6135870061671F /* CinchClient+Categories.swift */; };
 		CBAC48301B6137350061671F /* CinchClient+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC482F1B6137350061671F /* CinchClient+Categories.swift */; };
 /* End PBXBuildFile section */
@@ -118,6 +120,8 @@
 		C4F3820A1A90FB96001A392C /* CNHUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHUtils.swift; sourceTree = "<group>"; };
 		CB1BA4011B39EEDB009EECA6 /* uploadPhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uploadPhotos.json; path = response_stubs/uploadPhotos.json; sourceTree = "<group>"; };
 		CB9978AC1B5F818E00CD9338 /* fetchNotifications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fetchNotifications.json; path = response_stubs/fetchNotifications.json; sourceTree = "<group>"; };
+		CBA8C2041C1A066C009BC7E9 /* CinchClient+Purchases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Purchases.swift"; path = "Client/CinchClient+Purchases.swift"; sourceTree = "<group>"; };
+		CBA8C2061C1A0A07009BC7E9 /* CinchClient+Purchases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Purchases.swift"; sourceTree = "<group>"; };
 		CBAC482D1B6135870061671F /* CinchClient+Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Categories.swift"; path = "Client/CinchClient+Categories.swift"; sourceTree = "<group>"; };
 		CBAC482F1B6137350061671F /* CinchClient+Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Categories.swift"; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				C497C9EC1AEF1DD6000ED7C6 /* CinchClient+Followers.swift */,
 				C4BBAC8F1B023F840002E5B9 /* CinchClient+Notifications.swift */,
 				C4BBA2EB1A76E20500B23DC7 /* CinchClient+Polls.swift */,
+				CBA8C2041C1A066C009BC7E9 /* CinchClient+Purchases.swift */,
 				C47574061A9E8D0F00C7C5B9 /* CNHKeychain.swift */,
 				C47573FD1A9E33B400C7C5B9 /* CNHSession.swift */,
 			);
@@ -263,6 +268,7 @@
 				C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */,
 				C4BBAC911B02438D0002E5B9 /* CinchClient+NotificationsTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
+				CBA8C2061C1A0A07009BC7E9 /* CinchClient+Purchases.swift */,
 				C4DC95701A96935300A3FCCB /* CinchKitTests-Bridging-Header.h */,
 				C4506EF31A75B1B60053248E /* CinchKitTests.swift */,
 				C4047DBB1A9FD9BE000C3067 /* CinchKitTestsHelper.swift */,
@@ -516,6 +522,7 @@
 				C4BBA2E91A7693AF00B23DC7 /* ApiResource.swift in Sources */,
 				C412B4811A8D0DF100CFAAB9 /* PollsResponseSerializer.swift in Sources */,
 				C4610AB01AF3B7F80031EB53 /* CinchClient+Comments.swift in Sources */,
+				CBA8C2051C1A066C009BC7E9 /* CinchClient+Purchases.swift in Sources */,
 				C4BBA2FB1A76F6C200B23DC7 /* PollModel.swift in Sources */,
 				C47574071A9E8D0F00C7C5B9 /* CNHKeychain.swift in Sources */,
 				C4BBAC901B023F840002E5B9 /* CinchClient+Notifications.swift in Sources */,
@@ -537,6 +544,7 @@
 				C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */,
 				C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */,
 				C4610AB21AF3BF700031EB53 /* CinchClient+CommentsTests.swift in Sources */,
+				CBA8C2071C1A0A07009BC7E9 /* CinchClient+Purchases.swift in Sources */,
 				C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */,
 				C4506EF41A75B1B60053248E /* CinchKitTests.swift in Sources */,
 				C4BBAC921B02438D0002E5B9 /* CinchClient+NotificationsTests.swift in Sources */,

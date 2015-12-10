@@ -13,13 +13,13 @@
                      "links": {
                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca",
                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/notifications",
-                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/discussions",
+                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/discussions",
                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/followers",
                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/following",
                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/notifications",
                      "photos": "http://api.us-east-1.niftiws.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/photos",
                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/stats",
-                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/votes"
+                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/votes"
                      }
                      },
                      {
@@ -30,13 +30,13 @@
                      "links": {
                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30",
                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/notifications",
-                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/discussions",
+                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/discussions",
                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/followers",
                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/following",
                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/notifications",
                      "photos": "http://api.us-east-1.niftiws.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/photos",
                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/stats",
-                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/votes"
+                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30/votes"
                      }
                      },
                      {
@@ -54,13 +54,13 @@
                      "links": {
                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
-                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
+                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/followers",
                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/following",
                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
                      "photos": "http://api.us-east-1.niftiws.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/photos",
                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/stats",
-                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
+                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
                      }
                      },
                      {
@@ -78,20 +78,20 @@
                      "links": {
                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
-                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
+                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/followers",
                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/following",
                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
                      "photos": "http://api.us-east-1.niftiws.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/photos",
                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/stats",
-                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
+                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
                      }
                      }
                      ],
         "polls": [
                   {
                   "id": "2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
                   "topic": "foo bar",
                   "type": "binary",
                   "shortLink": "http://bit.ly/1Mw3aW8",
@@ -104,13 +104,13 @@
                   "recentComments": [
                                      {
                                      "id": 1438083995440,
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages/1438083995440",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages/1438083995440",
                                      "type": "picture",
                                      "created": "2015-07-28T11:46:35.440Z",
                                      "links": {
                                      "discussion": {
                                      "id": "2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
                                      "type": "discussions"
                                      },
                                      "author": {
@@ -140,25 +140,25 @@
                                      "links": {
                                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
                                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
-                                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
+                                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
                                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/followers",
                                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/following",
                                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
                                      "photos": "http://api.us-east-1.niftiws.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/photos",
                                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/stats",
-                                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
+                                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
                                      }
                                      }
                                      },
                                      {
                                      "id": 1438084375722,
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages/1438084375722",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages/1438084375722",
                                      "type": "picture",
                                      "created": "2015-07-28T11:52:55.722Z",
                                      "links": {
                                      "discussion": {
                                      "id": "2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
                                      "type": "discussions"
                                      },
                                      "author": {
@@ -188,25 +188,25 @@
                                      "links": {
                                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220",
                                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
-                                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
+                                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/discussions",
                                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/followers",
                                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/following",
                                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/notifications",
                                      "photos": "http://api.us-east-1.niftiws.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/photos",
                                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/stats",
-                                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
+                                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/72d25ff9-1d37-4814-b2bd-bc149c222220/votes"
                                      }
                                      }
                                      },
                                      {
                                      "id": 1438089790995,
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages/1438089790995",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages/1438089790995",
                                      "type": "picture",
                                      "created": "2015-07-28T13:23:10.995Z",
                                      "links": {
                                      "discussion": {
                                      "id": "2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90",
                                      "type": "discussions"
                                      },
                                      "author": {
@@ -228,13 +228,13 @@
                                      "links": {
                                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca",
                                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/notifications",
-                                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/discussions",
+                                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/discussions",
                                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/followers",
                                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/following",
                                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/notifications",
                                      "photos": "http://api.us-east-1.niftiws.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/photos",
                                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/stats",
-                                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/votes"
+                                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca/votes"
                                      }
                                      }
                                      }
@@ -297,19 +297,19 @@
                   "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/ca573b5c-252c-4c68-903a-9fb1c88f7fca"
                   },
                   "messages": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages"
                   },
                   "comments": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages?type=comment"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/messages?type=comment"
                   },
                   "vote": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/votes"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/2542b5e3-9e2c-4559-9e52-ab7a79a71f90/votes"
                   }
                   }
                   },
                   {
                   "id": "e6dd194d-f694-46f6-92f6-4942696142b5",
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5",
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5",
                   "topic": "Follow category test",
                   "type": "multiple",
                   "shortLink": "http://bit.ly/1LuTv1F",
@@ -375,19 +375,19 @@
                   "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/a9341364-be2f-4d46-a9bd-1456b5549c30"
                   },
                   "messages": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/messages"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/messages"
                   },
                   "comments": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/messages?type=comment"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/messages?type=comment"
                   },
                   "vote": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/votes"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/e6dd194d-f694-46f6-92f6-4942696142b5/votes"
                   }
                   }
                   },
                   {
                   "id": "8cc05188-5bff-4ee5-b058-64cc7c0a006a",
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
                   "topic": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                   "type": "binary",
                   "shortLink": "http://bit.ly/1e3si7r",
@@ -400,14 +400,14 @@
                   "recentComments": [
                                      {
                                      "id": 1437081819312,
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages/1437081819312",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages/1437081819312",
                                      "message": "Test comment 1",
                                      "type": "comment",
                                      "created": "2015-07-16T21:23:39.312Z",
                                      "links": {
                                      "discussion": {
                                      "id": "8cc05188-5bff-4ee5-b058-64cc7c0a006a",
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
                                      "type": "discussions"
                                      },
                                      "author": {
@@ -431,26 +431,26 @@
                                      "links": {
                                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
                                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
-                                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
+                                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
                                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/followers",
                                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/following",
                                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
                                      "photos": "http://api.us-east-1.niftiws.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/photos",
                                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/stats",
-                                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
+                                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
                                      }
                                      }
                                      },
                                      {
                                      "id": 1437081829413,
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages/1437081829413",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages/1437081829413",
                                      "message": "Test comment 2",
                                      "type": "comment",
                                      "created": "2015-07-16T21:23:49.413Z",
                                      "links": {
                                      "discussion": {
                                      "id": "8cc05188-5bff-4ee5-b058-64cc7c0a006a",
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
                                      "type": "discussions"
                                      },
                                      "author": {
@@ -474,26 +474,26 @@
                                      "links": {
                                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
                                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
-                                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
+                                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
                                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/followers",
                                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/following",
                                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
                                      "photos": "http://api.us-east-1.niftiws.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/photos",
                                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/stats",
-                                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
+                                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
                                      }
                                      }
                                      },
                                      {
                                      "id": 1437081837651,
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages/1437081837651",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages/1437081837651",
                                      "message": "Test comment 3",
                                      "type": "comment",
                                      "created": "2015-07-16T21:23:57.651Z",
                                      "links": {
                                      "discussion": {
                                      "id": "8cc05188-5bff-4ee5-b058-64cc7c0a006a",
-                                     "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
+                                     "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a",
                                      "type": "discussions"
                                      },
                                      "author": {
@@ -517,13 +517,13 @@
                                      "links": {
                                      "self": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42",
                                      "activities": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
-                                     "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
+                                     "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/discussions",
                                      "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/followers",
                                      "following": "http://social-service-xjrfryjqva.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/following",
                                      "notifications": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/notifications",
                                      "photos": "http://api.us-east-1.niftiws.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/photos",
                                      "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/stats",
-                                     "votes": "http://identity-service-izygw8dtme.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
+                                     "votes": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42/votes"
                                      }
                                      }
                                      }
@@ -586,13 +586,13 @@
                   "href": "http://auth-service-jgjfpv9gvy.elasticbeanstalk.com/accounts/0fc27cf5-0965-427a-a617-101cf987fe42"
                   },
                   "messages": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages"
                   },
                   "comments": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages?type=comment"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/messages?type=comment"
                   },
                   "vote": {
-                  "href": "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/votes"
+                  "href": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/8cc05188-5bff-4ee5-b058-64cc7c0a006a/votes"
                   }
                   }
                   }
@@ -607,7 +607,7 @@
                                   "http://d3hi854uoj0t8v.cloudfront.net/category-art@3x.png"
                                   ],
                        "links": {
-                       "discussions": "http://identity-service-izygw8dtme.elasticbeanstalk.com/categories/bb7feb32-6b5c-49f5-b52c-439eea0ebefe/discussions",
+                       "discussions": "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/categories/bb7feb32-6b5c-49f5-b52c-439eea0ebefe/discussions",
                        "stats": "http://notification-service-bd2cm278ft.elasticbeanstalk.com/categories/bb7feb32-6b5c-49f5-b52c-439eea0ebefe/stats",
                        "followers": "http://social-service-xjrfryjqva.elasticbeanstalk.com/categories/bb7feb32-6b5c-49f5-b52c-439eea0ebefe/followers"
                        }

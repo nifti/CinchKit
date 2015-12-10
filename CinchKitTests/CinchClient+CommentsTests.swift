@@ -19,7 +19,7 @@ class CinchClientCommentsSpec: QuickSpec {
             let c = CinchClient()
             
             it("should fetch comments") {
-                let url = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/98df6e53-5859-4ce5-a4bb-b0e48e214969/messages?type=comment")!
+                let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/98df6e53-5859-4ce5-a4bb-b0e48e214969/messages?type=comment")!
                 waitUntil(timeout: 5) { done in
                     c.fetchComments(atURL: url, queue: nil) { (response, error ) in
                         expect(error).to(beNil())
@@ -39,7 +39,7 @@ class CinchClientCommentsSpec: QuickSpec {
             CinchKitTestsHelper.setTestUserSession(c)
 
             var newCommentUrl: NSURL?
-            let messagesUrl = NSURL(string: "http://identity-service-izygw8dtme.elasticbeanstalk.com/discussions/1eb66fe4-fef8-4897-a966-28f206d2e426/messages")!
+            let messagesUrl = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/1eb66fe4-fef8-4897-a966-28f206d2e426/messages")!
 
             it("should create comment") {
                 waitUntil(timeout: 5) { done in
