@@ -428,10 +428,10 @@ class PurchaseSerializer: JSONObjectSerializer {
     private func decodePurchase(accounts: [String: CNHAccount], polls: [String: CNHPoll], json: JSON) -> CNHPurchase {
         var poll: CNHPoll?
 
-        let product = PurchaseProduct(rawValue: json["productId"].stringValue)!
+        let product = CNHPurchaseProduct(rawValue: json["productId"].stringValue)!
         let account: CNHAccount = accounts[json["accountId"].stringValue]!
 
-        if product == PurchaseProduct.BumpPoll {
+        if product == CNHPurchaseProduct.BumpPoll {
             poll = polls[json["metadata"]["pollId"].stringValue]
         }
 

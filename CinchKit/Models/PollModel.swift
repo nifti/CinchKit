@@ -16,7 +16,7 @@ public enum AccountRole : String {
     case Admin = "admin", User = "user"
 }
 
-public enum PurchaseProduct: String {
+public enum CNHPurchaseProduct: String {
     case BumpPoll = "com.clutchretail.cinch.bump"
 }
 
@@ -182,7 +182,7 @@ public struct CNHPhoto {
 
 public struct CNHPurchase {
     public let id: String
-    public let product: PurchaseProduct
+    public let product: CNHPurchaseProduct
     public let transactionId: String
 
     public let account: CNHAccount

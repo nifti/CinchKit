@@ -24,12 +24,12 @@ class CinchClientPurchasesSpec: QuickSpec {
         describe("create purchase") {
             it("should create a purchase") {
                 waitUntil(timeout: 5) { done in
-                    c.createPurchase(PurchaseProduct.BumpPoll, metadata: ["pollId": pollId], queue: nil, completionHandler: { (purchase, error) -> () in
+                    c.createPurchase(CNHPurchaseProduct.BumpPoll, metadata: ["pollId": pollId], queue: nil, completionHandler: { (purchase, error) -> () in
                         expect(error).to(beNil())
                         expect(purchase).toNot(beNil())
                         expect(purchase?.poll).toNot(beNil())
 
-                        expect(purchase?.product).to(equal(PurchaseProduct.BumpPoll))
+                        expect(purchase?.product).to(equal(CNHPurchaseProduct.BumpPoll))
                         expect(purchase?.poll?.id).to(equal(pollId))
 
                         done()
@@ -47,7 +47,7 @@ class CinchClientPurchasesSpec: QuickSpec {
                         expect(purchase).toNot(beNil())
                         expect(purchase?.poll).toNot(beNil())
 
-                        expect(purchase?.product).to(equal(PurchaseProduct.BumpPoll))
+                        expect(purchase?.product).to(equal(CNHPurchaseProduct.BumpPoll))
                         expect(purchase?.poll?.id).to(equal(pollId))
                         
                         done()
@@ -59,7 +59,7 @@ class CinchClientPurchasesSpec: QuickSpec {
         describe("delete purchase") {
             it("should delete the purchase") {
                 waitUntil(timeout: 5) { done in
-                    c.deletePurchase("com.clutchretail.cinch.bump", queue: nil, completionHandler: { (_, error) -> () in
+                    c.deletePurchase(CNHPurchaseProduct.BumpPoll, queue: nil, completionHandler: { (_, error) -> () in
                         expect(error).to(beNil())
                         done()
                     })
