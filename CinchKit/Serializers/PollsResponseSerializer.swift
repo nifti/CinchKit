@@ -406,6 +406,66 @@ class CategoriesSerializer : JSONObjectSerializer {
     }
 }
 
+class PurchaseSerializer: JSONObjectSerializer {
+
+    let accountsSerializer = AccountsSerializer()
+    let pollsSerializer = PollsResponseSerializer()
+
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHPurchase? {
+        var accountIndex = [String: CNHAccount]()
+        if let accounts = accountsSerializer.jsonToObject(json["linked"]["accounts"]) {
+            accountIndex = self.indexById(accounts)
+        }
+
+        var pollIndex = [String: CNHPoll]()
+        if let polls = json["linked"]["polls"].array?.map({ self.pollsSerializer.decodePoll(accountIndex, json: $0) }) {
+            pollIndex = self.indexById(polls)
+        }
+
+        return json["purchases"].array?.map({ self.decodePurchase(accountIndex, polls: pollIndex, json: $0) }).first
+    }
+
+    private func decodePurchase(accounts: [String: CNHAccount], polls: [String: CNHPoll], json: JSON) -> CNHPurchase {
+        var poll: CNHPoll?
+
+        let product = PurchaseProduct(rawValue: json["productId"].stringValue)!
+        let account: CNHAccount = accounts[json["accountId"].stringValue]!
+
+        if product == PurchaseProduct.BumpPoll {
+            poll = polls[json["metadata"]["pollId"].stringValue]
+        }
+
+        return CNHPurchase(
+            id: json["id"].stringValue,
+            product: product,
+            transactionId: json["transactionId"].stringValue,
+
+            account: account,
+            poll: poll
+        )
+    }
+
+    internal func indexById(data: [CNHAccount]) -> [String: CNHAccount] {
+        var result = [String: CNHAccount]()
+
+        for item in data {
+            result[item.id] = item
+        }
+
+        return result
+    }
+
+    internal func indexById(data: [CNHPoll]) -> [String: CNHPoll] {
+        var result = [String: CNHPoll]()
+
+        for item in data {
+            result[item.id] = item
+        }
+
+        return result
+    }
+}
+
 class EmptyResponseSerializer : JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> String? {
         return "OK"

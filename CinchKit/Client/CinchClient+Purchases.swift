@@ -10,11 +10,11 @@ import Foundation
 
 
 extension CinchClient {
-    public func createPurchase(productId: String, metadata: [String: AnyObject]?, queue: dispatch_queue_t? = nil, completionHandler: ((String?, NSError?) -> ())?) {
-        let serializer = EmptyResponseSerializer()
+    public func createPurchase(product: PurchaseProduct, metadata: [String: AnyObject]?, queue: dispatch_queue_t? = nil, completionHandler: ((CNHPurchase?, NSError?) -> ())?) {
+        let serializer = PurchaseSerializer()
 
         if let purchases = self.rootResources?["purchases"] {
-            var params: [String: AnyObject] = ["productId": productId]
+            var params: [String: AnyObject] = ["productId": product.rawValue]
             if let md = metadata {
                 params["metadata"] = md
             }
@@ -27,8 +27,8 @@ extension CinchClient {
         }
     }
 
-    public func updatePurchase(receipt: String, sandbox: Bool = false, queue: dispatch_queue_t? = nil, completionHandler: ((String?, NSError?) -> ())?) {
-        let serializer = EmptyResponseSerializer()
+    public func updatePurchase(receipt: String, sandbox: Bool = false, queue: dispatch_queue_t? = nil, completionHandler: ((CNHPurchase?, NSError?) -> ())?) {
+        let serializer = PurchaseSerializer()
 
         if let purchases = self.rootResources?["purchases"] {
             let params: [String: AnyObject] = [
