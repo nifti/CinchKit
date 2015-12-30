@@ -188,3 +188,9 @@ public struct CNHPurchase {
     public let account: CNHAccount
     public let poll: CNHPoll?
 }
+
+public struct CNHLeaderAccount {
+    public let account: CNHAccount
+    public let rank: Int
+    public let votesTotal: Int
+}

@@ -6,8 +6,6 @@
 //  Copyright © 2015 cinch. All rights reserved.
 //
 
-import Foundation
-
 
 extension CinchClient {
     public func createPurchase(product: CNHPurchaseProduct, metadata: [String: AnyObject]?, queue: dispatch_queue_t? = nil, completionHandler: ((CNHPurchase?, NSError?) -> ())?) {

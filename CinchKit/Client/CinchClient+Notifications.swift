@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 cinch. All rights reserved.
 //
 
-import SwiftyJSON
 
 extension CinchClient {
     public func fetchNotifications(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : (CNHNotificationsResponse?, NSError?) -> ()) {

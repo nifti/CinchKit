@@ -466,6 +466,38 @@ class PurchaseSerializer: JSONObjectSerializer {
     }
 }
 
+class LeaderboardSerializer: JSONObjectSerializer {
+
+    let accountsSerializer = AccountsSerializer()
+
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHLeaderAccount]? {
+        var accountIndex = [String: CNHAccount]()
+        if let accounts = accountsSerializer.jsonToObject(json["linked"]["accounts"]) {
+            accountIndex = self.indexById(accounts)
+        }
+
+        return json["leaders"].array?.map({ self.decodeLeader(accountIndex, json: $0) })
+    }
+
+    private func decodeLeader(accounts: [String: CNHAccount], json: JSON) -> CNHLeaderAccount {
+        return CNHLeaderAccount(
+            account: accounts[json["id"].stringValue]!,
+            rank: json["rank"].intValue,
+            votesTotal: json["votesTotal"].intValue
+        )
+    }
+
+    internal func indexById(data: [CNHAccount]) -> [String: CNHAccount] {
+        var result = [String: CNHAccount]()
+
+        for item in data {
+            result[item.id] = item
+        }
+
+        return result
+    }
+}
+
 class EmptyResponseSerializer : JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> String? {
         return "OK"

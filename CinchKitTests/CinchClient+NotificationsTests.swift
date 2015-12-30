@@ -22,7 +22,8 @@ class CinchClientNotificationsSpec: QuickSpec {
 
             beforeEach {
                 LSNocilla.sharedInstance().start()
-                LSNocilla.sharedInstance().clearStubs()            }
+                LSNocilla.sharedInstance().clearStubs()
+            }
 
             afterEach {
                 LSNocilla.sharedInstance().clearStubs()

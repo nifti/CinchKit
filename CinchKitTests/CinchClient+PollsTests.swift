@@ -163,8 +163,8 @@ class CinchClientPollsSpec: QuickSpec {
             it("should change poll's category") {
                 waitUntil(timeout: 5) { done in
                     c.refreshSession { (account, error) in
-                        let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/3f277983-e3bc-479a-be3f-4d0dfb3a95ef")!
-                        c.changePollCategory(atURL: url, categoryId: "f0935034-f9a4-4572-aa3e-dd1cf1967ebf", queue: nil, completionHandler: { (response, error) -> () in
+                        let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/01084044-15fc-4705-b595-4ef33baafdf9")!
+                        c.changePollCategory(atURL: url, categoryId: "9221b63d-9dad-44bc-97fd-47a2042bdbbc", queue: nil, completionHandler: { (response, error) -> () in
                             expect(error).to(beNil())
                             expect(response).notTo(beNil())
 
@@ -215,6 +215,23 @@ class CinchClientPollsSpec: QuickSpec {
                             done()
                         })
                     }
+                }
+            }
+        }
+
+        describe("leaderboard") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            let r = ApiResource(id: "leaderboard", href: NSURL(string: "http://polls.cinchws.net/leaderboard")!, title: "leaderboard")
+            c.rootResources = ["leaderboard" : r]
+
+            it("should get the leaderboard") {
+                waitUntil(timeout: 5) { done in
+                    c.getLeaderboard(nil, completionHandler: { (_, error) -> () in
+                        expect(error).to(beNil())
+                        done()
+                    })
                 }
             }
         }

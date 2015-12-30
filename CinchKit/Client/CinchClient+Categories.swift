@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 cinch. All rights reserved.
 //
 
-import Foundation
-
 
 extension CinchClient {
     public func fetchCategories(queue: dispatch_queue_t? = nil, completionHandler : ([CNHCategory]?, NSError?) -> ()) {
