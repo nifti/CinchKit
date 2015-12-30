@@ -29,7 +29,11 @@ extension CinchClient {
         let serializer = LeaderboardSerializer()
 
         if let leaderboard = self.rootResources?["leaderboard"] {
-            authorizedRequest(.GET, leaderboard.href, queue: queue, serializer: serializer, completionHandler: completionHandler)
+            if self.session.isOpen || self.session.sessionState == .Closed {
+                authorizedRequest(.GET, leaderboard.href, queue: queue, serializer: serializer, completionHandler: completionHandler)
+            } else {
+                request(.GET, leaderboard.href, queue: queue, serializer: serializer, completionHandler: completionHandler)
+            }
         } else {
             dispatch_async(queue ?? dispatch_get_main_queue(), {
                 completionHandler?(nil, self.clientNotConnectedError())
