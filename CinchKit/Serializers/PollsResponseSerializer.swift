@@ -483,7 +483,8 @@ class LeaderboardSerializer: JSONObjectSerializer {
         return CNHLeaderAccount(
             account: accounts[json["id"].stringValue]!,
             rank: json["rank"].intValue,
-            votesTotal: json["votesTotal"].intValue
+            votesTotal: json["votesTotal"].intValue,
+            movement: CNHLeaderMovement(rawValue: json["movement"].stringValue) ?? CNHLeaderMovement.Up
         )
     }
 

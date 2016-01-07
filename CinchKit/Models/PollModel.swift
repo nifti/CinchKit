@@ -20,6 +20,10 @@ public enum CNHPurchaseProduct: String {
     case BumpPoll = "com.clutchretail.cinch.bump"
 }
 
+public enum CNHLeaderMovement: String {
+    case Up = "up", Down = "down"
+}
+
 public struct CNHAccount {
     public let id: String
     public let href: String
@@ -193,4 +197,5 @@ public struct CNHLeaderAccount {
     public let account: CNHAccount
     public let rank: Int
     public let votesTotal: Int
+    public let movement: CNHLeaderMovement
 }
