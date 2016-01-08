@@ -219,6 +219,24 @@ class CinchClientPollsSpec: QuickSpec {
             }
         }
 
+        describe("remove from featured") {
+            let c = CinchClient()
+            CinchKitTestsHelper.setTestUserSession(c)
+
+            it("should remove poll from featured feed") {
+                waitUntil(timeout: 5) { done in
+                    c.refreshSession { (account, error) in
+                        let url = NSURL(string: "http://identity-service-hjvmj2uhdj.elasticbeanstalk.com/discussions/42ec38f3-5658-4708-8c20-0c70414b7c6f")!
+                        c.removeFromFeatured(atURL: url, queue: nil, completionHandler: { (response, error) -> () in
+                            expect(error).to(beNil())
+
+                            done()
+                        })
+                    }
+                }
+            }
+        }
+
         describe("leaderboard") {
             let c = CinchClient()
             CinchKitTestsHelper.setTestUserSession(c)

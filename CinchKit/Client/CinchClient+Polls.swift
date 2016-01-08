@@ -64,6 +64,14 @@ extension CinchClient {
         authorizedRequest(.PUT, url, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
     }
 
+    public func removeFromFeatured(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
+        let serializer = EmptyResponseSerializer()
+        let params: [String: AnyObject] = [
+            "featured": false
+        ]
+        authorizedRequest(.PUT, url, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
+    }
+
     public func deletePoll(atURL url : NSURL, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
         let serializer = EmptyResponseSerializer()
         authorizedRequest(.DELETE, url, parameters: nil, queue: queue, serializer: serializer, completionHandler: completionHandler)
