@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CinchKit'
-  s.version = '1.5.3'
+  s.version = '1.5.4'
   s.license = 'MIT'
   s.summary = 'Cinch iOS SDK'
   s.homepage = 'https://github.com/nifti/CinchKit'
