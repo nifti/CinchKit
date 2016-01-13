@@ -195,7 +195,7 @@ public struct CNHPurchase {
 
 public struct CNHLeaderAccount {
     public let account: CNHAccount
-    public let rank: Int
+    public let rank: Int?
     public let votesTotal: Int
     public let movement: CNHLeaderMovement
 }
