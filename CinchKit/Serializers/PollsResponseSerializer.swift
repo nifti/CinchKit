@@ -466,6 +466,8 @@ class PurchaseSerializer: JSONObjectSerializer {
     }
 }
 
+// -----
+
 class LeaderboardSerializer: JSONObjectSerializer {
 
     let accountsSerializer = AccountsSerializer()
@@ -498,6 +500,26 @@ class LeaderboardSerializer: JSONObjectSerializer {
         return result
     }
 }
+
+class LeaderboardResponseSerializer: JSONObjectSerializer {
+
+    let leaderboardSerializer = LeaderboardSerializer()
+
+    func jsonToObject(json: SwiftyJSON.JSON) -> CNHLeaderboardResponse? {
+        var nextLink : CNHApiLink?
+
+        if let href = json["links"]["next"].URL {
+            nextLink = CNHApiLink(id: nil, href: href, type: "leaderboard")
+        }
+
+        let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "leaderboard")
+        let leaders = leaderboardSerializer.jsonToObject(json["leaders"])
+
+        return CNHLeaderboardResponse(selfLink: selfLink, nextLink: nextLink, leaders: leaders)
+    }
+}
+
+// -----
 
 class EmptyResponseSerializer : JSONObjectSerializer {
     func jsonToObject(json: SwiftyJSON.JSON) -> String? {

@@ -25,8 +25,8 @@ extension CinchClient {
         }
     }
 
-    public func getLeaderboard(atURL url: NSURL? = nil, queue: dispatch_queue_t? = nil, completionHandler : (([CNHLeaderAccount]?, NSError?) -> ())?) {
-        let serializer = LeaderboardSerializer()
+    public func getLeaderboard(atURL url: NSURL? = nil, queue: dispatch_queue_t? = nil, completionHandler : ((CNHLeaderboardResponse?, NSError?) -> ())?) {
+        let serializer = LeaderboardResponseSerializer()
 
         if let leaderboard = self.rootResources?["leaderboard"] {
             let reqUrl = url ?? leaderboard.href

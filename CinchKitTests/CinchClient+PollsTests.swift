@@ -246,8 +246,11 @@ class CinchClientPollsSpec: QuickSpec {
 
             it("should get the leaderboard") {
                 waitUntil(timeout: 5) { done in
-                    c.getLeaderboard(atURL: nil, queue: nil, completionHandler: { (_, error) -> () in
+                    c.getLeaderboard(atURL: nil, queue: nil, completionHandler: { (response, error) -> () in
+                        expect(response).notTo(beNil())
+                        expect(response?.selfLink).notTo(beNil())
                         expect(error).to(beNil())
+
                         done()
                     })
                 }

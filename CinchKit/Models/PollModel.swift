@@ -199,3 +199,9 @@ public struct CNHLeaderAccount {
     public let votesTotal: Int
     public let movement: CNHLeaderMovement
 }
+
+public struct CNHLeaderboardResponse {
+    public let selfLink: CNHApiLink
+    public let nextLink: CNHApiLink?
+    public let leaders: [CNHLeaderAccount]?
+}
