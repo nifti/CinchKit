@@ -513,7 +513,7 @@ class LeaderboardResponseSerializer: JSONObjectSerializer {
         }
 
         let selfLink = CNHApiLink(id: nil, href: json["links"]["self"].URL!, type: "leaderboard")
-        let leaders = leaderboardSerializer.jsonToObject(json["leaders"])
+        let leaders = leaderboardSerializer.jsonToObject(json)
 
         return CNHLeaderboardResponse(selfLink: selfLink, nextLink: nextLink, leaders: leaders)
     }
