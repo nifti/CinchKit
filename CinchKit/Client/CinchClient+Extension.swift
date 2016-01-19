@@ -42,4 +42,21 @@ extension CinchClient {
             })
         }
     }
+
+    public func updateDeviceToken(deviceToken: String, accountId: String? = nil, queue: dispatch_queue_t? = nil, completionHandler : ((String?, NSError?) -> ())?) {
+        let serializer = EmptyResponseSerializer()
+
+        if let complaints = self.rootResources?["deviceToken"] {
+            var params = ["deviceToken": deviceToken]
+            if let acc = accountId {
+                params["accountId"] = acc
+            }
+
+            request(.POST, complaints.href, parameters: params, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        } else {
+            dispatch_async(queue ?? dispatch_get_main_queue(), {
+                completionHandler?(nil, self.clientNotConnectedError())
+            })
+        }
+    }
 }

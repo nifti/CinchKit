@@ -113,5 +113,21 @@ class CinchClientNotificationsSpec: QuickSpec {
                 }
             }
         }
+
+        describe("updating device token") {
+            let c = CinchClient()
+
+            let d = ApiResource(id: "deviceToken", href: NSURL(string: "http://notification-service-vpxjdpudmk.elasticbeanstalk.com/devicetokens")!, title: "Device token")
+            c.rootResources = ["deviceToken" : d]
+
+            it("should update device token") {
+                waitUntil(timeout: 5) { done in
+                    c.updateDeviceToken("1111111111", accountId: "2222222222", queue: nil, completionHandler: { (_, error) -> () in
+                        expect(error).to(beNil())
+                        done()
+                    })
+                }
+            }
+        }
     }
 }
