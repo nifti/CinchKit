@@ -519,6 +519,16 @@ class LeaderboardResponseSerializer: JSONObjectSerializer {
     }
 }
 
+class DeeplinksSerializer : JSONObjectSerializer {
+    let linkSerializer = LinksSerializer()
+
+    func jsonToObject(json: SwiftyJSON.JSON) -> [CNHApiLink]? {
+        return json.array?.map({ (json: JSON) -> CNHApiLink in
+            return CNHApiLink(id: nil, href: json.URL!, type: "deeplink")
+        })
+    }
+}
+
 // -----
 
 class EmptyResponseSerializer : JSONObjectSerializer {

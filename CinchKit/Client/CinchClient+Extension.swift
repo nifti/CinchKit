@@ -59,4 +59,26 @@ extension CinchClient {
             })
         }
     }
+
+    public func fetchDeeplinks(queue: dispatch_queue_t? = nil, completionHandler : (([CNHApiLink]?, NSError?) -> ())?) {
+        let serializer = DeeplinksSerializer()
+
+        if let deeplinks = self.rootResources?["deeplinks"] {
+            let deviceType = UIDevice.currentDevice().model
+            let osVersion = UIDevice.currentDevice().systemVersion.stringByReplacingOccurrencesOfString(".", withString: "_")
+            let deviceWidth = Int(CGRectGetWidth(UIScreen.mainScreen().bounds))
+            let deviceHeight = Int(CGRectGetHeight(UIScreen.mainScreen().bounds))
+
+            var queryString = "deviceType=\(deviceType)&osVersion=\(osVersion)&deviceWidth=\(deviceWidth)&deviceHeight=\(deviceHeight)"
+            queryString = queryString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+
+            let dl = NSURL(string: "\(deeplinks.href.absoluteString)?\(queryString)")!
+
+            request(.GET, dl, queue: queue, serializer: serializer, completionHandler: completionHandler)
+        } else {
+            dispatch_async(queue ?? dispatch_get_main_queue(), {
+                completionHandler?(nil, self.clientNotConnectedError())
+            })
+        }
+    }
 }

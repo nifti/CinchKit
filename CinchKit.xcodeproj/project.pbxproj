@@ -51,6 +51,7 @@
 		CBA8C2071C1A0A07009BC7E9 /* CinchClient+Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8C2061C1A0A07009BC7E9 /* CinchClient+Purchases.swift */; };
 		CBAC482E1B6135870061671F /* CinchClient+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC482D1B6135870061671F /* CinchClient+Categories.swift */; };
 		CBAC48301B6137350061671F /* CinchClient+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAC482F1B6137350061671F /* CinchClient+Categories.swift */; };
+		CBB31C1D1C580627002D84DC /* CinchClient+CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB31C1C1C580627002D84DC /* CinchClient+CommonTests.swift */; };
 		CBB9F9991C32CF0D0003B3AA /* CinchClient+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9F9981C32CF0D0003B3AA /* CinchClient+Stats.swift */; };
 		CBB9F99D1C32D0350003B3AA /* CinchClient+Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9F99C1C32D0350003B3AA /* CinchClient+Accounts.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,7 @@
 		CBA8C2061C1A0A07009BC7E9 /* CinchClient+Purchases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Purchases.swift"; sourceTree = "<group>"; };
 		CBAC482D1B6135870061671F /* CinchClient+Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Categories.swift"; path = "Client/CinchClient+Categories.swift"; sourceTree = "<group>"; };
 		CBAC482F1B6137350061671F /* CinchClient+Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+Categories.swift"; sourceTree = "<group>"; };
+		CBB31C1C1C580627002D84DC /* CinchClient+CommonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CinchClient+CommonTests.swift"; sourceTree = "<group>"; };
 		CBB9F9981C32CF0D0003B3AA /* CinchClient+Stats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Stats.swift"; path = "Client/CinchClient+Stats.swift"; sourceTree = "<group>"; };
 		CBB9F99C1C32D0350003B3AA /* CinchClient+Accounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CinchClient+Accounts.swift"; path = "Client/CinchClient+Accounts.swift"; sourceTree = "<group>"; };
 		D8789450AAA3102D7D0D9F10 /* Pods-CinchKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CinchKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CinchKitTests/Pods-CinchKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				C41DDDAF1A8D51FD00B9523A /* CinchClient+AuthTests.swift */,
 				CBAC482F1B6137350061671F /* CinchClient+Categories.swift */,
 				C4610AB11AF3BF700031EB53 /* CinchClient+CommentsTests.swift */,
+				CBB31C1C1C580627002D84DC /* CinchClient+CommonTests.swift */,
 				C497C9EE1AEF1FB0000ED7C6 /* CinchClient+FollowersTests.swift */,
 				C4BBAC911B02438D0002E5B9 /* CinchClient+NotificationsTests.swift */,
 				C4BBA2F71A76F10600B23DC7 /* CinchClient+PollsTests.swift */,
@@ -559,6 +562,7 @@
 				CBAC48301B6137350061671F /* CinchClient+Categories.swift in Sources */,
 				C47574091A9E8D8E00C7C5B9 /* CNHKeychainTests.swift in Sources */,
 				C47574021A9E35F900C7C5B9 /* CNHSessionsTests.swift in Sources */,
+				CBB31C1D1C580627002D84DC /* CinchClient+CommonTests.swift in Sources */,
 				C4610AB21AF3BF700031EB53 /* CinchClient+CommentsTests.swift in Sources */,
 				CBA8C2071C1A0A07009BC7E9 /* CinchClient+Purchases.swift in Sources */,
 				C41DDDB01A8D51FD00B9523A /* CinchClient+AuthTests.swift in Sources */,
