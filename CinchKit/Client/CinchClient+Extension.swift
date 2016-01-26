@@ -64,7 +64,7 @@ extension CinchClient {
         let serializer = DeeplinksSerializer()
 
         if let deeplinks = self.rootResources?["deeplinks"] {
-            let deviceType = UIDevice.currentDevice().model
+            let deviceType = UIDevice.currentDevice().model.stringByReplacingOccurrencesOfString(" Simulator", withString: "")
             let osVersion = UIDevice.currentDevice().systemVersion.stringByReplacingOccurrencesOfString(".", withString: "_")
             let deviceWidth = Int(CGRectGetWidth(UIScreen.mainScreen().bounds))
             let deviceHeight = Int(CGRectGetHeight(UIScreen.mainScreen().bounds))

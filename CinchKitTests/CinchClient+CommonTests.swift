@@ -25,7 +25,7 @@ class CinchClientCommonSpec: QuickSpec {
                 waitUntil(timeout: 10) { done in
                     let deeplink = "cinchpolls://users?ids=1234567890"
                     let params: [String: AnyObject] = [
-                        "deviceType": UIDevice.currentDevice().model,
+                        "deviceType": UIDevice.currentDevice().model.stringByReplacingOccurrencesOfString(" Simulator", withString: ""),
                         "osVersion": UIDevice.currentDevice().systemVersion.stringByReplacingOccurrencesOfString(".", withString: "_"),
                         "deviceWidth": CGRectGetWidth(UIScreen.mainScreen().bounds),
                         "deviceHeight": CGRectGetHeight(UIScreen.mainScreen().bounds),
